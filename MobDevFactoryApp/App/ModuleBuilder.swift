@@ -21,4 +21,14 @@ final class ModuleBuilder {
         viewController.viewModel = viewModel
         return viewController
     }
+    
+    static func builderAuthorizationViewController() -> UIViewController {
+        let viewController = AuthorizationViewController()
+        return viewController
+    }
+    
+    static func builderRegistrationViewController() -> UIViewController {
+        let viewController = RegistrationViewController()
+        return viewController
+    }
 }
