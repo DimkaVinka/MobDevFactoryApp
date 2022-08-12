@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class AuthorizationViewController: UIViewController {
+    
+    private var storageManager = StorageManager()
     
     //MARK: Views
     private var greteAccountButton: UIButton = {
@@ -72,9 +75,10 @@ class AuthorizationViewController: UIViewController {
         view.backgroundColor = Metric.colorBackround
         setupHerarcy()
         setupView()
+        storageManager.makeStorage()
     }
     //MARK: Setup
-    private func setupHerarcy(){
+    private func setupHerarcy() {
         view.addSubview(greteAccountButton)
         view.addSubview(label)
         view.addSubview(nickNameTextField)
@@ -119,29 +123,34 @@ class AuthorizationViewController: UIViewController {
         }
    }
     //MARK: Actions
-    @objc func tapButtonGreteAccount(){
+    @objc func tapButtonGreteAccount() {
         present(ModuleBuilder.builderRegistrationViewController(), animated: true)
     }
     
-    @objc private func tapButtonTabBarController(){
-        let tabBarViewController = UITabBarController()
-        tabBarViewController.tabBar.backgroundColor = .white
-        let lessonTabBarItem = ModuleBuilderTabBarConrolers.buiderLessonViewController()
-        lessonTabBarItem.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
-        let calendarTabBarItem = ModuleBuilderTabBarConrolers.buiderCalendarViewController()
-        calendarTabBarItem.tabBarItem = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar"), tag: 1)
-        let searchTabbarItem = ModuleBuilderTabBarConrolers.buiderSearchViewController()
-        searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
-        let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
-        personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
-        tabBarViewController.setViewControllers([
-            lessonTabBarItem,
-            searchTabbarItem,
-            calendarTabBarItem,
-            personTabbarItem,
-        ], animated: true)
-        tabBarViewController.modalPresentationStyle = .fullScreen
-        present(tabBarViewController, animated: true)
+    @objc private func tapButtonTabBarController() {
+        
+        for user in storageManager.items {
+            if user.nickName == nickNameTextField.text ?? "" && user.password == passwordTextField.text ?? "" {
+                let tabBarViewController = UITabBarController()
+                tabBarViewController.tabBar.backgroundColor = .white
+                let lessonTabBarItem = ModuleBuilderTabBarConrolers.buiderLessonViewController()
+                lessonTabBarItem.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
+                let calendarTabBarItem = ModuleBuilderTabBarConrolers.buiderCalendarViewController()
+                calendarTabBarItem.tabBarItem = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar"), tag: 1)
+                let searchTabbarItem = ModuleBuilderTabBarConrolers.buiderSearchViewController()
+                searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+                let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
+                personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
+                tabBarViewController.setViewControllers([
+                    lessonTabBarItem,
+                    searchTabbarItem,
+                    calendarTabBarItem,
+                    personTabbarItem,
+                ], animated: true)
+                tabBarViewController.modalPresentationStyle = .fullScreen
+                present(tabBarViewController, animated: true)
+            }
+        }
     }
 }
 

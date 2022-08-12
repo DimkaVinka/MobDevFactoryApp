@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class RegistrationViewController: UIViewController {
+    
+    var storageManager = StorageManager()
     
     private var signInButton: UIButton = {
         let button = UIButton(type: .system)
@@ -86,14 +89,19 @@ class RegistrationViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = Metric.cornelRadiusView
         button.setTitle("Регистрация", for: .normal)
+        button.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         return button
     }()
+    
     //MARK: Life cicle RegistrationViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Metric.colorBackround
         setupHerarcy()
         setupView()
+        
+        storageManager.makeStorage()
     }
     //MARK: Setup RegistrationViewController
     private func setupHerarcy(){
@@ -156,8 +164,18 @@ class RegistrationViewController: UIViewController {
         }
     }
     //MARK: Actions RegistrationViewController
-    @objc func tapButtonSign(){
+    @objc func tapButtonSign() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func registerButtonPressed() {
+        let user = User()
+        user.nickName = nickNameTextField.text ?? "empty"
+        user.name = firstNameTextField.text ?? "empty"
+        user.surName = secondNameTextField.text ?? "empty"
+        user.password = passwordTextField.text ?? "empty"
+        
+        storageManager.addUser(user)
     }
 }
 
