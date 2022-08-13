@@ -6,27 +6,52 @@
 //
 
 import UIKit
+import SnapKit
 
 class OnboardingViewController: UIViewController {
     
-    let stackView = UIStackView()
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 20
+        return stackView
+    }()
     
-    let imageView = UIImageView()
-    let titleLabel = UILabel()
-    let subtitleLabel = UILabel()
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
-    let skipButton = UIButton()
-    let nextButton = UIButton()
+    lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.textColor = .white
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        titleLabel.numberOfLines = 0
+        return titleLabel
+    }()
+    
+    lazy var subtitleLabel: UILabel = {
+        let subtitleLabel = UILabel()
+        subtitleLabel.textColor = .white
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.numberOfLines = 0
+        return subtitleLabel
+    }()
+    
     
     init(imageName: String, titleText: String, subtitleText: String) {
         super.init(nibName: nil, bundle: nil)
+    
         imageView.image = UIImage(named: imageName)
-        
         titleLabel.text = titleText
-        titleLabel.textColor = .white
-
         subtitleLabel.text = subtitleText
-        subtitleLabel.textColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -35,31 +60,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
         layout()
-    }
-}
-
-extension OnboardingViewController {
-    
-    func style() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 20
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-        
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        subtitleLabel.textAlignment = .center
-        
-        subtitleLabel.numberOfLines = 0
-        titleLabel.numberOfLines = 0
     }
         
     func layout() {
@@ -69,14 +70,18 @@ extension OnboardingViewController {
         
         view.addSubview(stackView)
         
-        NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            imageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            
-            subtitleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: subtitleLabel.trailingAnchor, multiplier: 2),
-        ])
+        stackView.snp.makeConstraints { (make) in
+            make.centerX.equalTo(view)
+            make.centerY.equalTo(view)
+        }
+        
+        imageView.snp.makeConstraints { (make) in
+            make.height.equalTo(view.snp.width).multipliedBy(0.5)
+        }
+        
+        subtitleLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(view).offset(20)
+            make.trailing.equalTo(view).offset(-20)
+        }
     }
 }
