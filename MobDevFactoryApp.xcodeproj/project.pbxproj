@@ -10,6 +10,7 @@
 		06B5168F28AD4CAC00CE9F7E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 06B5168E28AD4CAC00CE9F7E /* Charts */; };
 		06B5169228AD4D8200CE9F7E /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169128AD4D8200CE9F7E /* ExtensionDate.swift */; };
 		06B5169828AD4E3500CE9F7E /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169728AD4E3500CE9F7E /* PersonView.swift */; };
+		06B5169C28AD50E900CE9F7E /* CreatePersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */; };
 		7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */; };
 		7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */; };
 		7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		06B5169128AD4D8200CE9F7E /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		06B5169728AD4E3500CE9F7E /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonView.swift; sourceTree = "<group>"; };
 		7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoView.swift; sourceTree = "<group>"; };
 		7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoViewModel.swift; sourceTree = "<group>"; };
 		7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoModel.swift; sourceTree = "<group>"; };
@@ -96,8 +98,8 @@
 		06B5169328AD4DE600CE9F7E /* ProfileModul */ = {
 			isa = PBXGroup;
 			children = (
-				06B5169528AD4E1100CE9F7E /* View */,
-				06B5169628AD4E1600CE9F7E /* Controller */,
+				06B5169728AD4E3500CE9F7E /* PersonView.swift */,
+				FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */,
 			);
 			path = ProfileModul;
 			sourceTree = "<group>";
@@ -105,24 +107,9 @@
 		06B5169428AD4DF400CE9F7E /* CreateProfileModul */ = {
 			isa = PBXGroup;
 			children = (
+				06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */,
 			);
 			path = CreateProfileModul;
-			sourceTree = "<group>";
-		};
-		06B5169528AD4E1100CE9F7E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				06B5169728AD4E3500CE9F7E /* PersonView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		06B5169628AD4E1600CE9F7E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		7D68E32328A24C2E00A62BC6 /* ExampleTwoModule */ = {
@@ -405,6 +392,7 @@
 				7D74A60028A1A1EA009C4C70 /* SceneDelegate.swift in Sources */,
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,
+				06B5169C28AD50E900CE9F7E /* CreatePersonView.swift in Sources */,
 				06B5169828AD4E3500CE9F7E /* PersonView.swift in Sources */,
 				7D74A61928A1A2DC009C4C70 /* ExampleView.swift in Sources */,
 				FAF5FE6628A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift in Sources */,

@@ -232,7 +232,7 @@ class PersonView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = UIColor(red: 15 / 255, green: 20 / 255, blue: 59 / 255, alpha: 1)
+        backgroundColor = Metric.colorBackround
     }
     
     // MARK: - Constraints
