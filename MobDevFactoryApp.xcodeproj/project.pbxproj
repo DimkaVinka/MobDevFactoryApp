@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06B5168F28AD4CAC00CE9F7E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 06B5168E28AD4CAC00CE9F7E /* Charts */; };
+		06B5169228AD4D8200CE9F7E /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169128AD4D8200CE9F7E /* ExtensionDate.swift */; };
 		7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */; };
 		7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */; };
 		7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06B5169128AD4D8200CE9F7E /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoView.swift; sourceTree = "<group>"; };
 		7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoViewModel.swift; sourceTree = "<group>"; };
 		7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoModel.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06B5169028AD4D5200CE9F7E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06B5169128AD4D8200CE9F7E /* ExtensionDate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7D68E32328A24C2E00A62BC6 /* ExampleTwoModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +262,7 @@
 		FAF5FE7228A451CD00E0913E /* PersonViewController */ = {
 			isa = PBXGroup;
 			children = (
+				06B5169028AD4D5200CE9F7E /* Extensions */,
 				FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */,
 			);
 			path = PersonViewController;
@@ -351,6 +362,7 @@
 				FAF5FE6328A4491900E0913E /* Metric.swift in Sources */,
 				7D74A61528A1A2AF009C4C70 /* ExampleViewModel.swift in Sources */,
 				7D74A5FE28A1A1EA009C4C70 /* AppDelegate.swift in Sources */,
+				06B5169228AD4D8200CE9F7E /* ExtensionDate.swift in Sources */,
 				FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */,
 				7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */,
 				7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */,
