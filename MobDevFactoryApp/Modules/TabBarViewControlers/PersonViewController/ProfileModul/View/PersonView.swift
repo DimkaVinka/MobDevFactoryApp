@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class ProfileView: UIView {
+class PersonView: UIView {
     
-//    weak var delegate: ProfileViewControllerDelegate?
+    weak var delegate: PersonViewController?
 
     // MARK: - UI Elements
 
@@ -46,7 +46,7 @@ class ProfileView: UIView {
     }()
     
     @objc func tapButtonSettingsController() {
-//        delegate?.customViewDidTapButton(self)
+        delegate?.customViewDidTapButton(self)
     }
 
     private lazy var profilePhotoImage: UIImageView = {
