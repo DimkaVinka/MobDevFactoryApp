@@ -12,6 +12,7 @@ import RealmSwift
 class AuthorizationViewController: UIViewController {
     
     private var storageManager = StorageManager()
+    private var alert = Alert()
     
     //MARK: Views
     private var greteAccountButton: UIButton = {
@@ -149,6 +150,9 @@ class AuthorizationViewController: UIViewController {
                 ], animated: true)
                 tabBarViewController.modalPresentationStyle = .fullScreen
                 present(tabBarViewController, animated: true)
+            } else {
+// MARK: Alert
+                alert.showAletr(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
             }
         }
     }
