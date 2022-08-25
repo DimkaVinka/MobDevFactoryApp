@@ -38,7 +38,7 @@ class OnboardingView: UIView {
         layout.minimumLineSpacing = .zero
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .white
+         view.backgroundColor = UIColor(named: "mainBackgroundColor")
         view.isPagingEnabled = true
         
         view.dataSource = self
