@@ -5,6 +5,7 @@
 //  Created by Daniil Litvinov on 10.08.2022.
 //
 
+
 import UIKit
 import SnapKit
 import RealmSwift
@@ -140,19 +141,19 @@ class AuthorizationViewController: UIViewController {
                 calendarTabBarItem.tabBarItem = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar"), tag: 1)
                 let searchTabbarItem = ModuleBuilderTabBarConrolers.buiderSearchViewController()
                 searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
-                let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
-                personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
+//                let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
+//                personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
                 tabBarViewController.setViewControllers([
                     lessonTabBarItem,
                     searchTabbarItem,
                     calendarTabBarItem,
-                    personTabbarItem,
+                   // personTabbarItem,
                 ], animated: true)
                 tabBarViewController.modalPresentationStyle = .fullScreen
                 present(tabBarViewController, animated: true)
             } else {
 // MARK: Alert
-                alert.showAletr(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
+                alert.showAlert(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
             }
         }
     }
