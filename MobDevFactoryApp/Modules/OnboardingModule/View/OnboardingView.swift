@@ -16,8 +16,8 @@ class OnboardingView: UIView {
     private var selectedIndex = 0 {
         didSet {
             let isListPage = models.count - 1 > selectedIndex
-            buttonView.setTitle(isListPage ? Strings.nextButtonTitle : Strings.startButtonTitle, for: .normal)
-            buttonView.backgroundColor = isListPage ? .systemGreen : .systemPurple
+            buttonView.setTitle(isListPage ? "Далее" : "Начать!", for: .normal)
+            buttonView.backgroundColor = isListPage ? Metric.colorBackround : .systemGreen
         }
     }
     
@@ -25,7 +25,7 @@ class OnboardingView: UIView {
      lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
-        view.spacing = Metric.stackViewSpacing
+        view.spacing = 16
         view.distribution = .equalSpacing
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -38,7 +38,7 @@ class OnboardingView: UIView {
         layout.minimumLineSpacing = .zero
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = .white
+         view.backgroundColor = .white
         view.isPagingEnabled = true
         
         view.dataSource = self
@@ -64,8 +64,7 @@ class OnboardingView: UIView {
         let button = UIButton(type: .system)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.tintColor = .white
-        button.layer.cornerRadius = Metric.buttonHeight / 2
-        
+        button.layer.cornerRadius = 44 / 2
         button.addTarget(self, action: #selector(buttonTappedAction(_:)), for: .touchUpInside)
         return button
     }()
@@ -77,7 +76,7 @@ class OnboardingView: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = Metric.colorBackround
         setupHierarchy()
         setupLayout()
     }
@@ -91,19 +90,25 @@ class OnboardingView: UIView {
     }
     
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            colectionView.topAnchor.constraint(equalTo: topAnchor),
-            colectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            colectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            colectionView.heightAnchor.constraint(equalTo: heightAnchor),
-            
-            stackView.topAnchor.constraint(equalTo: colectionView.bottomAnchor, constant: Metric.topOffset),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metric.leftOffset),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Metric.rightOffset),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Metric.bottomOffset),
-            
-            buttonView.heightAnchor.constraint(equalToConstant: Metric.buttonHeight)
-        ])
+        colectionView.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.height.equalTo(self.snp.height)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(colectionView.snp.bottom).offset(45)
+            make.left.equalTo(self.snp.left).offset(40)
+            make.right.equalTo(self.snp.right).offset(-40)
+            make.bottom.equalTo(self.snp.bottom).offset(-50)
+        }
+        buttonView.snp.makeConstraints { make in
+            make.height.equalTo(44)
+        }
+        pageControl.snp.makeConstraints { make in
+            make.bottom.equalTo(buttonView.snp.top).offset(-30)
+        }
     }
     
     // MARK: - Configuration

@@ -249,9 +249,9 @@
 		D68963C428A81326005B9C39 /* OnboardingModule */ = {
 			isa = PBXGroup;
 			children = (
-				D62B519A28B9127A00BD8421 /* ViewModel */,
-				D62B519528B9121000BD8421 /* View */,
 				D62B519228B911AB00BD8421 /* Model */,
+				D62B519528B9121000BD8421 /* View */,
+				D62B519A28B9127A00BD8421 /* ViewModel */,
 			);
 			path = OnboardingModule;
 			sourceTree = "<group>";

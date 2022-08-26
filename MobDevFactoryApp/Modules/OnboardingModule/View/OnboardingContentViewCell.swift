@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class OnboardingContentViewCell: UICollectionViewCell {
     
@@ -67,13 +68,15 @@ class OnboardingContentViewCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            
-            imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35)
-        ])
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(self.snp.left).offset(40)
+            make.right.equalTo(self.snp.right).offset(-40)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.height.equalTo(self.snp.height).multipliedBy(0.35)
+        }
     }
     
     // MARK: - Configuration

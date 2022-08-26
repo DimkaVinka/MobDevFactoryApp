@@ -44,7 +44,7 @@ class OnboardingModel {
             ),
             Onboarding(
                 index: 4,
-                title: "Отслеживай прогресс",
+                title: "Отслеживай прогресс!",
                 description: "Следи за своим персональным рейтингом и рейтингом своей команды.",
                 imageName: "progressImage"
             ),
@@ -52,24 +52,4 @@ class OnboardingModel {
     }
 }
 
-
-
-extension OnboardingView {
-    
-    enum Metric {
-        static let buttonHeight: CGFloat = 44
-        static let topOffset: CGFloat = 25
-        static let leftOffset: CGFloat = 40
-        static let rightOffset: CGFloat = -40
-        static let bottomOffset: CGFloat = -50
-        
-        static let stackViewSpacing: CGFloat = 16
-    }
-
-
-    enum Strings {
-        static let nextButtonTitle: String = "Далее"
-        static let startButtonTitle: String = "Начать!"
-    }
-}
 

@@ -21,7 +21,6 @@ class OnboardingViewModel: UIViewController {
         super.viewDidLoad()
 
         view = OnboardingView()
-        
         model = OnboardingModel()
         configureView()
     }
