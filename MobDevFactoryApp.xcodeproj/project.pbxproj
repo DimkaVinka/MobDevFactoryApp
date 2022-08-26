@@ -29,6 +29,7 @@
 		7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA63A9B28A78F010050E9F3 /* StorageManager.swift */; };
 		7DC0667828A6C79700CBE9CA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0667728A6C79700CBE9CA /* Realm */; };
 		7DC0667A28A6C79700CBE9CA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7DC0667928A6C79700CBE9CA /* RealmSwift */; };
+		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
 		D68963C628A8137E005B9C39 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68963C528A8137E005B9C39 /* PageViewController.swift */; };
 		D68963C828A8138D005B9C39 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68963C728A8138D005B9C39 /* OnboardingViewController.swift */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
@@ -63,6 +64,7 @@
 		7D74A61D28A1A432009C4C70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D74A62328A1AEB4009C4C70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7DA63A9B28A78F010050E9F3 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
 		D68963C528A8137E005B9C39 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		D68963C728A8138D005B9C39 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FA1F095A28AFA5050068FBCA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7D74A5FF28A1A1EA009C4C70 /* SceneDelegate.swift */,
 				7D74A61A28A1A2E9009C4C70 /* ModuleBuilder.swift */,
 				FAF5FE6528A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift */,
+				D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */,
 				7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */,
 				D68963C628A8137E005B9C39 /* PageViewController.swift in Sources */,
+				D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */,
 				7D74A60028A1A1EA009C4C70 /* SceneDelegate.swift in Sources */,
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,
