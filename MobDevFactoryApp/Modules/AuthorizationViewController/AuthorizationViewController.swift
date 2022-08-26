@@ -152,7 +152,7 @@ class AuthorizationViewController: UIViewController {
                 present(tabBarViewController, animated: true)
             } else {
 // MARK: Alert
-                alert.showAletr(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
+                alert.showAletr(title: "Не верный парол или логин", viewComtroller: self)
             }
         }
     }

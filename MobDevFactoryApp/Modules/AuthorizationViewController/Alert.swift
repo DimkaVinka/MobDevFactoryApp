@@ -55,7 +55,8 @@ class Alert {
         targetView.addSubview(alertView)
 
         alertView.snp.makeConstraints { make in
-            make.center.equalTo(targetView)
+            make.centerX.equalTo(targetView)
+            make.top.equalTo(targetView).offset(-200)
             make.width.equalTo(Metric.widthTextFild)
             make.height.equalTo(130)
         }
@@ -86,6 +87,19 @@ class Alert {
     }
     //MARK: Actions Alert
     @objc private func dissmisActions(){
-        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.backroundView.alpha = 0
+        }) { done in
+            if done {
+                UIView.animate(withDuration: 2, animations: {
+                    self.backroundView.removeFromSuperview()
+                    self.label.removeFromSuperview()
+                    self.alertView.removeFromSuperview()
+                })
+            }
+            
+        }
+        }
+
     }
-}
+
