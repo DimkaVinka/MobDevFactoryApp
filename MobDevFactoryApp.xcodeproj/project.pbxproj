@@ -32,6 +32,8 @@
 		D62B519728B9122400BD8421 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519628B9122400BD8421 /* OnboardingView.swift */; };
 		D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519828B9125200BD8421 /* OnboardingContentViewCell.swift */; };
 		D62B519C28B912A000BD8421 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519B28B912A000BD8421 /* OnboardingViewModel.swift */; };
+		D62B519F28B9217000BD8421 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = D62B519E28B9217000BD8421 /* Charts */; };
+		D62B51A128B9217000BD8421 /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D62B51A028B9217000BD8421 /* ChartsDynamic */; };
 		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
 		FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */; };
@@ -87,8 +89,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62B519128B90C4400BD8421 /* RealmSwift in Frameworks */,
+				D62B51A128B9217000BD8421 /* ChartsDynamic in Frameworks */,
 				D62B518F28B90C4400BD8421 /* Realm in Frameworks */,
 				D62B518C28B90C3600BD8421 /* SnapKit in Frameworks */,
+				D62B519F28B9217000BD8421 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +351,8 @@
 				D62B518B28B90C3600BD8421 /* SnapKit */,
 				D62B518E28B90C4400BD8421 /* Realm */,
 				D62B519028B90C4400BD8421 /* RealmSwift */,
+				D62B519E28B9217000BD8421 /* Charts */,
+				D62B51A028B9217000BD8421 /* ChartsDynamic */,
 			);
 			productName = MobDevFactoryApp;
 			productReference = 7D74A5FA28A1A1EA009C4C70 /* MobDevFactoryApp.app */;
@@ -379,6 +385,7 @@
 			packageReferences = (
 				D62B518A28B90C3600BD8421 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D62B518D28B90C4400BD8421 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 7D74A5FB28A1A1EA009C4C70 /* Products */;
 			projectDirPath = "";
@@ -665,6 +672,14 @@
 				kind = branch;
 			};
 		};
+		D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -682,6 +697,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D62B518D28B90C4400BD8421 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		D62B519E28B9217000BD8421 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		D62B51A028B9217000BD8421 /* ChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = ChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
