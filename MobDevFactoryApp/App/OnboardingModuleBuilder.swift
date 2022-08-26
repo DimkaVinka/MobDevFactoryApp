@@ -8,7 +8,7 @@ import UIKit
 
 final class OnboardingModuleBuilder {
     static func builderOnboarding() -> UIViewController {
-        let viewController = PageViewController()
+        let viewController = OnboardingViewModel()
         return viewController
     }
 }
