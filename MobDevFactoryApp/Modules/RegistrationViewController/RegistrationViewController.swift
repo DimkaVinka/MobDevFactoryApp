@@ -178,5 +178,3 @@ class RegistrationViewController: UIViewController {
         storageManager.addUser(user)
     }
 }
-
-
