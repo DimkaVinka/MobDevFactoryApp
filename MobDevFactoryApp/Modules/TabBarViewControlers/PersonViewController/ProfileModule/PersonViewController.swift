@@ -68,7 +68,6 @@ extension PersonViewController: ChartViewDelegate {
 
 extension PersonViewController: ProfileViewControllerDelegate {
     func customViewDidTapButton(_ customView: PersonView) {
-        
         DispatchQueue.main.async {
 //            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeViewController(
 //                    viewController: CreatePersonViewController(),
@@ -78,12 +77,7 @@ extension PersonViewController: ProfileViewControllerDelegate {
             
             let viewController = CreatePersonViewController()
             self.present(viewController, animated: true)
-            
         }
-        
-
-        
-
     }
 }
 

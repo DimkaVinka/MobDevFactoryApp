@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
 
-class CreateProfileView: UIView {
+class CreatePersonView: UIView {
+    
+    weak var delegate: CreatePersonViewController?
     
     // MARK: - UI Elements
     
@@ -26,7 +29,7 @@ class CreateProfileView: UIView {
         image.contentMode = .scaleAspectFill
         image.backgroundColor = .systemOrange
         image.layer.masksToBounds = true
-        image.layer.cornerRadius = 110
+        image.layer.cornerRadius = 90
         return image
     }()
     
@@ -46,6 +49,8 @@ class CreateProfileView: UIView {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 15
         textField.clearButtonMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         return textField
     }()
     
@@ -65,6 +70,8 @@ class CreateProfileView: UIView {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 15
         textField.clearButtonMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         return textField
     }()
     
@@ -84,6 +91,8 @@ class CreateProfileView: UIView {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 15
         textField.clearButtonMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         return textField
     }()
     
@@ -103,6 +112,8 @@ class CreateProfileView: UIView {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 15
         textField.clearButtonMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         return textField
     }()
     
@@ -113,7 +124,7 @@ class CreateProfileView: UIView {
         button.backgroundColor = .orange
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 15
-//        button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
         return button
     }()
     
@@ -156,74 +167,80 @@ class CreateProfileView: UIView {
     private func setupLayout() {
         
         editProfileLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(10)
             make.centerX.equalTo(self.snp.centerX)
         }
         
         profilePhotoImage.snp.makeConstraints { make in
-            make.top.equalTo(editProfileLabel.snp.bottom).offset(35)
+            make.top.equalTo(editProfileLabel.snp.bottom).offset(20)
             make.centerX.equalTo(self.snp.centerX)
-            make.height.equalTo(220)
-            make.width.equalTo(220)
+            make.height.equalTo(180)
+            make.width.equalTo(180)
         }
         
         firstEditNameLabel.snp.makeConstraints { make in
             make.top.equalTo(profilePhotoImage.snp.bottom).offset(20)
-            make.leading.equalTo(self.snp.leading).offset(23)
-            make.trailing.equalTo(self.snp.trailing).offset(-23)
+            make.leading.equalTo(self.snp.leading).offset(25)
+            make.trailing.equalTo(self.snp.trailing).offset(-25)
         }
-        
+
         firstNameTextField.snp.makeConstraints { make in
             make.top.equalTo(firstEditNameLabel.snp.bottom).offset(10)
             make.leading.equalTo(firstEditNameLabel.snp.leading)
             make.trailing.equalTo(firstEditNameLabel.snp.trailing)
-            make.height.equalTo(40)
+            make.height.equalTo(35)
         }
-        
+
         editStatusLabel.snp.makeConstraints { make in
             make.top.equalTo(firstNameTextField.snp.bottom).offset(10)
             make.leading.equalTo(firstNameTextField.snp.leading)
             make.trailing.equalTo(firstNameTextField.snp.trailing)
         }
-        
+
         editStatusTextField.snp.makeConstraints { make in
             make.top.equalTo(editStatusLabel.snp.bottom).offset(10)
             make.leading.equalTo(editStatusLabel.snp.leading)
             make.trailing.equalTo(editStatusLabel.snp.trailing)
-            make.height.equalTo(40)
+            make.height.equalTo(35)
         }
-        
+
         editCityLabel.snp.makeConstraints { make in
             make.top.equalTo(editStatusTextField.snp.bottom).offset(10)
             make.leading.equalTo(editStatusTextField.snp.leading)
             make.trailing.equalTo(editStatusTextField.snp.trailing)
         }
-        
+
         editCityTextField.snp.makeConstraints { make in
             make.top.equalTo(editCityLabel.snp.bottom).offset(10)
             make.leading.equalTo(editCityLabel.snp.leading)
             make.trailing.equalTo(editCityLabel.snp.trailing)
-            make.height.equalTo(40)
+            make.height.equalTo(35)
         }
-        
+
         editMailLabel.snp.makeConstraints { make in
             make.top.equalTo(editCityTextField.snp.bottom).offset(10)
             make.leading.equalTo(editCityTextField.snp.leading)
             make.trailing.equalTo(editCityTextField.snp.trailing)
         }
-        
+
         editMailTextField.snp.makeConstraints { make in
             make.top.equalTo(editMailLabel.snp.bottom).offset(10)
             make.leading.equalTo(editMailLabel.snp.leading)
             make.trailing.equalTo(editMailLabel.snp.trailing)
-            make.height.equalTo(40)
+            make.height.equalTo(35)
         }
         
         saveProfileButton.snp.makeConstraints { make in
-            make.top.equalTo(editMailTextField.snp.bottom).offset(40)
+            make.top.equalTo(editMailTextField.snp.bottom).offset(35)
             make.leading.equalTo(editMailTextField.snp.leading)
             make.trailing.equalTo(editMailTextField.snp.trailing)
-            make.height.equalTo(40)
+            make.height.equalTo(45)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func tapButtonSettingsController() {
+        delegate?.dissmiss(self)
     }
 }
