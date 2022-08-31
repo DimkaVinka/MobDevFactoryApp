@@ -35,6 +35,7 @@ final class PersonViewController: UIViewController {
         super.viewDidLayoutSubviews()
         pieChart.frame = profileView.statisticsTableView.frame
         pieChart.center = profileView.statisticsTableView.center
+        pieChart.holeColor = Metric.colorBackround
         profileView.addSubview(pieChart)
         
         createChart()
