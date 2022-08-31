@@ -12,7 +12,7 @@ class PersonView: UIView {
     
     weak var delegate: PersonViewController?
 
-    // MARK: - UI Elements
+    // MARK: - Outlets
 
     private lazy var indicatorOnOffImage: UIImageView = {
         let image = UIImageView()
@@ -44,10 +44,6 @@ class PersonView: UIView {
         button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
         return button
     }()
-    
-    @objc func tapButtonSettingsController() {
-        delegate?.customViewDidTapButton(self)
-    }
 
     private lazy var profilePhotoImage: UIImageView = {
         let image = UIImageView()
@@ -185,7 +181,7 @@ class PersonView: UIView {
         return view
     }()
     
-    // MARK: - Iniialization
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -196,7 +192,7 @@ class PersonView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Peivate methods
+    // MARK: - Setup
     
     private func setupHierarchy() {
         addSubview(firstTopBarStackView)
@@ -234,8 +230,6 @@ class PersonView: UIView {
     private func setupView() {
         backgroundColor = Metric.colorBackround
     }
-    
-    // MARK: - Constraints
     
     private func setupLayout() {
         firstTopBarStackView.snp.makeConstraints { make in
@@ -282,6 +276,12 @@ class PersonView: UIView {
             make.trailing.equalTo(firstLineView.snp.trailing)
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-30)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc func tapButtonSettingsController() {
+        delegate?.customViewDidTapButton(self)
     }
 }
 
