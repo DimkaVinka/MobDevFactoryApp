@@ -11,6 +11,8 @@
 		06B5169828AD4E3500CE9F7E /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169728AD4E3500CE9F7E /* PersonView.swift */; };
 		06B5169C28AD50E900CE9F7E /* CreatePersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */; };
 		06B5169E28AD51F800CE9F7E /* CreatePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169D28AD51F800CE9F7E /* CreatePersonViewController.swift */; };
+		06E6DBC928C108A200F7563F /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 06E6DBC828C108A200F7563F /* Charts */; };
+		06EC229228C11379001E8AC1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC229128C11379001E8AC1 /* SettingsViewController.swift */; };
 		7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */; };
 		7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */; };
 		7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */; };
@@ -32,8 +34,6 @@
 		D62B519728B9122400BD8421 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519628B9122400BD8421 /* OnboardingView.swift */; };
 		D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519828B9125200BD8421 /* OnboardingContentViewCell.swift */; };
 		D62B519C28B912A000BD8421 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519B28B912A000BD8421 /* OnboardingViewModel.swift */; };
-		D62B519F28B9217000BD8421 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = D62B519E28B9217000BD8421 /* Charts */; };
-		D62B51A128B9217000BD8421 /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D62B51A028B9217000BD8421 /* ChartsDynamic */; };
 		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
 		FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */; };
@@ -51,6 +51,7 @@
 		06B5169728AD4E3500CE9F7E /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonView.swift; sourceTree = "<group>"; };
 		06B5169D28AD51F800CE9F7E /* CreatePersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonViewController.swift; sourceTree = "<group>"; };
+		06EC229128C11379001E8AC1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoView.swift; sourceTree = "<group>"; };
 		7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoViewModel.swift; sourceTree = "<group>"; };
 		7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoModel.swift; sourceTree = "<group>"; };
@@ -89,10 +90,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D62B519128B90C4400BD8421 /* RealmSwift in Frameworks */,
-				D62B51A128B9217000BD8421 /* ChartsDynamic in Frameworks */,
 				D62B518F28B90C4400BD8421 /* Realm in Frameworks */,
 				D62B518C28B90C3600BD8421 /* SnapKit in Frameworks */,
-				D62B519F28B9217000BD8421 /* Charts in Frameworks */,
+				06E6DBC928C108A200F7563F /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +123,14 @@
 				06B5169D28AD51F800CE9F7E /* CreatePersonViewController.swift */,
 			);
 			path = CreateProfileModule;
+			sourceTree = "<group>";
+		};
+		06EC229028C1135C001E8AC1 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06EC229128C11379001E8AC1 /* SettingsViewController.swift */,
+			);
+			path = SettingsViewController;
 			sourceTree = "<group>";
 		};
 		7D68E32328A24C2E00A62BC6 /* ExampleTwoModule */ = {
@@ -289,6 +297,7 @@
 		FAF5FE6428A449B300E0913E /* TabBarViewControlers */ = {
 			isa = PBXGroup;
 			children = (
+				06EC229028C1135C001E8AC1 /* SettingsViewController */,
 				FAF5FE7228A451CD00E0913E /* PersonViewController */,
 				FAF5FE7128A4518D00E0913E /* CalendarViewController */,
 				FAF5FE7028A4517D00E0913E /* SearchViewController */,
@@ -351,8 +360,7 @@
 				D62B518B28B90C3600BD8421 /* SnapKit */,
 				D62B518E28B90C4400BD8421 /* Realm */,
 				D62B519028B90C4400BD8421 /* RealmSwift */,
-				D62B519E28B9217000BD8421 /* Charts */,
-				D62B51A028B9217000BD8421 /* ChartsDynamic */,
+				06E6DBC828C108A200F7563F /* Charts */,
 			);
 			productName = MobDevFactoryApp;
 			productReference = 7D74A5FA28A1A1EA009C4C70 /* MobDevFactoryApp.app */;
@@ -385,7 +393,7 @@
 			packageReferences = (
 				D62B518A28B90C3600BD8421 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D62B518D28B90C4400BD8421 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */,
+				06E6DBC728C108A200F7563F /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 7D74A5FB28A1A1EA009C4C70 /* Products */;
 			projectDirPath = "";
@@ -433,6 +441,7 @@
 				FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */,
 				7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */,
 				7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */,
+				06EC229228C11379001E8AC1 /* SettingsViewController.swift in Sources */,
 				D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */,
 				7D74A60028A1A1EA009C4C70 /* SceneDelegate.swift in Sources */,
 				D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */,
@@ -656,6 +665,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		06E6DBC728C108A200F7563F /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D62B518A28B90C3600BD8421 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -672,17 +689,14 @@
 				kind = branch;
 			};
 		};
-		D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		06E6DBC828C108A200F7563F /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06E6DBC728C108A200F7563F /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		D62B518B28B90C3600BD8421 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D62B518A28B90C3600BD8421 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -697,16 +711,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D62B518D28B90C4400BD8421 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		D62B519E28B9217000BD8421 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-		D62B51A028B9217000BD8421 /* ChartsDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D62B519D28B9217000BD8421 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = ChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

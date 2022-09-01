@@ -33,4 +33,10 @@ final class ModuleBuilderTabBarConrolers {
         return viewController
     }
     
+    static func buiderSettingsViewController() -> UIViewController {
+        let viewController = SettingsViewController()
+        // тут будем model
+        return viewController
+    }
+    
 }

@@ -143,11 +143,14 @@ class AuthorizationViewController: UIViewController {
                 searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
                 let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
                 personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
+                let settingsTabbarItem = ModuleBuilderTabBarConrolers.buiderSettingsViewController()
+                settingsTabbarItem.tabBarItem = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gear"), tag: 4)
                 tabBarViewController.setViewControllers([
                     lessonTabBarItem,
                     searchTabbarItem,
                     calendarTabBarItem,
                     personTabbarItem,
+                    settingsTabbarItem
                 ], animated: true)
                 tabBarViewController.modalPresentationStyle = .fullScreen
                 present(tabBarViewController, animated: true)

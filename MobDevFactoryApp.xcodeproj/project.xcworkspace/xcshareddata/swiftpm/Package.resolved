@@ -21,7 +21,7 @@
     {
       "identity" : "realm-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-swift",
+      "location" : "https://github.com/realm/realm-swift.git",
       "state" : {
         "branch" : "master",
         "revision" : "d949715c09767dbe1b9924a2d187624811fc5cd9"
