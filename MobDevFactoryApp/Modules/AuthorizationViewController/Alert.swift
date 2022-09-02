@@ -102,6 +102,5 @@ class Alert: UIView {
         } completion: { _ in
             
         }
-
     }
-}
+

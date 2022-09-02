@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        window?.rootViewController = ModuleBuilder.builderAuthorizationViewController()
 //        window?.rootViewController = OnboardingModuleBuilder.builderOnboarding()
         window?.makeKeyAndVisible()
+        
     }
     
     func changeViewController(viewController: UIViewController, animated: Bool = true, animationOptions: UIView.AnimationOptions) {

@@ -260,6 +260,32 @@
 			path = OnboardingModule;
 			sourceTree = "<group>";
 		};
+		D6D3A2E828B157360054D6BD /* OnboardingModel */ = {
+			isa = PBXGroup;
+			children = (
+				D6D3A2EB28B157790054D6BD /* OnboardingModel.swift */,
+				D6D3A2ED28B157900054D6BD /* Onboarding.swift */,
+			);
+			path = OnboardingModel;
+			sourceTree = "<group>";
+		};
+		D6D3A2E928B157440054D6BD /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				D6D3A2EF28B157C70054D6BD /* OnboardingView.swift */,
+				D6D3A2F128B1580F0054D6BD /* OnboardingContentViewCell.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		D6D3A2EA28B1574C0054D6BD /* OnboardingViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D6D3A2F328B159B80054D6BD /* OnboardingController.swift */,
+			);
+			path = OnboardingViewModel;
+			sourceTree = "<group>";
+		};
 		FAF5FE5B28A2EE4500E0913E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +444,7 @@
 				D62B519C28B912A000BD8421 /* OnboardingViewModel.swift in Sources */,
 				D62B519728B9122400BD8421 /* OnboardingView.swift in Sources */,
 				FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */,
+				D6D3A2EC28B157790054D6BD /* OnboardingModel.swift in Sources */,
 				7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */,
 				FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */,
 				7D74A61728A1A2CC009C4C70 /* ExampleModel.swift in Sources */,
@@ -439,6 +466,7 @@
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,
 				06B5169C28AD50E900CE9F7E /* CreatePersonView.swift in Sources */,
+				D6D3A2F428B159B80054D6BD /* OnboardingController.swift in Sources */,
 				06B5169828AD4E3500CE9F7E /* PersonView.swift in Sources */,
 				7D74A61928A1A2DC009C4C70 /* ExampleView.swift in Sources */,
 				FAF5FE6628A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift in Sources */,

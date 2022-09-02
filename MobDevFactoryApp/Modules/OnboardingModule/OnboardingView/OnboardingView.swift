@@ -120,6 +120,7 @@ class OnboardingView: UIView {
     }
 }
 
+
     // MARK: - UICollectionViewDataSource
 extension OnboardingView: UICollectionViewDataSource {
     
