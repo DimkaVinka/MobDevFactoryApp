@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol CreateProfileViewControllerDelegate: AnyObject {
+    func dissmiss(_ customView: CreatePersonView)
+}
+
 class CreatePersonViewController: UIViewController {
     
     let scrollView: UIScrollView = {
@@ -19,8 +23,8 @@ class CreatePersonViewController: UIViewController {
         return scrollView
     }()
     
-    let createProfileView: CreateProfileView = {
-        let view = CreateProfileView()
+    let createProfileView: CreatePersonView = {
+        let view = CreatePersonView()
         return view
     }()
     
@@ -184,5 +188,17 @@ extension CreatePersonViewController: UIImagePickerControllerDelegate, UINavigat
             createProfileView.profilePhotoImage.image = pickedImage
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CreatePersonViewController: CreateProfileViewControllerDelegate {
+    func dissmiss(_ customView: CreatePersonView) {
+        DispatchQueue.main.async {
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeViewController(
+                    viewController: PersonViewController(),
+                    animated: true,
+                    animationOptions: .transitionFlipFromTop
+            )
+        }
     }
 }
