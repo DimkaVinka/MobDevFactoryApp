@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/danielgindi/Charts",
       "state" : {
-        "revision" : "66546404a6739173b8e436ab6bc1f2897cd08594",
-        "version" : "3.6.0"
+        "branch" : "master",
+        "revision" : "2c77b2b8a4ccb82a36260b44b2c794683cc6f17b"
       }
     },
     {
@@ -21,10 +21,10 @@
     {
       "identity" : "realm-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-swift",
+      "location" : "https://github.com/realm/realm-swift.git",
       "state" : {
         "branch" : "master",
-        "revision" : "fa1c61607f9d59f849359e6f0e8ece575b569ba3"
+        "revision" : "4b2747301da1d8844c395dd54a8627830da8f96e"
       }
     },
     {
