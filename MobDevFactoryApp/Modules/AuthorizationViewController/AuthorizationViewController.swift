@@ -5,6 +5,7 @@
 //  Created by Daniil Litvinov on 10.08.2022.
 //
 
+
 import UIKit
 import SnapKit
 import RealmSwift
@@ -152,7 +153,7 @@ class AuthorizationViewController: UIViewController {
                 present(tabBarViewController, animated: true)
             } else {
 // MARK: Alert
-                alert.showAletr(title: "Не верный парол или логин", viewComtroller: self)
+                alert.showAlert(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
             }
         }
     }

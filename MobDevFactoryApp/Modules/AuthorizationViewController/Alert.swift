@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class Alert {
+class Alert: UIView {
 
     private lazy var backroundView: UIView = {
         let view = UIView()
@@ -47,20 +47,22 @@ class Alert {
         return button
     }()
     
-    func showAletr(title: String, viewComtroller: UIViewController) {
+    func showAlert(title: String, viewComtroller: UIViewController) {
         guard let targetView = viewComtroller.view else { return }
         backroundView.frame = targetView.bounds
         targetView.addSubview(backroundView)
         // ALERT
+        
         targetView.addSubview(alertView)
+        alertView.addSubview(label)
+        alertView.addSubview(button)
 
         alertView.snp.makeConstraints { make in
-            make.centerX.equalTo(targetView)
-            make.top.equalTo(targetView).offset(-200)
+            make.centerX.equalTo(backroundView)
+            make.top.equalTo(backroundView)
             make.width.equalTo(Metric.widthTextFild)
             make.height.equalTo(130)
         }
-        alertView.addSubview(label)
         // LABEL
         label.snp.makeConstraints { make in
             make.top.equalTo(alertView)
@@ -69,7 +71,6 @@ class Alert {
         }
         label.text = title
         // BUTTON
-        alertView.addSubview(button)
         button.snp.makeConstraints { make in
             make.top.equalTo(alertView).offset(90)
             make.bottom.equalTo(alertView)
@@ -86,20 +87,20 @@ class Alert {
         }
     }
     //MARK: Actions Alert
-    @objc private func dissmisActions(){
-        UIView.animate(withDuration: 0.3, animations: {
+    @objc private func dissmisActions() {
+        UIView.animate(withDuration: 0.3) {
             self.backroundView.alpha = 0
-        }) { done in
-            if done {
-                UIView.animate(withDuration: 2, animations: {
-                    self.backroundView.removeFromSuperview()
-                    self.label.removeFromSuperview()
-                    self.alertView.removeFromSuperview()
-                })
+            self.alertView.alpha = 0
+            self.button.alpha = 0
+            self.label.alpha = 0
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.backroundView.removeFromSuperview()
+                self.alertView.removeFromSuperview()
+                self.label.removeFromSuperview()
+                self.button.removeFromSuperview()
             }
+        } completion: { _ in
             
         }
-        }
-
     }
 
