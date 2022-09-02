@@ -35,6 +35,7 @@ final class PersonViewController: UIViewController {
         super.viewDidLayoutSubviews()
         pieChart.frame = profileView.statisticsTableView.frame
         pieChart.center = profileView.statisticsTableView.center
+        pieChart.holeColor = Metric.colorBackround
         profileView.addSubview(pieChart)
         
         createChart()
@@ -58,14 +59,26 @@ final class PersonViewController: UIViewController {
     }
 }
 
+// MARK: - ChartViewDelegate
+
 extension PersonViewController: ChartViewDelegate {
     
 }
 
+// MARK: - ProfileViewControllerDelegate
+
 extension PersonViewController: ProfileViewControllerDelegate {
     func customViewDidTapButton(_ customView: PersonView) {
-//        let viewController = CreateProfileViewController()
-//        navigationController?.present(viewController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+//            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeViewController(
+//                    viewController: CreatePersonViewController(),
+//                    animated: true,
+//                    animationOptions: .transitionFlipFromBottom
+//            )
+            
+            let viewController = CreatePersonViewController()
+            self.present(viewController, animated: true)
+        }
     }
 }
 
