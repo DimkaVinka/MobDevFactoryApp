@@ -11,4 +11,6 @@ pod 'SnapKit', '~> 5.0.0'
 
 pod 'Charts'
 
+pod 'RealmSwift', '~>10'
+
 end
