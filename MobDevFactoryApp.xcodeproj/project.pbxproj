@@ -14,6 +14,7 @@
 		06EC22CE28C4BC3F001E8AC1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22CD28C4BC3F001E8AC1 /* Realm */; };
 		06EC22D128C4C33B001E8AC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22D028C4C33B001E8AC1 /* SnapKit */; };
 		06EC22D428C4C438001E8AC1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22D328C4C438001E8AC1 /* RealmSwift */; };
+		06EC22D728C4C51B001E8AC1 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22D628C4C51B001E8AC1 /* Charts */; };
 		7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */; };
 		7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */; };
 		7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */; };
@@ -89,6 +90,7 @@
 				06EC22D428C4C438001E8AC1 /* RealmSwift in Frameworks */,
 				06EC22CE28C4BC3F001E8AC1 /* Realm in Frameworks */,
 				06EC22D128C4C33B001E8AC1 /* SnapKit in Frameworks */,
+				06EC22D728C4C51B001E8AC1 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +349,7 @@
 				06EC22CD28C4BC3F001E8AC1 /* Realm */,
 				06EC22D028C4C33B001E8AC1 /* SnapKit */,
 				06EC22D328C4C438001E8AC1 /* RealmSwift */,
+				06EC22D628C4C51B001E8AC1 /* Charts */,
 			);
 			productName = MobDevFactoryApp;
 			productReference = 7D74A5FA28A1A1EA009C4C70 /* MobDevFactoryApp.app */;
@@ -380,6 +383,7 @@
 				06EC22CC28C4BC3F001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				06EC22CF28C4C33A001E8AC1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				06EC22D228C4C438001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				06EC22D528C4C51B001E8AC1 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 7D74A5FB28A1A1EA009C4C70 /* Products */;
 			projectDirPath = "";
@@ -674,6 +678,14 @@
 				kind = branch;
 			};
 		};
+		06EC22D528C4C51B001E8AC1 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -691,6 +703,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 06EC22CC28C4BC3F001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		06EC22D628C4C51B001E8AC1 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06EC22D528C4C51B001E8AC1 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
