@@ -28,6 +28,11 @@
 		7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A61A28A1A2E9009C4C70 /* ModuleBuilder.swift */; };
 		7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A61D28A1A432009C4C70 /* NetworkManager.swift */; };
 		7D74A62428A1AEB4009C4C70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A62328A1AEB4009C4C70 /* Extensions.swift */; };
+		7D94033428C299F900D2E101 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033328C299F900D2E101 /* SnapKit */; };
+		7D94033728C29A0700D2E101 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033628C29A0700D2E101 /* Charts */; };
+		7D94033D28C29A8A00D2E101 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033C28C29A8A00D2E101 /* Realm */; };
+		7D94033F28C29A8A00D2E101 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033E28C29A8A00D2E101 /* RealmSwift */; };
+		7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94034028C2A36C00D2E101 /* TabBarController.swift */; };
 		7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA63A9B28A78F010050E9F3 /* StorageManager.swift */; };
 		D62B519428B911DB00BD8421 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519328B911DB00BD8421 /* Onboarding.swift */; };
 		D62B519728B9122400BD8421 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519628B9122400BD8421 /* OnboardingView.swift */; };
@@ -65,6 +70,7 @@
 		7D74A61A28A1A2E9009C4C70 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		7D74A61D28A1A432009C4C70 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7D74A62328A1AEB4009C4C70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7D94034028C2A36C00D2E101 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7DA63A9B28A78F010050E9F3 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		D62B519328B911DB00BD8421 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		D62B519628B9122400BD8421 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -87,10 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06EC22D428C4C438001E8AC1 /* RealmSwift in Frameworks */,
-				06EC22CE28C4BC3F001E8AC1 /* Realm in Frameworks */,
-				06EC22D128C4C33B001E8AC1 /* SnapKit in Frameworks */,
-				7D3DAF3A28CB9F90007EB8F2 /* Charts in Frameworks */,
+				7D94033F28C29A8A00D2E101 /* RealmSwift in Frameworks */,
+				7D94033D28C29A8A00D2E101 /* Realm in Frameworks */,
+				7D94033728C29A0700D2E101 /* Charts in Frameworks */,
+				7D94033428C299F900D2E101 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +288,7 @@
 				FAF5FE7128A4518D00E0913E /* CalendarViewController */,
 				FAF5FE7028A4517D00E0913E /* SearchViewController */,
 				FAF5FE6F28A4516A00E0913E /* LessonViewController */,
+				7D94034028C2A36C00D2E101 /* TabBarController.swift */,
 			);
 			path = TabBarViewControlers;
 			sourceTree = "<group>";
@@ -337,10 +344,10 @@
 			);
 			name = MobDevFactoryApp;
 			packageProductDependencies = (
-				06EC22CD28C4BC3F001E8AC1 /* Realm */,
-				06EC22D028C4C33B001E8AC1 /* SnapKit */,
-				06EC22D328C4C438001E8AC1 /* RealmSwift */,
-				7D3DAF3928CB9F90007EB8F2 /* Charts */,
+				7D94033328C299F900D2E101 /* SnapKit */,
+				7D94033628C29A0700D2E101 /* Charts */,
+				7D94033C28C29A8A00D2E101 /* Realm */,
+				7D94033E28C29A8A00D2E101 /* RealmSwift */,
 			);
 			productName = MobDevFactoryApp;
 			productReference = 7D3DAF3F28CBA3E7007EB8F2 /* MobDevFactoryApp.app */;
@@ -371,10 +378,9 @@
 			);
 			mainGroup = 7D74A5F128A1A1EA009C4C70;
 			packageReferences = (
-				06EC22CC28C4BC3F001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				06EC22CF28C4C33A001E8AC1 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				06EC22D228C4C438001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				7D3DAF3828CB9F90007EB8F2 /* XCRemoteSwiftPackageReference "Charts" */,
+				7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */,
+				7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 7D74A5F128A1A1EA009C4C70;
 			projectDirPath = "";
@@ -411,6 +417,7 @@
 				7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */,
 				FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */,
 				7D74A61728A1A2CC009C4C70 /* ExampleModel.swift in Sources */,
+				7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */,
 				FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */,
 				7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */,
 				FAF5FE6C28A44C9000E0913E /* CalendarViewController.swift in Sources */,
@@ -645,15 +652,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		06EC22CC28C4BC3F001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		06EC22CF28C4C33A001E8AC1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -661,17 +660,17 @@
 				kind = branch;
 			};
 		};
-		06EC22D228C4C438001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
+			repositoryURL = "https://github.com/danielgindi/Charts";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		7D3DAF3828CB9F90007EB8F2 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts";
+			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -680,25 +679,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		06EC22CD28C4BC3F001E8AC1 /* Realm */ = {
+		7D94033328C299F900D2E101 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 06EC22CC28C4BC3F001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		06EC22D028C4C33B001E8AC1 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 06EC22CF28C4C33A001E8AC1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		06EC22D328C4C438001E8AC1 /* RealmSwift */ = {
+		7D94033628C29A0700D2E101 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 06EC22CC28C4BC3F001E8AC1 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		7D3DAF3928CB9F90007EB8F2 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7D3DAF3828CB9F90007EB8F2 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		7D94033C28C29A8A00D2E101 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		7D94033E28C29A8A00D2E101 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

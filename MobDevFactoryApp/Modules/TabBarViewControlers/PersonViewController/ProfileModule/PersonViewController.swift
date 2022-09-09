@@ -9,7 +9,7 @@ import UIKit
 import Charts
 
 protocol ProfileViewControllerDelegate: AnyObject {
-    func customViewDidTapButton(_ customView: PersonView)
+    func customViewDidTapButton()
 }
 
 final class PersonViewController: UIViewController {
@@ -68,17 +68,11 @@ extension PersonViewController: ChartViewDelegate {
 // MARK: - ProfileViewControllerDelegate
 
 extension PersonViewController: ProfileViewControllerDelegate {
-    func customViewDidTapButton(_ customView: PersonView) {
-        DispatchQueue.main.async {
-//            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeViewController(
-//                    viewController: CreatePersonViewController(),
-//                    animated: true,
-//                    animationOptions: .transitionFlipFromBottom
-//            )
-            
-            let viewController = CreatePersonViewController()
-            self.present(viewController, animated: true)
-        }
+    func customViewDidTapButton() {
+        
+        let viewController = ModuleBuilder.builderCreateNewUser()
+        self.present(viewController, animated: true)
+        
     }
 }
 

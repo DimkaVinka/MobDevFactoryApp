@@ -13,6 +13,7 @@ class User: Object {
     @Persisted var name: String = ""
     @Persisted var surName: String = ""
     @Persisted var password: String = ""
+//    @Persisted var isLogged: Bool = true
 }
 
 class StorageManager {

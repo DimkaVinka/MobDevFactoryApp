@@ -11,6 +11,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+//        let storage = StorageManager()
+//        for item in storage.items {
+////            if item.isLogged == true {
+////                storage.makeStorage()
+////                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeViewController(
+////                    viewController: ,
+////                        animated: true,
+////                        animationOptions: .transitionFlipFromBottom
+////                )
+////            }
+//        }
+        
         return true
     }
 

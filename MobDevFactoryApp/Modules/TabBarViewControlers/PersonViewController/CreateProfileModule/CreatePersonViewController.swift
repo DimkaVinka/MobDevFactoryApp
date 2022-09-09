@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 
 protocol CreateProfileViewControllerDelegate: AnyObject {
-    func dissmiss(_ customView: CreatePersonView)
+    func dissmiss()
 }
 
-class CreatePersonViewController: UIViewController {
+class CreatePersonViewController: UIViewController, CreateProfileViewControllerDelegate {
     
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -167,6 +167,12 @@ class CreatePersonViewController: UIViewController {
             make.width.equalTo(scrollView.snp.width)
         }
     }
+    
+    func dissmiss() {
+        self.dismiss(animated: true) {
+            print("dismissed")
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -191,14 +197,3 @@ extension CreatePersonViewController: UIImagePickerControllerDelegate, UINavigat
     }
 }
 
-extension CreatePersonViewController: CreateProfileViewControllerDelegate {
-    func dissmiss(_ customView: CreatePersonView) {
-        DispatchQueue.main.async {
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeViewController(
-                    viewController: PersonViewController(),
-                    animated: true,
-                    animationOptions: .transitionFlipFromTop
-            )
-        }
-    }
-}

@@ -133,29 +133,38 @@ class AuthorizationViewController: UIViewController {
         
         for user in storageManager.items {
             if user.nickName == nickNameTextField.text ?? "" && user.password == passwordTextField.text ?? "" {
-                let tabBarViewController = UITabBarController()
-                tabBarViewController.tabBar.backgroundColor = .white
-                let lessonTabBarItem = ModuleBuilderTabBarConrolers.buiderLessonViewController()
-                lessonTabBarItem.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
-                let calendarTabBarItem = ModuleBuilderTabBarConrolers.buiderCalendarViewController()
-                calendarTabBarItem.tabBarItem = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar"), tag: 1)
-                let searchTabbarItem = ModuleBuilderTabBarConrolers.buiderSearchViewController()
-                searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
-                let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
-                personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
-                tabBarViewController.setViewControllers([
-                    lessonTabBarItem,
-                    searchTabbarItem,
-                    calendarTabBarItem,
-                    personTabbarItem,
-                ], animated: true)
-                tabBarViewController.modalPresentationStyle = .fullScreen
-                present(tabBarViewController, animated: true)
+//                let tabBarViewController = UITabBarController()
+//                tabBarViewController.tabBar.backgroundColor = .white
+//                let lessonTabBarItem = ModuleBuilderTabBarConrolers.buiderLessonViewController()
+//                lessonTabBarItem.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
+//                let calendarTabBarItem = ModuleBuilderTabBarConrolers.buiderCalendarViewController()
+//                calendarTabBarItem.tabBarItem = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar"), tag: 1)
+//                let searchTabbarItem = ModuleBuilderTabBarConrolers.buiderSearchViewController()
+//                searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+//                let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
+//                personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
+//                tabBarViewController.setViewControllers([
+//                    lessonTabBarItem,
+//                    searchTabbarItem,
+//                    calendarTabBarItem,
+//                    personTabbarItem,
+//                ], animated: true)
+//                tabBarViewController.modalPresentationStyle = .fullScreen
+//                present(tabBarViewController, animated: true)
+                
+                SceneDelegate.shared.changeViewController(viewController: ModuleBuilder.builderTabBarController(),
+                                                          animationOptions: .transitionCrossDissolve)
             } else {
 // MARK: Alert
                 alert.showAlert(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
             }
         }
+    }
+}
+
+extension SceneDelegate {
+    static var shared: SceneDelegate {
+        return (UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate)
     }
 }
 
