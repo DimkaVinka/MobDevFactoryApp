@@ -16,8 +16,11 @@ final class ModuleBuilderTabBarConrolers {
     }
     
     static func buiderCalendarViewController() -> UIViewController {
-        let viewController = CalendarViewController()
-        // тут будем model
+//        let viewController = CalendarViewController()
+//        // тут будем model
+//        return viewController
+
+        let viewController = UIViewController()
         return viewController
     }
     
