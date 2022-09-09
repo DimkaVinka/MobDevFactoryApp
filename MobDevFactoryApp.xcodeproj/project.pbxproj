@@ -11,10 +11,6 @@
 		06B5169828AD4E3500CE9F7E /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169728AD4E3500CE9F7E /* PersonView.swift */; };
 		06B5169C28AD50E900CE9F7E /* CreatePersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */; };
 		06B5169E28AD51F800CE9F7E /* CreatePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5169D28AD51F800CE9F7E /* CreatePersonViewController.swift */; };
-		06EC22CE28C4BC3F001E8AC1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22CD28C4BC3F001E8AC1 /* Realm */; };
-		06EC22D128C4C33B001E8AC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22D028C4C33B001E8AC1 /* SnapKit */; };
-		06EC22D428C4C438001E8AC1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 06EC22D328C4C438001E8AC1 /* RealmSwift */; };
-		7D3DAF3A28CB9F90007EB8F2 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 7D3DAF3928CB9F90007EB8F2 /* Charts */; };
 		7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */; };
 		7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */; };
 		7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */; };
@@ -38,6 +34,13 @@
 		D62B519728B9122400BD8421 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519628B9122400BD8421 /* OnboardingView.swift */; };
 		D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519828B9125200BD8421 /* OnboardingContentViewCell.swift */; };
 		D62B519C28B912A000BD8421 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519B28B912A000BD8421 /* OnboardingViewModel.swift */; };
+		D66C74F828CBABC600CB7375 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C74F728CBABC600CB7375 /* CalendarViewModel.swift */; };
+		D66C74FB28CBABEB00CB7375 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C74FA28CBABEB00CB7375 /* CalendarTableViewCell.swift */; };
+		D66C74FD28CBAC0200CB7375 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C74FC28CBAC0200CB7375 /* CalendarView.swift */; };
+		D66C750028CBAC2700CB7375 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C74FF28CBAC2700CB7375 /* EventModel.swift */; };
+		D66C750228CBAC3A00CB7375 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750128CBAC3A00CB7375 /* EventsList.swift */; };
+		D66C750528CBAC6600CB7375 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750428CBAC6600CB7375 /* Date+String.swift */; };
+		D66C750828CBACD000CB7375 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D66C750728CBACD000CB7375 /* FSCalendar */; };
 		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
 		FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */; };
@@ -46,7 +49,6 @@
 		FAF5FE6628A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6528A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift */; };
 		FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6728A44B2100E0913E /* LessonViewController.swift */; };
 		FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6928A44BC400E0913E /* SearchViewController.swift */; };
-		FAF5FE6C28A44C9000E0913E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6B28A44C9000E0913E /* CalendarViewController.swift */; };
 		FAF5FE6E28A44D3400E0913E /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +57,6 @@
 		06B5169728AD4E3500CE9F7E /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		06B5169B28AD50E900CE9F7E /* CreatePersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonView.swift; sourceTree = "<group>"; };
 		06B5169D28AD51F800CE9F7E /* CreatePersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonViewController.swift; sourceTree = "<group>"; };
-		7D3DAF3F28CBA3E7007EB8F2 /* MobDevFactoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MobDevFactoryApp.app; path = "/Users/dimkavinka/Desktop/AppForStudents/MobDevFactoryApp/build/Debug-iphoneos/MobDevFactoryApp.app"; sourceTree = "<absolute>"; };
 		7D68E32428A24C4400A62BC6 /* ExampleTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoView.swift; sourceTree = "<group>"; };
 		7D68E32628A24C5300A62BC6 /* ExampleTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoViewModel.swift; sourceTree = "<group>"; };
 		7D68E32828A24C5E00A62BC6 /* ExampleTwoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoModel.swift; sourceTree = "<group>"; };
@@ -76,6 +77,13 @@
 		D62B519628B9122400BD8421 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D62B519828B9125200BD8421 /* OnboardingContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewCell.swift; sourceTree = "<group>"; };
 		D62B519B28B912A000BD8421 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		D66C74F528CBAA8F00CB7375 /* MobDevFactoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobDevFactoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66C74F728CBABC600CB7375 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		D66C74FA28CBABEB00CB7375 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		D66C74FC28CBAC0200CB7375 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D66C74FF28CBAC2700CB7375 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		D66C750128CBAC3A00CB7375 /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
+		D66C750428CBAC6600CB7375 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
 		FA1F095A28AFA5050068FBCA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +92,6 @@
 		FAF5FE6528A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderTabBarConrolers.swift; sourceTree = "<group>"; };
 		FAF5FE6728A44B2100E0913E /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		FAF5FE6928A44BC400E0913E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		FAF5FE6B28A44C9000E0913E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +103,7 @@
 				7D94033F28C29A8A00D2E101 /* RealmSwift in Frameworks */,
 				7D94033D28C29A8A00D2E101 /* Realm in Frameworks */,
 				7D94033728C29A0700D2E101 /* Charts in Frameworks */,
+				D66C750828CBACD000CB7375 /* FSCalendar in Frameworks */,
 				7D94033428C299F900D2E101 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7D74A5FC28A1A1EA009C4C70 /* MobDevFactoryApp */,
+				D66C74F528CBAA8F00CB7375 /* MobDevFactoryApp.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +254,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D66C74F628CBABAB00CB7375 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D66C74F728CBABC600CB7375 /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D66C74F928CBABD500CB7375 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D66C74FA28CBABEB00CB7375 /* CalendarTableViewCell.swift */,
+				D66C74FC28CBAC0200CB7375 /* CalendarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D66C74FE28CBAC1700CB7375 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D66C74FF28CBAC2700CB7375 /* EventModel.swift */,
+				D66C750128CBAC3A00CB7375 /* EventsList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D66C750328CBAC5300CB7375 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D66C750428CBAC6600CB7375 /* Date+String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D68963C428A81326005B9C39 /* OnboardingModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +355,10 @@
 		FAF5FE7128A4518D00E0913E /* CalendarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FAF5FE6B28A44C9000E0913E /* CalendarViewController.swift */,
+				D66C750328CBAC5300CB7375 /* Extension */,
+				D66C74FE28CBAC1700CB7375 /* Model */,
+				D66C74F928CBABD500CB7375 /* View */,
+				D66C74F628CBABAB00CB7375 /* ViewModel */,
 			);
 			path = CalendarViewController;
 			sourceTree = "<group>";
@@ -348,9 +394,10 @@
 				7D94033628C29A0700D2E101 /* Charts */,
 				7D94033C28C29A8A00D2E101 /* Realm */,
 				7D94033E28C29A8A00D2E101 /* RealmSwift */,
+				D66C750728CBACD000CB7375 /* FSCalendar */,
 			);
 			productName = MobDevFactoryApp;
-			productReference = 7D3DAF3F28CBA3E7007EB8F2 /* MobDevFactoryApp.app */;
+			productReference = D66C74F528CBAA8F00CB7375 /* MobDevFactoryApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -381,6 +428,7 @@
 				7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */,
 				7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D66C750628CBACD000CB7375 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 7D74A5F128A1A1EA009C4C70;
 			projectDirPath = "";
@@ -416,22 +464,27 @@
 				FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */,
 				7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */,
 				FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */,
+				D66C74FB28CBABEB00CB7375 /* CalendarTableViewCell.swift in Sources */,
 				7D74A61728A1A2CC009C4C70 /* ExampleModel.swift in Sources */,
 				7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */,
 				FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */,
 				7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */,
-				FAF5FE6C28A44C9000E0913E /* CalendarViewController.swift in Sources */,
 				FAF5FE6328A4491900E0913E /* Metric.swift in Sources */,
+				D66C750528CBAC6600CB7375 /* Date+String.swift in Sources */,
 				7D74A61528A1A2AF009C4C70 /* ExampleViewModel.swift in Sources */,
+				D66C750228CBAC3A00CB7375 /* EventsList.swift in Sources */,
 				7D74A5FE28A1A1EA009C4C70 /* AppDelegate.swift in Sources */,
 				06B5169228AD4D8200CE9F7E /* ExtensionDate.swift in Sources */,
+				D66C750028CBAC2700CB7375 /* EventModel.swift in Sources */,
 				06B5169E28AD51F800CE9F7E /* CreatePersonViewController.swift in Sources */,
 				FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */,
+				D66C74FD28CBAC0200CB7375 /* CalendarView.swift in Sources */,
 				7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */,
 				7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */,
 				D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */,
 				7D74A60028A1A1EA009C4C70 /* SceneDelegate.swift in Sources */,
 				D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */,
+				D66C74F828CBABC600CB7375 /* CalendarViewModel.swift in Sources */,
 				D62B519428B911DB00BD8421 /* Onboarding.swift in Sources */,
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,
@@ -676,6 +729,14 @@
 				kind = branch;
 			};
 		};
+		D66C750628CBACD000CB7375 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -698,6 +759,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		D66C750728CBACD000CB7375 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D66C750628CBACD000CB7375 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

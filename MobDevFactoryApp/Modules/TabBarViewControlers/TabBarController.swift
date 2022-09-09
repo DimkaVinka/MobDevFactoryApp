@@ -30,7 +30,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let secondItem = UITabBarItem(title: "Second", image: UIImage(systemName: "iphone.homebutton.radiowaves.left.and.right.circle"), selectedImage: UIImage(systemName: "iphone.homebutton.radiowaves.left.and.right.circle.fill"))
         second.tabBarItem = secondItem
         
-        let third = CalendarViewController()
+        let third = CalendarViewModel()
         let thirdIcon = UITabBarItem(title: "Third", image: UIImage(systemName: "homepodmini.2"), selectedImage: UIImage(systemName: "homepodmini.2.fill"))
         third.tabBarItem = thirdIcon
         
