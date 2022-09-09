@@ -23,22 +23,26 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func setupTabBarViewControllers() {
         let first = LessonViewController()
-        let firstIcon = UITabBarItem(title: "First", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        let firstIcon = UITabBarItem(title: "Уроки", image: UIImage(systemName: "house.circle"), selectedImage: UIImage(systemName: "house.circle.fill"))
         first.tabBarItem = firstIcon
         
         let second = SearchViewController()
-        let secondItem = UITabBarItem(title: "Second", image: UIImage(systemName: "iphone.homebutton.radiowaves.left.and.right.circle"), selectedImage: UIImage(systemName: "iphone.homebutton.radiowaves.left.and.right.circle.fill"))
+        let secondItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass.circle"), selectedImage: UIImage(systemName: "magnifyingglass.circle.fill"))
         second.tabBarItem = secondItem
         
         let third = CalendarViewModel()
-        let thirdIcon = UITabBarItem(title: "Third", image: UIImage(systemName: "homepodmini.2"), selectedImage: UIImage(systemName: "homepodmini.2.fill"))
+        let thirdIcon = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar.circle"), selectedImage: UIImage(systemName: "calendar.circle.fill"))
         third.tabBarItem = thirdIcon
         
         let fourth = PersonViewController()
-        let fourtIcon = UITabBarItem(title: "Fourth", image: UIImage(systemName: "camera.macro.circle"), selectedImage: UIImage(systemName: "camera.macro.circle.fill"))
+        let fourtIcon = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
         fourth.tabBarItem = fourtIcon
         
-        let controllers = [first, second, third, fourth]
+        let fifth = SettingsViewModel()
+        let fifthIcon = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gear.circle"), selectedImage: UIImage(systemName: "gear.circle.fill"))
+        fifth.tabBarItem = fifthIcon
+        
+        let controllers = [first, second, third, fourth, fifth]
         self.setViewControllers(controllers, animated: true)
     }
 }

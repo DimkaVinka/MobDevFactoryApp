@@ -164,7 +164,7 @@ extension OnboardingView {
             selectedIndex += 1
             pageControl.currentPage += 1
         } else {
-            viewModel.present(ModuleBuilder.builderAuthorizationViewController(), animated: true)
+            SceneDelegate.shared.changeViewController(viewController: ModuleBuilder.builderAuthorizationViewController(), animationOptions: .transitionCrossDissolve)
         }
     }
 }
