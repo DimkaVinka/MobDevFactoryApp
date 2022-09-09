@@ -281,7 +281,7 @@ class PersonView: UIView {
     // MARK: - Actions
     
     @objc func tapButtonSettingsController() {
-        delegate?.customViewDidTapButton(self)
+        delegate?.customViewDidTapButton()
     }
 }
 

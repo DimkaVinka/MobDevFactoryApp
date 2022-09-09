@@ -7,11 +7,10 @@
 
 import UIKit
 import SnapKit
-import SwiftUI
 
 class CreatePersonView: UIView {
     
-    weak var delegate: CreatePersonViewController?
+    var delegate: CreateProfileViewControllerDelegate!
     
     // MARK: - UI Elements
     
@@ -118,7 +117,7 @@ class CreatePersonView: UIView {
     }()
     
     lazy var saveProfileButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("Сохранить", for: .normal)
         button.tintColor = .white
         button.backgroundColor = .orange
@@ -241,6 +240,8 @@ class CreatePersonView: UIView {
     // MARK: - Actions
     
     @objc private func tapButtonSettingsController() {
-        delegate?.dissmiss(self)
+        self.delegate?.dissmiss()
+        print("button pressed")
+        
     }
 }

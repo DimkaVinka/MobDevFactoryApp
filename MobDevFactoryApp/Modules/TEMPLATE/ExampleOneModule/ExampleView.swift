@@ -76,6 +76,6 @@ class ExampleViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func buttonPressed() {
-        present(ModuleBuilder.builderExampleSecondModule(), animated: true)
+//        present(ModuleBuilder.builderExampleSecondModule(), animated: true)
     }
 }

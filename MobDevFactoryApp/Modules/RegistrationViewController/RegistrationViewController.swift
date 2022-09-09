@@ -178,3 +178,7 @@ class RegistrationViewController: UIViewController {
         storageManager.addUser(user)
     }
 }
+
+extension RegistrationViewController: UITextFieldDelegate {
+    
+}
