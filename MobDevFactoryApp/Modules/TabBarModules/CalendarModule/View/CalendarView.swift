@@ -79,7 +79,7 @@ class CalendarView: UIView {
     // MARK: - Settings
     
     func setupView() {
-        backgroundColor = UIColor(named: "back")
+        backgroundColor = Metric.colorBackround
         tintColor = .white
     }
     

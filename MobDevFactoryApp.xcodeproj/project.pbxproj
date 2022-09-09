@@ -41,6 +41,7 @@
 		D66C750228CBAC3A00CB7375 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750128CBAC3A00CB7375 /* EventsList.swift */; };
 		D66C750528CBAC6600CB7375 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750428CBAC6600CB7375 /* Date+String.swift */; };
 		D66C750828CBACD000CB7375 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D66C750728CBACD000CB7375 /* FSCalendar */; };
+		D66C750B28CBB35B00CB7375 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */; };
 		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
 		FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */; };
@@ -84,6 +85,7 @@
 		D66C74FF28CBAC2700CB7375 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		D66C750128CBAC3A00CB7375 /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
 		D66C750428CBAC6600CB7375 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
 		FA1F095A28AFA5050068FBCA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -221,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				D68963C428A81326005B9C39 /* OnboardingModule */,
-				FAF5FE6428A449B300E0913E /* TabBarViewControlers */,
+				FAF5FE6428A449B300E0913E /* TabBarModules */,
 				FAF5FE6128A4483D00E0913E /* RegistrationViewController */,
 				FAF5FE5C28A2EFA900E0913E /* AuthorizationViewController */,
 				7D68E32D28A29A9D00A62BC6 /* TEMPLATE */,
@@ -288,6 +290,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D66C750928CBB2E600CB7375 /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
 		D68963C428A81326005B9C39 /* OnboardingModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,35 +334,36 @@
 			path = RegistrationViewController;
 			sourceTree = "<group>";
 		};
-		FAF5FE6428A449B300E0913E /* TabBarViewControlers */ = {
+		FAF5FE6428A449B300E0913E /* TabBarModules */ = {
 			isa = PBXGroup;
 			children = (
-				FAF5FE7228A451CD00E0913E /* PersonViewController */,
-				FAF5FE7128A4518D00E0913E /* CalendarViewController */,
-				FAF5FE7028A4517D00E0913E /* SearchViewController */,
-				FAF5FE6F28A4516A00E0913E /* LessonViewController */,
+				D66C750928CBB2E600CB7375 /* SettingsModule */,
+				FAF5FE7228A451CD00E0913E /* PersonModule */,
+				FAF5FE7128A4518D00E0913E /* CalendarModule */,
+				FAF5FE7028A4517D00E0913E /* SearchModule */,
+				FAF5FE6F28A4516A00E0913E /* LessonModule */,
 				7D94034028C2A36C00D2E101 /* TabBarController.swift */,
 			);
-			path = TabBarViewControlers;
+			path = TabBarModules;
 			sourceTree = "<group>";
 		};
-		FAF5FE6F28A4516A00E0913E /* LessonViewController */ = {
+		FAF5FE6F28A4516A00E0913E /* LessonModule */ = {
 			isa = PBXGroup;
 			children = (
 				FAF5FE6728A44B2100E0913E /* LessonViewController.swift */,
 			);
-			path = LessonViewController;
+			path = LessonModule;
 			sourceTree = "<group>";
 		};
-		FAF5FE7028A4517D00E0913E /* SearchViewController */ = {
+		FAF5FE7028A4517D00E0913E /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
 				FAF5FE6928A44BC400E0913E /* SearchViewController.swift */,
 			);
-			path = SearchViewController;
+			path = SearchModule;
 			sourceTree = "<group>";
 		};
-		FAF5FE7128A4518D00E0913E /* CalendarViewController */ = {
+		FAF5FE7128A4518D00E0913E /* CalendarModule */ = {
 			isa = PBXGroup;
 			children = (
 				D66C750328CBAC5300CB7375 /* Extension */,
@@ -360,17 +371,17 @@
 				D66C74F928CBABD500CB7375 /* View */,
 				D66C74F628CBABAB00CB7375 /* ViewModel */,
 			);
-			path = CalendarViewController;
+			path = CalendarModule;
 			sourceTree = "<group>";
 		};
-		FAF5FE7228A451CD00E0913E /* PersonViewController */ = {
+		FAF5FE7228A451CD00E0913E /* PersonModule */ = {
 			isa = PBXGroup;
 			children = (
 				06B5169028AD4D5200CE9F7E /* Extensions */,
 				06B5169328AD4DE600CE9F7E /* ProfileModule */,
 				06B5169428AD4DF400CE9F7E /* CreateProfileModule */,
 			);
-			path = PersonViewController;
+			path = PersonModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,6 +480,7 @@
 				7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */,
 				FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */,
 				7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */,
+				D66C750B28CBB35B00CB7375 /* SettingsViewModel.swift in Sources */,
 				FAF5FE6328A4491900E0913E /* Metric.swift in Sources */,
 				D66C750528CBAC6600CB7375 /* Date+String.swift in Sources */,
 				7D74A61528A1A2AF009C4C70 /* ExampleViewModel.swift in Sources */,

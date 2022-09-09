@@ -162,10 +162,6 @@ class AuthorizationViewController: UIViewController {
     }
 }
 
-extension SceneDelegate {
-    static var shared: SceneDelegate {
-        return (UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate)
-    }
-}
+
 
 
