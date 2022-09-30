@@ -11,13 +11,7 @@ import UIKit
 class LessonsViewModel {
     
     // MARK: - Properties
-    var block: Block
+    var block: Block?
     let view = BlocksView()
-    let cources: [Cource]
-    
-    init(block: Block) {
-        self.block = block
-        self.cources = block.cource
-    }
 }
 

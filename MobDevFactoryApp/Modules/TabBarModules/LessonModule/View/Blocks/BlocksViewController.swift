@@ -6,33 +6,47 @@
 //
 
 import UIKit
+import Combine
 
 class BlocksViewController: UIViewController {
     
     // MARK: - Properties
-    var blocksViewModel = BlocksViewModel(blocks: [Block]())
+    var blocksViewModel = BlocksViewModel()
+    private var observer: AnyCancellable?
+    var blocks: [Block]?
+
+    private var currentView: BlocksView? {
+        guard isViewLoaded else { return nil }
+        return view as? BlocksView
+    }
     
     // MARK: - Lifecycle
     override func loadView() {
-        view = blocksViewModel.view
+        view = BlocksView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.blocksViewModel.loadBlocks()
+        
+        observer = blocksViewModel.$blocks.sink { block in
+            self.blocks = block
+        }
         setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        blocksViewModel.loadBlocks()
+        
     }
     
     // MARK: - Setup functions
     private func setupView() {
         title = "Конспекты"
-        blocksViewModel.view.tableView.dataSource = self
-        blocksViewModel.view.tableView.delegate = self
-        blocksViewModel.view.tableView.keyboardDismissMode = .onDrag
+        
+        currentView?.tableView.dataSource = self
+        currentView?.tableView.delegate = self
+        currentView?.tableView.keyboardDismissMode = .onDrag
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barTintColor = .white
@@ -42,13 +56,13 @@ class BlocksViewController: UIViewController {
 // MARK: - Extension: UITableViewDataSource
 extension BlocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return blocksViewModel.blocks.count
+        return blocks?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let info = blocksViewModel.blocks[indexPath.row]
+        let info = blocks?[indexPath.row]
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Subtitle2")
-        cell.textLabel?.text = info.block_name
+        cell.textLabel?.text = info?.block_name
         cell.accessoryType = .disclosureIndicator
         cell.imageView?.image = UIImage(systemName: "arrow.right.circle.fill")
         return cell
@@ -58,9 +72,9 @@ extension BlocksViewController: UITableViewDataSource {
 // MARK: - Extension: UITableViewDelegate
 extension BlocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destinationBlock = blocksViewModel.blocks[indexPath.row]
+        let destinationBlock = (blocks?[indexPath.row])!
         let destinationController = LessonsViewController()
-        destinationController.lessonsViewModel?.block = destinationBlock
+        destinationController.lessonsViewModel.block = destinationBlock
         navigationController?.pushViewController(destinationController, animated: true)
         tableView.deselectRow(at: indexPath, animated: false)
     }
