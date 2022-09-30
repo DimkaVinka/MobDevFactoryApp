@@ -64,7 +64,6 @@
 		FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */; };
 		FAF5FE6328A4491900E0913E /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6228A4491900E0913E /* Metric.swift */; };
 		FAF5FE6628A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6528A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift */; };
-		FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6728A44B2100E0913E /* LessonViewController.swift */; };
 		FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6928A44BC400E0913E /* SearchViewController.swift */; };
 		FAF5FE6E28A44D3400E0913E /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */; };
 /* End PBXBuildFile section */
@@ -124,7 +123,6 @@
 		FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FAF5FE6228A4491900E0913E /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
 		FAF5FE6528A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderTabBarConrolers.swift; sourceTree = "<group>"; };
-		FAF5FE6728A44B2100E0913E /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		FAF5FE6928A44BC400E0913E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FAF5FE6D28A44D3400E0913E /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -462,7 +460,6 @@
 				D6A3DAA228E736DA00D5D8C7 /* ViewModel */,
 				D6A3DAA128E736D200D5D8C7 /* View */,
 				D6A3DA9B28E7365600D5D8C7 /* Model */,
-				FAF5FE6728A44B2100E0913E /* LessonViewController.swift */,
 			);
 			path = LessonModule;
 			sourceTree = "<group>";
@@ -612,7 +609,6 @@
 				D6A3DAB128E737D700D5D8C7 /* BlocksViewModel.swift in Sources */,
 				D66C750028CBAC2700CB7375 /* EventModel.swift in Sources */,
 				06B5169E28AD51F800CE9F7E /* CreatePersonViewController.swift in Sources */,
-				FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */,
 				D66C74FD28CBAC0200CB7375 /* CalendarView.swift in Sources */,
 				7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */,
 				7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */,

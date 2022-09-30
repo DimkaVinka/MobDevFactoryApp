@@ -13,7 +13,6 @@ class LessonsViewModel {
     // MARK: - Properties
     var block: Block
     let view = BlocksView()
-    
     let cources: [Cource]
     
     init(block: Block) {

@@ -10,7 +10,7 @@ import UIKit
 class LessonsViewController: UIViewController {
     
     // MARK: - Properties
-    var lessonsViewModel: LessonsViewModel?
+    var lessonsViewModel = LessonsViewModel()
     
     // MARK: - Lifecycle
     override func loadView() {

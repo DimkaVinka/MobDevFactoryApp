@@ -10,7 +10,7 @@ import UIKit
 class BlocksViewModel {
     
     // MARK: - Properties
-    var blocks: [Block]
+    var blocks = [Block]()
     let view = BlocksView()
     
     init(blocks: [Block]) {

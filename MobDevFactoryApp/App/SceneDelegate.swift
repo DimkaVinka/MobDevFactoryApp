@@ -43,7 +43,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 
-
 extension SceneDelegate {
     static var shared: SceneDelegate {
         return (UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate)
