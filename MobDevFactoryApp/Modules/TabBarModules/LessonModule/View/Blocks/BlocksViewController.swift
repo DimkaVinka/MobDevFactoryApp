@@ -23,13 +23,13 @@ class BlocksViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         blocksViewModel?.loadBlocks()
     }
     
     // MARK: - Setup functions
     private func setupView() {
-        title = "Содержание курса"
+        title = "Конспекты"
         blocksViewModel?.view.tableView.dataSource = self
         blocksViewModel?.view.tableView.delegate = self
         blocksViewModel?.view.tableView.keyboardDismissMode = .onDrag

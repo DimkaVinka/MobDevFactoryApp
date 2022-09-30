@@ -374,9 +374,9 @@
 		D6A3DAA128E736D200D5D8C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D6A3DAAB28E7378400D5D8C7 /* DetailLessons */,
-				D6A3DAA828E7374600D5D8C7 /* Lessons */,
 				D6A3DAA328E736FA00D5D8C7 /* Blocks */,
+				D6A3DAA828E7374600D5D8C7 /* Lessons */,
+				D6A3DAAB28E7378400D5D8C7 /* DetailLessons */,
 			);
 			path = View;
 			sourceTree = "<group>";

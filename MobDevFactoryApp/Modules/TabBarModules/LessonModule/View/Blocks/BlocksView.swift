@@ -31,7 +31,6 @@ class BlocksView: UIView {
     }
     
     private func commonInit() {
-       
         setupHierarchy()
         setupLayout()
         setupView()
