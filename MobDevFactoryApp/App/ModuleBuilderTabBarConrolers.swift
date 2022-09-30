@@ -10,7 +10,7 @@ import UIKit
 final class ModuleBuilderTabBarConrolers {
     /// таб бары
     static func buiderLessonViewController() -> UIViewController {
-        let viewController = LessonViewController()
+        let viewController = BlocksViewController()
         // тут будем model
         return viewController
     }

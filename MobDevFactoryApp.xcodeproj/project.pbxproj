@@ -24,10 +24,6 @@
 		7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A61A28A1A2E9009C4C70 /* ModuleBuilder.swift */; };
 		7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A61D28A1A432009C4C70 /* NetworkManager.swift */; };
 		7D74A62428A1AEB4009C4C70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D74A62328A1AEB4009C4C70 /* Extensions.swift */; };
-		7D94033428C299F900D2E101 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033328C299F900D2E101 /* SnapKit */; };
-		7D94033728C29A0700D2E101 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033628C29A0700D2E101 /* Charts */; };
-		7D94033D28C29A8A00D2E101 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033C28C29A8A00D2E101 /* Realm */; };
-		7D94033F28C29A8A00D2E101 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94033E28C29A8A00D2E101 /* RealmSwift */; };
 		7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94034028C2A36C00D2E101 /* TabBarController.swift */; };
 		7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA63A9B28A78F010050E9F3 /* StorageManager.swift */; };
 		D62B519428B911DB00BD8421 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B519328B911DB00BD8421 /* Onboarding.swift */; };
@@ -40,9 +36,29 @@
 		D66C750028CBAC2700CB7375 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C74FF28CBAC2700CB7375 /* EventModel.swift */; };
 		D66C750228CBAC3A00CB7375 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750128CBAC3A00CB7375 /* EventsList.swift */; };
 		D66C750528CBAC6600CB7375 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750428CBAC6600CB7375 /* Date+String.swift */; };
-		D66C750828CBACD000CB7375 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D66C750728CBACD000CB7375 /* FSCalendar */; };
 		D66C750B28CBB35B00CB7375 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */; };
 		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
+		D6A3DA8D28E735E700D5D8C7 /* cources.json in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA8C28E735E700D5D8C7 /* cources.json */; };
+		D6A3DA9528E7360C00D5D8C7 /* 01-01.html in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA8F28E7360C00D5D8C7 /* 01-01.html */; };
+		D6A3DA9628E7360C00D5D8C7 /* 02-04.html in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA9028E7360C00D5D8C7 /* 02-04.html */; };
+		D6A3DA9728E7360C00D5D8C7 /* 01-02.html in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA9128E7360C00D5D8C7 /* 01-02.html */; };
+		D6A3DA9828E7360C00D5D8C7 /* 02-02.html in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA9228E7360C00D5D8C7 /* 02-02.html */; };
+		D6A3DA9928E7360C00D5D8C7 /* 02-01.html in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA9328E7360C00D5D8C7 /* 02-01.html */; };
+		D6A3DA9A28E7360C00D5D8C7 /* 02-03.html in Resources */ = {isa = PBXBuildFile; fileRef = D6A3DA9428E7360C00D5D8C7 /* 02-03.html */; };
+		D6A3DA9D28E7366B00D5D8C7 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DA9C28E7366B00D5D8C7 /* Blocks.swift */; };
+		D6A3DAA528E7371100D5D8C7 /* BlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAA428E7371100D5D8C7 /* BlocksViewController.swift */; };
+		D6A3DAA728E7373100D5D8C7 /* BlocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAA628E7373100D5D8C7 /* BlocksView.swift */; };
+		D6A3DAAA28E7376100D5D8C7 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAA928E7376100D5D8C7 /* LessonsViewController.swift */; };
+		D6A3DAAD28E7379600D5D8C7 /* DetailLessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAAC28E7379600D5D8C7 /* DetailLessonsViewController.swift */; };
+		D6A3DAAF28E737B100D5D8C7 /* DetailLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAAE28E737B100D5D8C7 /* DetailLessonsView.swift */; };
+		D6A3DAB128E737D700D5D8C7 /* BlocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */; };
+		D6A3DAB328E737EB00D5D8C7 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */; };
+		D6A3DAB528E7380000D5D8C7 /* DetailLessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */; };
+		D6A3DAB828E7388400D5D8C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D6A3DAB728E7388400D5D8C7 /* SnapKit */; };
+		D6A3DABB28E738AA00D5D8C7 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = D6A3DABA28E738AA00D5D8C7 /* Charts */; };
+		D6A3DABE28E738D400D5D8C7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D6A3DABD28E738D400D5D8C7 /* Realm */; };
+		D6A3DAC028E738D400D5D8C7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D6A3DABF28E738D400D5D8C7 /* RealmSwift */; };
+		D6A3DAC328E738EC00D5D8C7 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D6A3DAC228E738EC00D5D8C7 /* FSCalendar */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
 		FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */; };
 		FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */; };
@@ -87,6 +103,22 @@
 		D66C750428CBAC6600CB7375 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
+		D6A3DA8C28E735E700D5D8C7 /* cources.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cources.json; sourceTree = "<group>"; };
+		D6A3DA8F28E7360C00D5D8C7 /* 01-01.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "01-01.html"; sourceTree = "<group>"; };
+		D6A3DA9028E7360C00D5D8C7 /* 02-04.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "02-04.html"; sourceTree = "<group>"; };
+		D6A3DA9128E7360C00D5D8C7 /* 01-02.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "01-02.html"; sourceTree = "<group>"; };
+		D6A3DA9228E7360C00D5D8C7 /* 02-02.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "02-02.html"; sourceTree = "<group>"; };
+		D6A3DA9328E7360C00D5D8C7 /* 02-01.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "02-01.html"; sourceTree = "<group>"; };
+		D6A3DA9428E7360C00D5D8C7 /* 02-03.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "02-03.html"; sourceTree = "<group>"; };
+		D6A3DA9C28E7366B00D5D8C7 /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
+		D6A3DAA428E7371100D5D8C7 /* BlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksViewController.swift; sourceTree = "<group>"; };
+		D6A3DAA628E7373100D5D8C7 /* BlocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksView.swift; sourceTree = "<group>"; };
+		D6A3DAA928E7376100D5D8C7 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
+		D6A3DAAC28E7379600D5D8C7 /* DetailLessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonsViewController.swift; sourceTree = "<group>"; };
+		D6A3DAAE28E737B100D5D8C7 /* DetailLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonsView.swift; sourceTree = "<group>"; };
+		D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksViewModel.swift; sourceTree = "<group>"; };
+		D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
+		D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonsViewModel.swift; sourceTree = "<group>"; };
 		FA1F095A28AFA5050068FBCA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -102,11 +134,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D94033F28C29A8A00D2E101 /* RealmSwift in Frameworks */,
-				7D94033D28C29A8A00D2E101 /* Realm in Frameworks */,
-				7D94033728C29A0700D2E101 /* Charts in Frameworks */,
-				D66C750828CBACD000CB7375 /* FSCalendar in Frameworks */,
-				7D94033428C299F900D2E101 /* SnapKit in Frameworks */,
+				D6A3DAC028E738D400D5D8C7 /* RealmSwift in Frameworks */,
+				D6A3DABE28E738D400D5D8C7 /* Realm in Frameworks */,
+				D6A3DAB828E7388400D5D8C7 /* SnapKit in Frameworks */,
+				D6A3DAC328E738EC00D5D8C7 /* FSCalendar in Frameworks */,
+				D6A3DABB28E738AA00D5D8C7 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +234,8 @@
 		7D74A61328A1A274009C4C70 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D6A3DA8E28E735F500D5D8C7 /* HTMLLessonsFiles */,
+				D6A3DA8B28E735C000D5D8C7 /* JSONLessonsFiles */,
 				FAF5FE5B28A2EE4500E0913E /* Extensions */,
 				7D74A60628A1A1ED009C4C70 /* Assets.xcassets */,
 				7D74A60828A1A1ED009C4C70 /* LaunchScreen.storyboard */,
@@ -308,6 +342,81 @@
 			path = OnboardingModule;
 			sourceTree = "<group>";
 		};
+		D6A3DA8B28E735C000D5D8C7 /* JSONLessonsFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DA8C28E735E700D5D8C7 /* cources.json */,
+			);
+			path = JSONLessonsFiles;
+			sourceTree = "<group>";
+		};
+		D6A3DA8E28E735F500D5D8C7 /* HTMLLessonsFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DA8F28E7360C00D5D8C7 /* 01-01.html */,
+				D6A3DA9128E7360C00D5D8C7 /* 01-02.html */,
+				D6A3DA9328E7360C00D5D8C7 /* 02-01.html */,
+				D6A3DA9228E7360C00D5D8C7 /* 02-02.html */,
+				D6A3DA9428E7360C00D5D8C7 /* 02-03.html */,
+				D6A3DA9028E7360C00D5D8C7 /* 02-04.html */,
+			);
+			path = HTMLLessonsFiles;
+			sourceTree = "<group>";
+		};
+		D6A3DA9B28E7365600D5D8C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DA9C28E7366B00D5D8C7 /* Blocks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6A3DAA128E736D200D5D8C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DAA328E736FA00D5D8C7 /* Blocks */,
+				D6A3DAA828E7374600D5D8C7 /* Lessons */,
+				D6A3DAAB28E7378400D5D8C7 /* DetailLessons */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6A3DAA228E736DA00D5D8C7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */,
+				D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */,
+				D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6A3DAA328E736FA00D5D8C7 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DAA428E7371100D5D8C7 /* BlocksViewController.swift */,
+				D6A3DAA628E7373100D5D8C7 /* BlocksView.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		D6A3DAA828E7374600D5D8C7 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DAA928E7376100D5D8C7 /* LessonsViewController.swift */,
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		D6A3DAAB28E7378400D5D8C7 /* DetailLessons */ = {
+			isa = PBXGroup;
+			children = (
+				D6A3DAAC28E7379600D5D8C7 /* DetailLessonsViewController.swift */,
+				D6A3DAAE28E737B100D5D8C7 /* DetailLessonsView.swift */,
+			);
+			path = DetailLessons;
+			sourceTree = "<group>";
+		};
 		FAF5FE5B28A2EE4500E0913E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +459,9 @@
 		FAF5FE6F28A4516A00E0913E /* LessonModule */ = {
 			isa = PBXGroup;
 			children = (
+				D6A3DAA228E736DA00D5D8C7 /* ViewModel */,
+				D6A3DAA128E736D200D5D8C7 /* View */,
+				D6A3DA9B28E7365600D5D8C7 /* Model */,
 				FAF5FE6728A44B2100E0913E /* LessonViewController.swift */,
 			);
 			path = LessonModule;
@@ -401,11 +513,11 @@
 			);
 			name = MobDevFactoryApp;
 			packageProductDependencies = (
-				7D94033328C299F900D2E101 /* SnapKit */,
-				7D94033628C29A0700D2E101 /* Charts */,
-				7D94033C28C29A8A00D2E101 /* Realm */,
-				7D94033E28C29A8A00D2E101 /* RealmSwift */,
-				D66C750728CBACD000CB7375 /* FSCalendar */,
+				D6A3DAB728E7388400D5D8C7 /* SnapKit */,
+				D6A3DABA28E738AA00D5D8C7 /* Charts */,
+				D6A3DABD28E738D400D5D8C7 /* Realm */,
+				D6A3DABF28E738D400D5D8C7 /* RealmSwift */,
+				D6A3DAC228E738EC00D5D8C7 /* FSCalendar */,
 			);
 			productName = MobDevFactoryApp;
 			productReference = D66C74F528CBAA8F00CB7375 /* MobDevFactoryApp.app */;
@@ -436,10 +548,10 @@
 			);
 			mainGroup = 7D74A5F128A1A1EA009C4C70;
 			packageReferences = (
-				7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */,
-				7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				D66C750628CBACD000CB7375 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				D6A3DAB628E7388400D5D8C7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D6A3DAB928E738AA00D5D8C7 /* XCRemoteSwiftPackageReference "Charts" */,
+				D6A3DABC28E738D400D5D8C7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D6A3DAC128E738EC00D5D8C7 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 7D74A5F128A1A1EA009C4C70;
 			projectDirPath = "";
@@ -455,8 +567,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6A3DA9628E7360C00D5D8C7 /* 02-04.html in Resources */,
+				D6A3DA9A28E7360C00D5D8C7 /* 02-03.html in Resources */,
+				D6A3DA9828E7360C00D5D8C7 /* 02-02.html in Resources */,
+				D6A3DA9528E7360C00D5D8C7 /* 01-01.html in Resources */,
 				7D74A60A28A1A1ED009C4C70 /* LaunchScreen.storyboard in Resources */,
 				7D74A60728A1A1ED009C4C70 /* Assets.xcassets in Resources */,
+				D6A3DA9928E7360C00D5D8C7 /* 02-01.html in Resources */,
+				D6A3DA8D28E735E700D5D8C7 /* cources.json in Resources */,
+				D6A3DA9728E7360C00D5D8C7 /* 01-02.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,9 +595,11 @@
 				7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */,
 				FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */,
 				D66C74FB28CBABEB00CB7375 /* CalendarTableViewCell.swift in Sources */,
+				D6A3DAAD28E7379600D5D8C7 /* DetailLessonsViewController.swift in Sources */,
 				7D74A61728A1A2CC009C4C70 /* ExampleModel.swift in Sources */,
 				7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */,
 				FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */,
+				D6A3DAAF28E737B100D5D8C7 /* DetailLessonsView.swift in Sources */,
 				7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */,
 				D66C750B28CBB35B00CB7375 /* SettingsViewModel.swift in Sources */,
 				FAF5FE6328A4491900E0913E /* Metric.swift in Sources */,
@@ -486,7 +607,9 @@
 				7D74A61528A1A2AF009C4C70 /* ExampleViewModel.swift in Sources */,
 				D66C750228CBAC3A00CB7375 /* EventsList.swift in Sources */,
 				7D74A5FE28A1A1EA009C4C70 /* AppDelegate.swift in Sources */,
+				D6A3DAB528E7380000D5D8C7 /* DetailLessonsViewModel.swift in Sources */,
 				06B5169228AD4D8200CE9F7E /* ExtensionDate.swift in Sources */,
+				D6A3DAB128E737D700D5D8C7 /* BlocksViewModel.swift in Sources */,
 				D66C750028CBAC2700CB7375 /* EventModel.swift in Sources */,
 				06B5169E28AD51F800CE9F7E /* CreatePersonViewController.swift in Sources */,
 				FAF5FE6828A44B2100E0913E /* LessonViewController.swift in Sources */,
@@ -495,14 +618,19 @@
 				7D74A61B28A1A2E9009C4C70 /* ModuleBuilder.swift in Sources */,
 				D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */,
 				7D74A60028A1A1EA009C4C70 /* SceneDelegate.swift in Sources */,
+				D6A3DAA728E7373100D5D8C7 /* BlocksView.swift in Sources */,
 				D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */,
 				D66C74F828CBABC600CB7375 /* CalendarViewModel.swift in Sources */,
+				D6A3DAA528E7371100D5D8C7 /* BlocksViewController.swift in Sources */,
 				D62B519428B911DB00BD8421 /* Onboarding.swift in Sources */,
+				D6A3DAAA28E7376100D5D8C7 /* LessonsViewController.swift in Sources */,
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,
 				06B5169C28AD50E900CE9F7E /* CreatePersonView.swift in Sources */,
 				06B5169828AD4E3500CE9F7E /* PersonView.swift in Sources */,
+				D6A3DA9D28E7366B00D5D8C7 /* Blocks.swift in Sources */,
 				7D74A61928A1A2DC009C4C70 /* ExampleView.swift in Sources */,
+				D6A3DAB328E737EB00D5D8C7 /* LessonsViewModel.swift in Sources */,
 				FAF5FE6628A44A3000E0913E /* ModuleBuilderTabBarConrolers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,7 +845,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		D6A3DAB628E7388400D5D8C7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -725,23 +853,23 @@
 				kind = branch;
 			};
 		};
-		7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		D6A3DAB928E738AA00D5D8C7 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts";
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		D6A3DABC28E738D400D5D8C7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
+			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		D66C750628CBACD000CB7375 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+		D6A3DAC128E738EC00D5D8C7 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
 			requirement = {
@@ -752,29 +880,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7D94033328C299F900D2E101 /* SnapKit */ = {
+		D6A3DAB728E7388400D5D8C7 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D94033228C299F900D2E101 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = D6A3DAB628E7388400D5D8C7 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		7D94033628C29A0700D2E101 /* Charts */ = {
+		D6A3DABA28E738AA00D5D8C7 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D94033528C29A0700D2E101 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = D6A3DAB928E738AA00D5D8C7 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
-		7D94033C28C29A8A00D2E101 /* Realm */ = {
+		D6A3DABD28E738D400D5D8C7 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = D6A3DABC28E738D400D5D8C7 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		7D94033E28C29A8A00D2E101 /* RealmSwift */ = {
+		D6A3DABF28E738D400D5D8C7 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7D94033B28C29A8A00D2E101 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = D6A3DABC28E738D400D5D8C7 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		D66C750728CBACD000CB7375 /* FSCalendar */ = {
+		D6A3DAC228E738EC00D5D8C7 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D66C750628CBACD000CB7375 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			package = D6A3DAC128E738EC00D5D8C7 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */

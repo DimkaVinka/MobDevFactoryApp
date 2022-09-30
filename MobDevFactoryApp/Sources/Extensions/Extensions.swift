@@ -21,4 +21,10 @@ extension UIImageView {
     }
 }
 
-
+extension Date {
+     func convertToStringLessons() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: self)
+    }
+}
