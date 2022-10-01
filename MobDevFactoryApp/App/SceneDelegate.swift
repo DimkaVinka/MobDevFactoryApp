@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = OnboardingModuleBuilder.builderOnboarding()
             window?.makeKeyAndVisible()
         } else {
+            
             guard let windowScene = (scene as? UIWindowScene) else { return }
             self.window = UIWindow(windowScene: windowScene)
             window?.rootViewController = ModuleBuilder.builderAuthorizationViewController()

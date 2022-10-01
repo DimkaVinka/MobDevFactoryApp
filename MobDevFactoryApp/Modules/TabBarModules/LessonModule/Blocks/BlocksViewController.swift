@@ -27,17 +27,12 @@ class BlocksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.blocksViewModel.loadBlocks()
         
+        blocksViewModel.loadBlocks()
         observer = blocksViewModel.$blocks.sink { block in
             self.blocks = block
         }
         setupView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
     }
     
     // MARK: - Setup functions
@@ -72,10 +67,9 @@ extension BlocksViewController: UITableViewDataSource {
 // MARK: - Extension: UITableViewDelegate
 extension BlocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destinationBlock = (blocks?[indexPath.row])!
+        tableView.deselectRow(at: indexPath, animated: true)
         let destinationController = LessonsViewController()
-        destinationController.lessonsViewModel.block = destinationBlock
+        destinationController.lessonsViewModel.block = blocks?[indexPath.row]
         navigationController?.pushViewController(destinationController, animated: true)
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

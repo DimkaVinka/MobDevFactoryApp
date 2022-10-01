@@ -11,7 +11,7 @@ import Combine
 class BlocksViewModel {
     
     // MARK: - Properties
-    @Published private(set) var blocks = [Block]()
+    @Published var blocks: [Block]?
    
     
     // MARK: - Functions

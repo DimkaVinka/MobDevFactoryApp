@@ -50,7 +50,6 @@
 		D6A3DAA728E7373100D5D8C7 /* BlocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAA628E7373100D5D8C7 /* BlocksView.swift */; };
 		D6A3DAAA28E7376100D5D8C7 /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAA928E7376100D5D8C7 /* LessonsViewController.swift */; };
 		D6A3DAAD28E7379600D5D8C7 /* DetailLessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAAC28E7379600D5D8C7 /* DetailLessonsViewController.swift */; };
-		D6A3DAAF28E737B100D5D8C7 /* DetailLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAAE28E737B100D5D8C7 /* DetailLessonsView.swift */; };
 		D6A3DAB128E737D700D5D8C7 /* BlocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */; };
 		D6A3DAB328E737EB00D5D8C7 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */; };
 		D6A3DAB528E7380000D5D8C7 /* DetailLessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */; };
@@ -114,7 +113,6 @@
 		D6A3DAA628E7373100D5D8C7 /* BlocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksView.swift; sourceTree = "<group>"; };
 		D6A3DAA928E7376100D5D8C7 /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		D6A3DAAC28E7379600D5D8C7 /* DetailLessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonsViewController.swift; sourceTree = "<group>"; };
-		D6A3DAAE28E737B100D5D8C7 /* DetailLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonsView.swift; sourceTree = "<group>"; };
 		D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksViewModel.swift; sourceTree = "<group>"; };
 		D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
 		D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonsViewModel.swift; sourceTree = "<group>"; };
@@ -369,31 +367,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D6A3DAA128E736D200D5D8C7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D6A3DAA328E736FA00D5D8C7 /* Blocks */,
-				D6A3DAA828E7374600D5D8C7 /* Lessons */,
-				D6A3DAAB28E7378400D5D8C7 /* DetailLessons */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D6A3DAA228E736DA00D5D8C7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */,
-				D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */,
-				D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		D6A3DAA328E736FA00D5D8C7 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
 				D6A3DAA428E7371100D5D8C7 /* BlocksViewController.swift */,
 				D6A3DAA628E7373100D5D8C7 /* BlocksView.swift */,
+				D6A3DAB028E737D700D5D8C7 /* BlocksViewModel.swift */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -402,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				D6A3DAA928E7376100D5D8C7 /* LessonsViewController.swift */,
+				D6A3DAB228E737EB00D5D8C7 /* LessonsViewModel.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -410,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				D6A3DAAC28E7379600D5D8C7 /* DetailLessonsViewController.swift */,
-				D6A3DAAE28E737B100D5D8C7 /* DetailLessonsView.swift */,
+				D6A3DAB428E7380000D5D8C7 /* DetailLessonsViewModel.swift */,
 			);
 			path = DetailLessons;
 			sourceTree = "<group>";
@@ -457,9 +437,10 @@
 		FAF5FE6F28A4516A00E0913E /* LessonModule */ = {
 			isa = PBXGroup;
 			children = (
-				D6A3DAA228E736DA00D5D8C7 /* ViewModel */,
-				D6A3DAA128E736D200D5D8C7 /* View */,
 				D6A3DA9B28E7365600D5D8C7 /* Model */,
+				D6A3DAA328E736FA00D5D8C7 /* Blocks */,
+				D6A3DAA828E7374600D5D8C7 /* Lessons */,
+				D6A3DAAB28E7378400D5D8C7 /* DetailLessons */,
 			);
 			path = LessonModule;
 			sourceTree = "<group>";
@@ -596,7 +577,6 @@
 				7D74A61728A1A2CC009C4C70 /* ExampleModel.swift in Sources */,
 				7D94034128C2A36C00D2E101 /* TabBarController.swift in Sources */,
 				FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */,
-				D6A3DAAF28E737B100D5D8C7 /* DetailLessonsView.swift in Sources */,
 				7DA63A9C28A78F010050E9F3 /* StorageManager.swift in Sources */,
 				D66C750B28CBB35B00CB7375 /* SettingsViewModel.swift in Sources */,
 				FAF5FE6328A4491900E0913E /* Metric.swift in Sources */,

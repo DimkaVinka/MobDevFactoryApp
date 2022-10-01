@@ -22,7 +22,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabBarViewControllers() {
-        let first = BlocksViewController()
+        let first = UINavigationController(rootViewController: BlocksViewController())
         let firstIcon = UITabBarItem(title: "Уроки", image: UIImage(systemName: "house.circle"), selectedImage: UIImage(systemName: "house.circle.fill"))
         first.tabBarItem = firstIcon
         

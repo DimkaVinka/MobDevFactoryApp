@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 
 class LessonsViewModel {
     
     // MARK: - Properties
-    var block: Block?
-    let view = BlocksView()
+   @Published var block: Block?
 }
 
