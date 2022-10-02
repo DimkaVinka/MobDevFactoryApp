@@ -38,7 +38,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let fourtIcon = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
         fourth.tabBarItem = fourtIcon
         
-        let fifth = SettingsViewModel()
+        let fifth = SettingsViewController()
         let fifthIcon = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gear.circle"), selectedImage: UIImage(systemName: "gear.circle.fill"))
         fifth.tabBarItem = fifthIcon
         
