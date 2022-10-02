@@ -6,16 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class BlocksViewModel {
     
     // MARK: - Properties
-    var blocks: [Block]
-    let view = BlocksView()
-    
-    init(blocks: [Block]) {
-        self.blocks = blocks
-    }
+    @Published var blocks: [Block]?
+   
     
     // MARK: - Functions
     func loadBlocks() {

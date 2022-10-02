@@ -6,19 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 
 class LessonsViewModel {
     
     // MARK: - Properties
-    var block: Block
-    let view = BlocksView()
-    
-    let cources: [Cource]
-    
-    init(block: Block) {
-        self.block = block
-        self.cources = block.cource
-    }
+   @Published var block: Block?
 }
 
