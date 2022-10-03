@@ -43,7 +43,7 @@ class SettingsViewModel {
                 .staticCell(model: SettingsOption(title: "Язык",
                                                   icon: UIImage(image: .language),
                                                   iconBackgroungColor: nil) {
-//                                                      SceneDelegate.shared.changeViewController(viewController: LanguageViewController(), animationOptions: .curveEaseOut)
+                                                      //                                                      SceneDelegate.shared.changeViewController(viewController: LanguageViewController(), animationOptions: .curveEaseOut)
                                                   }),
                 .staticCell(model: SettingsOption(title: "Выйти",
                                                   icon: UIImage(image: .quit),
@@ -54,7 +54,3 @@ class SettingsViewModel {
         ]
     }
 }
-
-
-
-

@@ -12,6 +12,8 @@ class SettingTableCell: UITableViewCell {
 
     static let identifire = "SettingTableCell"
 
+    // MARK: - Private properties
+
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -101,4 +103,3 @@ class SettingTableCell: UITableViewCell {
         }
     }
 }
-

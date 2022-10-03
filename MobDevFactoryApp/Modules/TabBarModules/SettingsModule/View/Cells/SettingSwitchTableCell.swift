@@ -12,6 +12,8 @@ class SettingSwitchTableCell: UITableViewCell {
 
     static let switchIdentifire = "SwitchTableViewCell"
 
+    // MARK: - Private properties
+
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -121,4 +123,3 @@ class SettingSwitchTableCell: UITableViewCell {
         }
     }
 }
-

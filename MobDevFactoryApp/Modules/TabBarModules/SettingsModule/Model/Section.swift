@@ -14,7 +14,6 @@ struct Section {
     let options: [SettingsOptionType]
 }
 
-// Создание разного типа ячеек
 enum SettingsOptionType {
     case staticCell(model: SettingsOption)
     case switchCell(model: SettingsSwitchOption)
