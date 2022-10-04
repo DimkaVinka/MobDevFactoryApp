@@ -7,22 +7,29 @@
 
 import UIKit
 import SnapKit
+import Combine
 
-class OnboardingView: UIView {
+class OnboardingViewController: UIViewController {
     
-    var models = [Onboarding]()
+    // MARK: - Properties
+    
+    var onboardingModel = [Onboarding]()
     var viewModel = OnboardingViewModel()
+    private var observer: AnyCancellable?
+    
+    var indexObserver = PassthroughSubject<Int, Never>()
+    
+    //@Published var currentIndex = Int()
     
     private var selectedIndex = 0 {
         didSet {
-            let isListPage = models.count - 1 > selectedIndex
+            let isListPage = onboardingModel.count - 1 > selectedIndex
             buttonView.setTitle(isListPage ? "Далее" : "Начать!", for: .normal)
             buttonView.backgroundColor = isListPage ? Metric.colorBackround : .systemGreen
         }
     }
     
-    // MARK: - Views
-     lazy var stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 16
@@ -32,20 +39,17 @@ class OnboardingView: UIView {
         return view
     }()
     
-     lazy var colectionView: UICollectionView = {
+    lazy var colectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = .zero
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-         view.backgroundColor = .white
+        view.backgroundColor = .white
         view.isPagingEnabled = true
-        
         view.dataSource = self
         view.delegate = self
-        
         view.showsHorizontalScrollIndicator = false
-        
         view.register(OnboardingContentViewCell.self,
                       forCellWithReuseIdentifier: OnboardingContentViewCell.identifier)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -60,48 +64,62 @@ class OnboardingView: UIView {
         return pageControl
     }()
     
-     lazy var buttonView: UIButton = {
-        let button = UIButton(type: .system)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.tintColor = .white
-        button.layer.cornerRadius = 44 / 2
-        button.addTarget(self, action: #selector(buttonTappedAction(_:)), for: .touchUpInside)
-        return button
+    lazy var buttonView: UIButton = {
+        let buttonView = UIButton(type: .system)
+        buttonView.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
+        buttonView.tintColor = .white
+        buttonView.layer.cornerRadius = 44 / 2
+        buttonView.addTarget(self, action: #selector(buttonTappedAction), for: .touchUpInside)
+        return buttonView
     }()
     
-    // MARK: - Initial
-    init() {
-        super.init(frame: .zero)
-        commonInit()
-    }
     
-    private func commonInit() {
-        backgroundColor = Metric.colorBackround
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupHierarchy()
         setupLayout()
+        setupView()
+        
+        configureView()
+        viewModel.createOnboardingModel()
+  
+        observer = viewModel.$onboardingModel.sink(receiveValue: { value in
+                self.onboardingModel = value
+            self.pageControl.numberOfPages = value.count
+            self.pageControl.currentPage = 0
+            self.selectedIndex = 0
+            self.colectionView.reloadData()
+        })
     }
     
     // MARK: - Settings
+    
+    private func setupView() {
+        view.backgroundColor = Metric.colorBackround
+    }
+    
     private func setupHierarchy() {
-        addSubview(colectionView)
-        addSubview(stackView)
+        view.addSubview(colectionView)
+        view.addSubview(stackView)
         stackView.addArrangedSubview(pageControl)
         stackView.addArrangedSubview(buttonView)
     }
     
     private func setupLayout() {
         colectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top)
-            make.left.equalTo(self.snp.left)
-            make.right.equalTo(self.snp.right)
-            make.height.equalTo(self.snp.height)
+            make.top.equalTo(view.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.height.equalTo(view.snp.height)
         }
         
         stackView.snp.makeConstraints { make in
             make.top.equalTo(colectionView.snp.bottom).offset(45)
-            make.left.equalTo(self.snp.left).offset(40)
-            make.right.equalTo(self.snp.right).offset(-40)
-            make.bottom.equalTo(self.snp.bottom).offset(-50)
+            make.left.equalTo(view.snp.left).offset(40)
+            make.right.equalTo(view.snp.right).offset(-40)
+            make.bottom.equalTo(view.snp.bottom).offset(-50)
         }
         buttonView.snp.makeConstraints { make in
             make.height.equalTo(44)
@@ -111,53 +129,11 @@ class OnboardingView: UIView {
         }
     }
     
-    // MARK: - Configuration
-    func configureView(with models: [Onboarding]) {
-        self.models = models
-        pageControl.numberOfPages = models.count
-        pageControl.currentPage = 0
-        selectedIndex = 0
-        colectionView.reloadData()
-    }
+    // MARK: - functions
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: - UICollectionViewDataSource
-extension OnboardingView: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = colectionView.dequeueReusableCell(withReuseIdentifier: OnboardingContentViewCell.identifier, for: indexPath) as? OnboardingContentViewCell else { return UICollectionViewCell() }
-        cell.configureView(with: models[indexPath.row])
-        return cell
-    }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-extension OnboardingView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let newIndexPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-        pageControl.currentPage = newIndexPage
-        selectedIndex = newIndexPage
-    }
-}
-
-// MARL: - Action
-extension OnboardingView {
-    
-    @objc private func buttonTappedAction(_ sender: Any) {
+    @objc func buttonTappedAction() {
         
-        if models.count - 1 > selectedIndex {
+        if onboardingModel.count - 1 > selectedIndex {
             colectionView.scrollToItem(at: IndexPath(item: selectedIndex + 1, section: 0),
                                        at: .centeredHorizontally, animated: true)
             
@@ -166,5 +142,40 @@ extension OnboardingView {
         } else {
             SceneDelegate.shared.changeViewController(viewController: ModuleBuilder.builderAuthorizationViewController(), animationOptions: .transitionCrossDissolve)
         }
+    }
+    
+    // MARK: - Configuration
+    func configureView() {
+//        pageControl.numberOfPages = onboardingModel.count
+//        pageControl.currentPage = 0
+//        selectedIndex = 0
+//        colectionView.reloadData()
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension OnboardingViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return onboardingModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = colectionView.dequeueReusableCell(withReuseIdentifier: OnboardingContentViewCell.identifier, for: indexPath) as? OnboardingContentViewCell else { return UICollectionViewCell() }
+        cell.configureView(with: onboardingModel[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let newIndexPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        pageControl.currentPage = newIndexPage
+        selectedIndex = newIndexPage
     }
 }

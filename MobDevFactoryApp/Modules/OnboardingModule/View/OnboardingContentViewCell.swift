@@ -17,9 +17,7 @@ class OnboardingContentViewCell: UICollectionViewCell {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 16
-        
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
     }()
     
