@@ -28,7 +28,7 @@ final class ModuleBuilderTabBarConrolers {
     }
     
     static func buiderPersonViewController() -> UIViewController {
-        let viewController = PersonViewController()
+        let viewController = ProfileViewController()
         // тут будем model
         return viewController
     }
