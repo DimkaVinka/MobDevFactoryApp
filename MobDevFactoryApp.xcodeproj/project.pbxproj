@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A30B1428EF4CA7007BAF80 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 04A30B1328EF4CA7007BAF80 /* glossary.json */; };
 		060A002C28E9A27100F0CCED /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A002B28E9A27100F0CCED /* Section.swift */; };
 		060A002E28E9A39D00F0CCED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A002D28E9A39D00F0CCED /* SettingsViewController.swift */; };
 		060A003528E9A60E00F0CCED /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A003428E9A60E00F0CCED /* SettingTableCell.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A30B1328EF4CA7007BAF80 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.json; path = "../../../../Важно ‼️/MobDevFactoryApp-develop-3/MobDevFactoryApp/Sources/glossary.json"; sourceTree = "<group>"; };
 		060A002B28E9A27100F0CCED /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		060A002D28E9A39D00F0CCED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		060A003428E9A60E00F0CCED /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 		D6A3DA8B28E735C000D5D8C7 /* JSONLessonsFiles */ = {
 			isa = PBXGroup;
 			children = (
+				04A30B1328EF4CA7007BAF80 /* glossary.json */,
 				D6A3DA8C28E735E700D5D8C7 /* cources.json */,
 			);
 			path = JSONLessonsFiles;
@@ -590,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6A3DA9628E7360C00D5D8C7 /* 02-04.html in Resources */,
+				04A30B1428EF4CA7007BAF80 /* glossary.json in Resources */,
 				D6A3DA9A28E7360C00D5D8C7 /* 02-03.html in Resources */,
 				D6A3DA9828E7360C00D5D8C7 /* 02-02.html in Resources */,
 				D6A3DA9528E7360C00D5D8C7 /* 01-01.html in Resources */,
