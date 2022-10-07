@@ -26,7 +26,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let firstIcon = UITabBarItem(title: "Уроки", image: UIImage(systemName: "house.circle"), selectedImage: UIImage(systemName: "house.circle.fill"))
         first.tabBarItem = firstIcon
         
-        let second = SearchViewController()
+        let second = UINavigationController(rootViewController: SearchViewController())
         let secondItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass.circle"), selectedImage: UIImage(systemName: "magnifyingglass.circle.fill"))
         second.tabBarItem = secondItem
         
