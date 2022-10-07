@@ -12,7 +12,7 @@ class BlocksView: UIView {
     
     // MARK: - Properties
     var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.rowHeight = 50
         tableView.layer.cornerRadius = 10
         tableView.translatesAutoresizingMaskIntoConstraints = false
