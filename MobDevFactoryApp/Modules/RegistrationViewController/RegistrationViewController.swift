@@ -11,6 +11,9 @@ import RealmSwift
 
 class RegistrationViewController: UIViewController {
     
+    private var alert = Alert()
+    private var alertTab = AlertTabBar()
+    
     var storageManager = StorageManager()
     
     private var signInButton: UIButton = {
@@ -41,8 +44,8 @@ class RegistrationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = Metric.cornelRadiusView
         textField.clearButtonMode = .always
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Nick Name"
-        textField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         return textField
     }()
     
@@ -53,8 +56,8 @@ class RegistrationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = Metric.cornelRadiusView
         textField.clearButtonMode = .always
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "First Name"
-        textField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         return textField
     }()
     
@@ -65,8 +68,8 @@ class RegistrationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = Metric.cornelRadiusView
         textField.clearButtonMode = .always
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Second Name"
-        textField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         return textField
     }()
     
@@ -77,8 +80,8 @@ class RegistrationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = Metric.cornelRadiusView
         textField.clearButtonMode = .always
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Password"
-        textField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         return textField
     }()
     
@@ -117,14 +120,14 @@ class RegistrationViewController: UIViewController {
     private func setupView(){
         signInButton.snp.makeConstraints { make in
             make.left.equalTo(view)
-            make.top.equalTo(view).offset(200)
+            make.top.equalTo(view).offset(100)
             make.width.equalTo(150)
             make.height.equalTo(Metric.heightView)
         }
         
         label.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.centerY.equalTo(view).offset(-70)
+            make.centerY.equalTo(signInButton).offset(70)
             make.width.equalTo(250)
         }
         
@@ -169,13 +172,27 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func registerButtonPressed() {
-        let user = User()
-        user.nickName = nickNameTextField.text ?? "empty"
-        user.name = firstNameTextField.text ?? "empty"
-        user.surName = secondNameTextField.text ?? "empty"
-        user.password = passwordTextField.text ?? "empty"
         
-        storageManager.addUser(user)
+        let user = User()
+
+        if  nickNameTextField.text == "" ||
+            secondNameTextField.text == "" ||
+            firstNameTextField.text == "" ||
+            passwordTextField.text == ""
+        {
+            alert.showAlert(title: "Заполните все поля", viewComtroller: self)
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                user.nickName = self.nickNameTextField.text ?? "empty"
+                user.name = self.firstNameTextField.text ?? "empty"
+                user.surName = self.secondNameTextField.text ?? "empty"
+                user.password = self.passwordTextField.text ?? "empty"
+                self.storageManager.addUser(user)
+                SceneDelegate.shared.changeViewController(viewController: ModuleBuilder.builderTabBarController(),
+                                                          animationOptions: .transitionCrossDissolve)
+            }
+            alertTab.showAlertTabBar(title: "Поздравляю!!! Вы зарегистрировались", viewComtroller: self)
+        }
     }
 }
 

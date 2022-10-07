@@ -1,14 +1,14 @@
 //
-//  Alert.swift
+//  AlertTabBar.swift
 //  MobDevFactoryApp
 //
-//  Created by Daniil Litvinov on 19.08.2022.
+//  Created by Daniil Litvinov on 15.09.2022.
 //
 
 import UIKit
 import SnapKit
 
-class Alert: UIView {
+class AlertTabBar: UIView {
     
     private lazy var backroundView: UIView = {
         let view = UIView()
@@ -35,19 +35,9 @@ class Alert: UIView {
         return label
     }()
     
-    private lazy var button: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .white
-        button.setTitle("OK", for: .normal)
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(dissmisActions), for: .touchUpInside)
-        return button
-    }()
-    
     private var myTargetView: UIView?
     
-    func showAlert(title: String, viewComtroller: UIViewController) {
+    func showAlertTabBar(title: String, viewComtroller: UIViewController) {
         guard let targetView = viewComtroller.view else { return }
         
         myTargetView = targetView
@@ -56,7 +46,6 @@ class Alert: UIView {
         // ALERT
         targetView.addSubview(alertView)
         alertView.addSubview(label)
-        alertView.addSubview(button)
         
         alertView.snp.makeConstraints { make in
             make.centerX.equalTo(targetView)
@@ -71,12 +60,6 @@ class Alert: UIView {
             make.height.equalTo(90)
         }
         label.text = title
-        // BUTTON
-        button.snp.makeConstraints { make in
-            make.top.equalTo(alertView).offset(90)
-            make.bottom.equalTo(alertView)
-            make.width.equalTo(Metric.widthTextFild)
-        }
         
         UIView.animate(withDuration: 0.3, animations: { [self] in
             self.backroundView.alpha = 0.8
@@ -85,19 +68,9 @@ class Alert: UIView {
             if done {
                 UIView.animate(withDuration: 0.1) {
                     self.alertView.center = targetView.center
-                }
-            }
-        }
-    }
-    //MARK: Actions Alert
-    @objc private func dissmisActions() {
-        
-        UIView.animate(withDuration: 0.3) {
-            self.backroundView.alpha = 0
-        } completion: { done in
-            if done {
-                DispatchQueue.main.async {
-                    self.alertView.removeFromSuperview()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.alertView.removeFromSuperview()
+                    }
                 }
             }
         }

@@ -44,6 +44,7 @@
 		D66C750B28CBB35B00CB7375 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */; };
 		D67FE11128B9019800F0D7B6 /* OnboardingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */; };
 		FA1F095B28AFA5050068FBCA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F095A28AFA5050068FBCA /* Alert.swift */; };
+		FA4DC53E28D396DB004F7568 /* AlertTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4DC53D28D396DB004F7568 /* AlertTabBar.swift */; };
 		FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */; };
 		FAF5FE6028A446AB00E0913E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */; };
 		FAF5FE6328A4491900E0913E /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5FE6228A4491900E0913E /* Metric.swift */; };
@@ -88,6 +89,7 @@
 		D66C750A28CBB35B00CB7375 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D67FE11028B9019800F0D7B6 /* OnboardingModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleBuilder.swift; sourceTree = "<group>"; };
 		FA1F095A28AFA5050068FBCA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		FA4DC53D28D396DB004F7568 /* AlertTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTabBar.swift; sourceTree = "<group>"; };
 		FAF5FE5D28A3948100E0913E /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FAF5FE6228A4491900E0913E /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF5FE5F28A446AB00E0913E /* RegistrationViewController.swift */,
+				FA4DC53D28D396DB004F7568 /* AlertTabBar.swift */,
 			);
 			path = RegistrationViewController;
 			sourceTree = "<group>";
@@ -337,12 +340,12 @@
 		FAF5FE6428A449B300E0913E /* TabBarModules */ = {
 			isa = PBXGroup;
 			children = (
+				7D94034028C2A36C00D2E101 /* TabBarController.swift */,
 				D66C750928CBB2E600CB7375 /* SettingsModule */,
 				FAF5FE7228A451CD00E0913E /* PersonModule */,
 				FAF5FE7128A4518D00E0913E /* CalendarModule */,
 				FAF5FE7028A4517D00E0913E /* SearchModule */,
 				FAF5FE6F28A4516A00E0913E /* LessonModule */,
-				7D94034028C2A36C00D2E101 /* TabBarController.swift */,
 			);
 			path = TabBarModules;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				7D74A60028A1A1EA009C4C70 /* SceneDelegate.swift in Sources */,
 				D62B519928B9125200BD8421 /* OnboardingContentViewCell.swift in Sources */,
 				D66C74F828CBABC600CB7375 /* CalendarViewModel.swift in Sources */,
+				FA4DC53E28D396DB004F7568 /* AlertTabBar.swift in Sources */,
 				D62B519428B911DB00BD8421 /* Onboarding.swift in Sources */,
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,

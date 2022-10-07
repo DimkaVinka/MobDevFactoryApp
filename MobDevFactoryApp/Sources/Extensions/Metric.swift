@@ -13,6 +13,7 @@ enum Metric {
     static let widthTextFild: CGFloat = 270
     static let heightView: CGFloat = 40
     static let cornelRadiusView: CGFloat = 14
+    static let sizeLogoImage: CGFloat = 300
 }
 
 
