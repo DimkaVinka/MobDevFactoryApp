@@ -13,6 +13,8 @@ enum Metric {
     static let widthTextFild: CGFloat = 270
     static let heightView: CGFloat = 40
     static let cornelRadiusView: CGFloat = 14
+    static let blueCustom = UIColor(red: 24 / 255, green: 157 / 255, blue: 244 / 255, alpha: 1)
+    static let violetCustom = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
 }
 
 

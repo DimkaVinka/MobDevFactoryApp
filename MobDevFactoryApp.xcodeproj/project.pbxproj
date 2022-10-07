@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0455886728F01054000B83F0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455886628F01054000B83F0 /* SearchView.swift */; };
+		0455886B28F01098000B83F0 /* GlossaryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455886A28F01098000B83F0 /* GlossaryDataModel.swift */; };
+		0455886D28F010D4000B83F0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455886C28F010D4000B83F0 /* SearchViewModel.swift */; };
 		04A30B1428EF4CA7007BAF80 /* glossary.json in Resources */ = {isa = PBXBuildFile; fileRef = 04A30B1328EF4CA7007BAF80 /* glossary.json */; };
 		060A002C28E9A27100F0CCED /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A002B28E9A27100F0CCED /* Section.swift */; };
 		060A002E28E9A39D00F0CCED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A002D28E9A39D00F0CCED /* SettingsViewController.swift */; };
@@ -73,7 +76,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04A30B1328EF4CA7007BAF80 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = glossary.json; path = "../../../../Важно ‼️/MobDevFactoryApp-develop-3/MobDevFactoryApp/Sources/glossary.json"; sourceTree = "<group>"; };
+		0455886628F01054000B83F0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0455886A28F01098000B83F0 /* GlossaryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryDataModel.swift; sourceTree = "<group>"; };
+		0455886C28F010D4000B83F0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = MobDevFactoryApp/Modules/TabBarModules/SearchModule/ViewModel/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
+		04A30B1328EF4CA7007BAF80 /* glossary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = glossary.json; sourceTree = "<group>"; };
 		060A002B28E9A27100F0CCED /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		060A002D28E9A39D00F0CCED /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		060A003428E9A60E00F0CCED /* SettingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
@@ -151,6 +157,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0455885A28F00DFF000B83F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0455886A28F01098000B83F0 /* GlossaryDataModel.swift */,
+			);
+			name = Model;
+			path = "../../../../../Важно ‼️/MobDevFactoryApp-develop-3/MobDevFactoryApp/Modules/TabBarModules/SearchModule/Model";
+			sourceTree = "<group>";
+		};
+		0455886028F00E0C000B83F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5FE6928A44BC400E0913E /* SearchViewController.swift */,
+				0455886628F01054000B83F0 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0455886E28F01218000B83F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0455886C28F010D4000B83F0 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		060A003328E9A5EB00F0CCED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,7 +527,9 @@
 		FAF5FE7028A4517D00E0913E /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
-				FAF5FE6928A44BC400E0913E /* SearchViewController.swift */,
+				0455885A28F00DFF000B83F0 /* Model */,
+				0455886028F00E0C000B83F0 /* View */,
+				0455886E28F01218000B83F0 /* ViewModel */,
 			);
 			path = SearchModule;
 			sourceTree = "<group>";
@@ -612,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0455886D28F010D4000B83F0 /* SearchViewModel.swift in Sources */,
 				FAF5FE5E28A3948100E0913E /* AuthorizationViewController.swift in Sources */,
 				FAF5FE6E28A44D3400E0913E /* PersonViewController.swift in Sources */,
 				7D74A62428A1AEB4009C4C70 /* Extensions.swift in Sources */,
@@ -621,6 +656,7 @@
 				7D68E32928A24C5E00A62BC6 /* ExampleTwoModel.swift in Sources */,
 				FAF5FE6A28A44BC400E0913E /* SearchViewController.swift in Sources */,
 				D66C74FB28CBABEB00CB7375 /* CalendarTableViewCell.swift in Sources */,
+				0455886728F01054000B83F0 /* SearchView.swift in Sources */,
 				D6A3DAAD28E7379600D5D8C7 /* DetailLessonsViewController.swift in Sources */,
 				060A002C28E9A27100F0CCED /* Section.swift in Sources */,
 				7D74A61728A1A2CC009C4C70 /* ExampleModel.swift in Sources */,
@@ -650,6 +686,7 @@
 				D66C74F828CBABC600CB7375 /* CalendarViewModel.swift in Sources */,
 				D6A3DAA528E7371100D5D8C7 /* BlocksViewController.swift in Sources */,
 				D62B519428B911DB00BD8421 /* Onboarding.swift in Sources */,
+				0455886B28F01098000B83F0 /* GlossaryDataModel.swift in Sources */,
 				D6A3DAAA28E7376100D5D8C7 /* LessonsViewController.swift in Sources */,
 				7D68E32528A24C4400A62BC6 /* ExampleTwoView.swift in Sources */,
 				7D68E32728A24C5300A62BC6 /* ExampleTwoViewModel.swift in Sources */,
