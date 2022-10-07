@@ -12,28 +12,35 @@ class SectionHeader: UICollectionReusableView {
     
     static let identifier = "SectionHeader"
     
-    var imageIcon = UIImageView()
+    var imageIcon: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.backgroundColor = .red
+        image.tintColor = .white
+        image.image = UIImage(systemName: "play.rectangle.fill")
+        return image
+    }()
     
     var lableTitle: UILabel = {
         let lable = UILabel()
         lable.font = UIFont.preferredFont(forTextStyle: .title3)
         lable.adjustsFontForContentSizeCategory = true
-        lable.textColor = .systemBlue
+        lable.textColor = .white
         return lable
     }()
     
     var forwardImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "chevron.right")
-        image.tintColor = .placeholderText
+        image.image = UIImage(systemName: "chevron.down")
+        image.tintColor = .white
         return image
     }()
     
     var lableNumber: UILabel = {
         let lable = UILabel()
-        lable.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        lable.font = UIFont.preferredFont(forTextStyle: .title3)
         lable.adjustsFontForContentSizeCategory = true
-        lable.textColor = .placeholderText
+        lable.textColor = .white
         return lable
     }()
     
@@ -45,12 +52,6 @@ class SectionHeader: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    func setupCell(data: Team) {
-//        imageIcon.image = data.image
-//        lableTitle.text = data.lableTitle
-//        lableNumber.text = data.lableNumber
-//    }
     
     func setupView(){
         addSubview(imageIcon)

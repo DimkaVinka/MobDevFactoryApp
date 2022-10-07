@@ -12,10 +12,14 @@ struct Teams: Codable {
 }
 
 struct Team: Codable {
-    let courators: Courators
+    let courators: [Courator]
     let teamScore: Int
     let teamName: String
     let team: [Student]
+}
+
+struct Students: Codable {
+    let students: [Student]
 }
 
 struct Student: Codable {
@@ -26,7 +30,6 @@ struct Student: Codable {
 
 struct Courators: Codable {
     let courators: [Courator]
-
 }
 
 struct Courator: Codable {
