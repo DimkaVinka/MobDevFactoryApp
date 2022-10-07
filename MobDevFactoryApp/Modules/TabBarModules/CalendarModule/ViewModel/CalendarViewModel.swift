@@ -100,13 +100,13 @@ extension CalendarViewModel:   FSCalendarDataSource {
             if Calendar.current.isDate(event.date, inSameDayAs: date) {
                 switch event.colorGroup {
                 case .groupCall:
-                    returnValue = UIImage(systemName: "phone.badge.plus")!
+                    returnValue = UIImage(systemName: "circle.dotted")!
                 case .newConspect:
-                    returnValue = UIImage(systemName: "book")!
+                    returnValue = UIImage(systemName: "circle.dotted")!
                 case .homeworkOpen:
-                    returnValue = UIImage(systemName: "folder.badge.plus")!
+                    returnValue = UIImage(systemName: "circle.dotted")!
                 case .homeworkDeadline:
-                    returnValue = UIImage(systemName: "clock.badge.exclamationmark")!
+                    returnValue = UIImage(systemName: "circle.dotted")!
                 }
             }
         }
