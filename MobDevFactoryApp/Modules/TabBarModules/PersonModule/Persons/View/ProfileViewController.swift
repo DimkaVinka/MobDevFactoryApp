@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import RealmSwift
 import Charts
 
 class ProfileViewController: UIViewController {
@@ -15,12 +16,28 @@ class ProfileViewController: UIViewController {
     // MARK: - Properties
 
     var viewModel = ProfileViewModel()
-    var persons: [Persons]?
+    let realm = try! Realm()
+    var persons: [PersonModel]?
     var pieChart = PieChartView()
 
     // MARK: - Private properties
 
     private var observer: AnyCancellable?
+
+    private lazy var editProfileButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "edit"), for: .normal)
+        button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
+        return button
+    }()
+
+    // MARK: - Actions
+
+    @objc func tapButtonSettingsController() {
+        let vc = ModuleBuilder.builderCreateNewUser()
+//        let navController = UINavigationController(rootViewController: DetailProfileViewController())
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
 
     // MARK: - Lifecycle
 
@@ -40,6 +57,10 @@ class ProfileViewController: UIViewController {
         observer = viewModel.$persons.sink { value in
             self.persons = value
         }
+
+        saveStudents()
+        createStudents()
+        setupHierarchy()
     }
 
     override func viewDidLayoutSubviews() {
@@ -52,6 +73,38 @@ class ProfileViewController: UIViewController {
         personView?.addSubview(pieChart)
 
         createChart()
+    }
+
+    func saveStudents() {
+        let student = PersonModel()
+        student.profileImage = UIImage(named: "noImage")!
+        student.firstName = "Fedor Donskov"
+        student.groupLabel = "Group 6"
+        student.cityLabel = "Россия, Москва"
+        student.emailLabel = "fedya_donskov@mail.ru"
+
+        realm.beginWrite()
+
+        realm.add(student)
+
+        try! realm.commitWrite()
+    }
+
+    func createStudents() {
+        let people = realm.objects(PersonModel.self)
+        for person in people {
+            let profileImage = person.profileImage
+            let firstName = person.firstName
+            let groupLabel = person.groupLabel
+            let cityLabel = person.cityLabel
+            let emailLabel = person.emailLabel
+
+            personView?.profilePhotoImage.image = profileImage
+            personView?.nameStudentsLabel.text = firstName
+            personView?.numberGroupLabel.text = groupLabel
+            personView?.cityLabel.text = cityLabel
+            personView?.emailLabel.text = emailLabel
+        }
     }
 
     private func createChart() {
@@ -70,6 +123,20 @@ class ProfileViewController: UIViewController {
 
         pieChart.data = data
     }
+
+    private func setupHierarchy() {
+        view.addSubview(editProfileButton)
+
+        createLayout()
+    }
+
+    private func createLayout() {
+        editProfileButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
+//            make.leading.equalTo(view.snp.leading).offset(30)
+            make.trailing.equalTo(view.snp.trailing).offset(-30)
+        }
+    }
 }
 
 // MARK: - ChartViewDelegate
@@ -77,14 +144,3 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: ChartViewDelegate {
 
 }
-
-//// MARK: - ProfileViewControllerDelegate
-//
-//extension ProfileViewController: ProfileViewControllerDelegate {
-//    func customViewDidTapButton() {
-//
-//        let viewController = ModuleBuilder.builderCreateNewUser()
-//        self.present(viewController, animated: true)
-//
-//    }
-//}

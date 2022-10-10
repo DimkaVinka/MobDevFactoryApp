@@ -10,5 +10,5 @@ import Combine
 
 class ProfileViewModel {
 
-    @Published var persons = [Persons]()
+    @Published var persons = [PersonModel]()
 }

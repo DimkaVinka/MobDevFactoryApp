@@ -10,16 +10,9 @@ import SnapKit
 
 class DetailProfileViewController: UIViewController {
 
-    let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.alwaysBounceVertical = false
-        scrollView.backgroundColor = UIColor.clear
-        scrollView.bounces = false
-        scrollView.showsVerticalScrollIndicator = false
-        return scrollView
-    }()
+    // MARK: - Properties
 
-    private var activeTextField: UITextField?
+    var activeTextField: UITextField?
     let imagePicker = UIImagePickerController()
 
     // MARK: - Lifecycle
@@ -42,82 +35,77 @@ class DetailProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.detailProfileView?.firstNameTextField.delegate = self
-        self.detailProfileView?.editStatusTextField.delegate = self
         self.detailProfileView?.editCityTextField.delegate = self
         self.detailProfileView?.editMailTextField.delegate = self
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(notification:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(keyboardWillShow(notification:)),
+//                                               name: UIResponder.keyboardWillShowNotification,
+//                                               object: nil)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(keyboardWillHide(notification:)),
+//                                               name: UIResponder.keyboardWillHideNotification,
+//                                               object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        NotificationCenter.default.removeObserver(self,
-                                                  name: UIResponder.keyboardWillShowNotification,
-                                                  object: nil)
-        NotificationCenter.default.removeObserver(self,
-                                                  name: UIResponder.keyboardWillHideNotification,
-                                                  object: nil)
+//        NotificationCenter.default.removeObserver(self,
+//                                                  name: UIResponder.keyboardWillShowNotification,
+//                                                  object: nil)
+//        NotificationCenter.default.removeObserver(self,
+//                                                  name: UIResponder.keyboardWillHideNotification,
+//                                                  object: nil)
     }
 
-    // MARK: - Peivate methods
+    // MARK: - Private methods
 
     private func setupHierarchy() {
-//        self.view.addSubview(scrollView)
-//        scrollView.addSubview(detailProfileView)
 
         settingsActiveTextField()
-        hideKeyboardsTap()
-        createLayout()
+//        hideKeyboardsTap()
 
         imagePicker.delegate = self
         createTapGesture()
-        
     }
 
     private func settingsActiveTextField() {
         self.activeTextField = UITextField()
     }
 
-    private func hideKeyboardsTap() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
-    }
+//    private func hideKeyboardsTap() {
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        self.view.addGestureRecognizer(tap)
+//    }
+//
+//    @objc func dismissKeyboard() {
+//        self.view.endEditing(true)
+//    }
+//
+//    @objc func keyboardWillShow(notification: Notification) {
+//        print("Клавиатура отображена")
+//        guard let keyBoardInfo = notification.userInfo else { return }
+//        if let keyboardSize = (keyBoardInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
+//            let keyboardHeight = keyboardSize.height + 10
+//            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+////            self.scrollView.contentInset = contentInsets
+//            var viewRect = self.view.frame
+//            viewRect.size.height -= keyboardHeight
+//
+//            guard let activeField = self.activeTextField else { return }
+//            if (!viewRect.contains(activeField.frame.origin)) {
+//                let scrollPoint = CGPoint(x: 0, y: activeField.frame.origin.y - keyboardHeight)
+////                self.scrollView.setContentOffset(scrollPoint, animated: true)
+//            }
+//        }
+//    }
 
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-
-    @objc func keyboardWillShow(notification: Notification) {
-        print("Клавиатура отображена")
-        guard let keyBoardInfo = notification.userInfo else { return }
-        if let keyboardSize = (keyBoardInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
-            let keyboardHeight = keyboardSize.height + 10
-            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
-            self.scrollView.contentInset = contentInsets
-            var viewRect = self.view.frame
-            viewRect.size.height -= keyboardHeight
-
-            guard let activeField = self.activeTextField else { return }
-            if (!viewRect.contains(activeField.frame.origin)) {
-                let scrollPoint = CGPoint(x: 0, y: activeField.frame.origin.y - keyboardHeight)
-                self.scrollView.setContentOffset(scrollPoint, animated: true)
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: Notification) {
-        print("Клавиатура скрыта")
-        let contentInsets = UIEdgeInsets.zero
-        self.scrollView.contentInset = contentInsets
-    }
+//    @objc func keyboardWillHide(notification: Notification) {
+//        print("Клавиатура скрыта")
+//        let contentInsets = UIEdgeInsets.zero
+////        self.scrollView.contentInset = contentInsets
+//    }
 
     private func createTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnImage(_ :)))
@@ -146,33 +134,6 @@ class DetailProfileViewController: UIViewController {
             alert.addAction(actionCancel)
 
             present(alert, animated: true, completion: nil)
-    }
-
-    // MARK: - Constraints
-
-    private func createLayout() {
-//        scrollView.snp.makeConstraints { make in
-//            make.top.equalTo(self.view.snp.top)
-//            make.leading.equalTo(self.view.snp.leading)
-//            make.trailing.equalTo(self.view.snp.trailing)
-//            make.bottom.equalTo(self.view.snp.bottom)
-//        }
-
-        detailProfileView?.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.bottom.equalTo(view.snp.bottom)
-
-            make.height.equalTo(view.snp.height)
-            make.width.equalTo(view.snp.width)
-        }
-    }
-
-    func dissmiss() {
-        self.dismiss(animated: true) {
-            print("dismissed")
-        }
     }
 }
 

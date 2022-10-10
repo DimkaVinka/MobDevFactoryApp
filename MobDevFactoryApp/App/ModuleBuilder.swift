@@ -38,12 +38,9 @@ final class ModuleBuilder {
     }
     
     static func builderCreateNewUser() -> UIViewController {
-        let viewController = DetailProfileViewController()
+//        let navigationViewController = UINavigationController(rootViewController: DetailProfileViewController())
 
-//        view.delegate = viewController
-//        func dismissVC() {
-//            viewController.dismiss(animated: true)
-//        }
+        let viewController = DetailProfileViewController()
         return viewController
     }
 }

@@ -14,7 +14,6 @@ struct DetailPersons {
 struct DetailPerson {
     let name: String
     let photo: UIImage?
-    let status: String?
     let groupNumber: String
     let eMail: String
 }

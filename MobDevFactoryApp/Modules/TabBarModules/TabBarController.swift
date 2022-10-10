@@ -18,7 +18,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     func setupTabBarController() {
         tabBar.tintColor = .black
         tabBar.backgroundColor = .white
-        view.backgroundColor = .systemGreen
+//        view.backgroundColor = .systemGreen
     }
     
     func setupTabBarViewControllers() {
@@ -34,7 +34,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let thirdIcon = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar.circle"), selectedImage: UIImage(systemName: "calendar.circle.fill"))
         third.tabBarItem = thirdIcon
         
-        let fourth = ProfileViewController()
+        let fourth = UINavigationController(rootViewController: ProfileViewController())
         let fourtIcon = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
         fourth.tabBarItem = fourtIcon
         
