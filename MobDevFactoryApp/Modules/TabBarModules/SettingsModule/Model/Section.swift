@@ -35,18 +35,3 @@ struct SettingsSwitchOption {
     let handler: (() -> Void)
     var isOn: Bool
 }
-
-extension UIImage {
-    convenience init?(image: Icon) {
-        self.init(named: image.rawValue)
-    }
-
-    enum Icon: String {
-        case account = "account"
-        case notification = "notification"
-        case privacySecurity = "lock"
-        case darkMode = "moon"
-        case language = "language"
-        case quit = "quit"
-    }
-}
