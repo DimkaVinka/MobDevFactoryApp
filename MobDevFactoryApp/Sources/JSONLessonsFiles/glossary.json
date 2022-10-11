@@ -1,0 +1,187 @@
+[{
+    "title":"Access Control",
+    "description":"Контроль доступа"
+}, {
+    "title":"Associated Types",
+    "description":"Связанные типы"
+}, {
+    "title":"Associated values",
+    "description":"Связанные значения"
+}, {
+    "title":"Associativity",
+    "description":"Ассоциативность"
+}, {
+  "title":"Automatic Reference Counting",
+  "description":"Автоматический подсчет ссылок"
+}, {
+    "title":"Bridging Header",
+    "description":"Связующий заголовок"
+}, {
+    "title":"Capture values",
+    "description":"Захват переменных"
+}, {
+    "title":"Capture List",
+    "description":"Список захвата"
+}, {
+    "title":"Closures",
+    "description":"Замыкания"
+}, {
+    "title":"Compound Assignment Operators",
+    "description":"Составные опреаторы присваивания"
+}, {
+    "title":"Computed Properties",
+    "description":"Вычисляемые свойства"
+}, {
+    "title":"Convenience initializer",
+    "description":"Вспомогательный инициализатор"
+}, {
+    "title":"Custom Operators",
+    "description":"Пользовательские операторы"
+}, {
+    "title":"Customizing Initialization",
+    "description":"кастомизированная инициализация"
+}, {
+    "title":"Declarations",
+    "description":"Объявления"
+}, {
+    "title":"Default Initializers",
+    "description":"Инициализаторы по умолчанию"
+}, {
+    "title":"Delegation",
+    "description":"Делегирование"
+}, {
+    "title":"Designited initializer",
+    "description":"Основной инициализатор"
+}, {
+    "title":"Dynamic dispatch",
+    "description":"Динамическая диспетчеризация"
+}, {
+    "title":"Entries",
+    "description":"Записи"
+}, {
+    "title":"Enumerations",
+    "description":"Перечисления"
+}, {
+    "title":"Error Handling",
+    "description":"Обработка ошибок"
+}, {
+    "title":"Equivalence Operators",
+    "description":"Операторы равенства"
+}, {
+    "title":"Extensions",
+    "description":"Расширения"
+}, {
+    "title":"External Parameter Names",
+    "description":"Внешние имена параметров"
+}, {
+    "title":"Failable Initializers",
+    "description":"Проваливающиеся инициализаторы"
+}, {
+    "title":"Generics",
+    "description":"Универсальные шаблоны (дженерики)"
+}, {
+    "title":"Generic Collection",
+    "description":"типизированная коллекция"
+}, {
+    "title":"Implicitly Unwrapped Optionals",
+    "description":"Неявно распакованные опционалы"
+}, {
+    "title":"Initialization",
+    "description":"Инициализация"
+}, {
+    "title":"Initializer Delegation",
+    "description":"Делегация инициализаторов"
+}, {
+    "title":"Inheritance",
+    "description":"Наследование"
+}, {
+    "title":"Lazy Stored Properties",
+    "description":"ленивые свойства (лениво хранимые свойства – мне как то не по душе)"
+}, {
+    "title":"Memberwise Initializers",
+    "description":"Почленный инициализатор"
+}, {
+    "title":"Nested functions",
+    "description":"Вложенные функции"
+}, {
+    "title":"Nested Types",
+    "description":"Вложенные типы"
+}, {
+    "title":"Nil Coalescing Operator",
+    "description":"Оператор объединения со значением nil"
+}, {
+    "title":"Operator Functions",
+    "description":"Операторные функции"
+}, {
+    "title":"Optionals",
+    "description":"Опциональные типы или опционалы"
+}, {
+    "title":"Optional Binding",
+    "description":"Привязка опционалов"
+}, {
+    "title":"Optional Chaining",
+    "description":"Опциональная последовательность"
+}, {
+    "title":"Optional Tuple",
+    "description":"Опциональный кортеж"
+}, {
+    "title":"Precedence",
+    "description":"Приоритет"
+}, {
+    "title":"Properties",
+    "description":"Cвойства"
+}, {
+    "title":"Property Observer",
+    "description":"Наблюдатель за свойством"
+}, {
+    "title":"Protocols",
+    "description":"Протоколы"
+}, {
+    "title":"Reference type",
+    "description":"Cсылочный тип"
+}, {
+    "title":"Required Initializers",
+    "description":"Требуемые инициализаторы"
+}, {
+    "title":"Stored Properties",
+    "description":"Хранимые свойства"
+}, {
+    "title":"String interpolation",
+    "description":"Интерполяция строк"
+}, {
+    "title":"Strong Reference",
+    "description":"Сильная связь (ссылка)"
+}, {
+    "title":"Subscripts",
+    "description":"Индексы"
+}, {
+    "title":"Switch",
+    "description":"Переключатель"
+}, {
+    "title":"Tuple",
+    "description":"Кортеж"
+}, {
+    "title":"Type Casting",
+    "description":"Приведение типа"
+}, {
+    "title":"Type Properties",
+    "description":"Свойства типа (известные в C как статические свойства)"
+}, {
+    "title":"Type Methods",
+    "description":"Методы типа (известные в C как статические методы)"
+}, {
+    "title":"Unowned reference",
+    "description":"Ссылка без обладания"
+}, {
+    "title":"Value type",
+    "description":"Значимый тип"
+}, {
+    "title":"Variable parameter",
+    "description":"Изменяемый параметр"
+}, {
+    "title":"Variadic parameters",
+    "description":"Параметры с переменным числом возможных значений"
+}, {
+    "title":"Week reference",
+    "description":"Слабая ссылка"
+}]

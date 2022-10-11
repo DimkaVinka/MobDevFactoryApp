@@ -46,7 +46,7 @@ class CalendarView: UIView {
         calendar.appearance.headerTitleColor = .brown
         calendar.appearance.headerTitleAlignment = .center
         calendar.collectionView.tintColor = .orange
-        calendar.appearance.imageOffset = CGPoint(x: 0, y: 5)
+        calendar.appearance.imageOffset = CGPoint(x: 0, y: -10)
         calendar.locale = Locale(identifier: "ru_RU")
         calendar.allowsMultipleSelection = false
         calendar.firstWeekday = 2

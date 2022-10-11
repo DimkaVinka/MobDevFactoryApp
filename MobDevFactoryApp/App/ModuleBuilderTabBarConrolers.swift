@@ -11,25 +11,26 @@ final class ModuleBuilderTabBarConrolers {
     /// таб бары
     static func buiderLessonViewController() -> UIViewController {
         let viewController = BlocksViewController()
-        // тут будем model
-        return viewController
-    }
-    
-    static func buiderCalendarViewController() -> UIViewController {
-        let viewController = CalendarViewModel()
-        // тут будем model
         return viewController
     }
     
     static func buiderSearchViewController() -> UIViewController {
         let viewController = SearchViewController()
-        // тут будем model
         return viewController
     }
     
-    static func buiderPersonViewController() -> UIViewController {
-        let viewController = ProfileViewController()
-        // тут будем model
+    static func buiderCalendarViewController() -> UIViewController {
+        let viewController = CalendarViewModel()
+        return viewController
+    }
+    
+    static func buiderRatingViewController() -> UIViewController {
+        let viewController = RatingViewController()
+        return viewController
+    }
+    
+    static func buiderSettingsViewController() -> UIViewController {
+        let viewController = SettingsViewController()
         return viewController
     }
     

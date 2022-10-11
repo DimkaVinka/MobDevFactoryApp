@@ -23,19 +23,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func setupTabBarViewControllers() {
         let first = UINavigationController(rootViewController: BlocksViewController())
-        let firstIcon = UITabBarItem(title: "Уроки", image: UIImage(systemName: "house.circle"), selectedImage: UIImage(systemName: "house.circle.fill"))
+        let firstIcon = UITabBarItem(title: "Уроки", image: UIImage(systemName: "book.circle"), selectedImage: UIImage(systemName: "book.circle.fill"))
         first.tabBarItem = firstIcon
         
         let second = SearchViewController()
-        let secondItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass.circle"), selectedImage: UIImage(systemName: "magnifyingglass.circle.fill"))
+        let secondItem = UITabBarItem(title: "Словарь", image: UIImage(systemName: "book.closed.circle"), selectedImage: UIImage(systemName: "book.closed.circle.fill"))
         second.tabBarItem = secondItem
         
         let third = CalendarViewModel()
         let thirdIcon = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar.circle"), selectedImage: UIImage(systemName: "calendar.circle.fill"))
         third.tabBarItem = thirdIcon
-        
-        let fourth = ProfileViewController()
-        let fourtIcon = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
+
+        let fourth = UINavigationController(rootViewController: RatingViewController())
+        let fourtIcon = UITabBarItem(title: "Рейтинг", image: UIImage(systemName: "star.circle"), selectedImage: UIImage(systemName: "star.circle.fill"))
         fourth.tabBarItem = fourtIcon
         
         let fifth = UINavigationController(rootViewController: SettingsViewController())
