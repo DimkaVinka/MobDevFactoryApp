@@ -120,7 +120,7 @@ class DetailProfileView: UIView {
         button.tintColor = .white
         button.backgroundColor = .orange
         button.layer.masksToBounds = true
-        button.layer.cornerRadius = 15
+        button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
         return button
     }()

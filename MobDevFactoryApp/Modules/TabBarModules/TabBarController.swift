@@ -34,11 +34,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let thirdIcon = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar.circle"), selectedImage: UIImage(systemName: "calendar.circle.fill"))
         third.tabBarItem = thirdIcon
         
-        let fourth = UINavigationController(rootViewController: ProfileViewController())
+        let fourth = ProfileViewController()
         let fourtIcon = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
         fourth.tabBarItem = fourtIcon
         
-        let fifth = SettingsViewController()
+        let fifth = UINavigationController(rootViewController: SettingsViewController())
         let fifthIcon = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gear.circle"), selectedImage: UIImage(systemName: "gear.circle.fill"))
         fifth.tabBarItem = fifthIcon
         

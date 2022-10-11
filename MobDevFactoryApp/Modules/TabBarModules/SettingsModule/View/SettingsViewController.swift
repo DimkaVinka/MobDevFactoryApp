@@ -86,6 +86,12 @@ extension SettingsViewController: UITableViewDelegate {
         switch type.self {
         case .staticCell(let model):
             print("Нажата ячейка \(model.title)")
+
+            if model.title == "Аккаунт" {
+                let profileUserController = ProfileViewController()
+                navigationController?.pushViewController(profileUserController, animated: true)
+            }
+
             model.handler()
         case .switchCell(let model):
             print("Нажата ячейка \(model.title)")
