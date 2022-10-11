@@ -13,11 +13,14 @@ class ProfileView: UIView {
     // MARK: - Private properties
 
     private lazy var indicatorOnOffImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(systemName: "circle.fill")
-        image.sizeToFit()
-        image.contentMode = .center
-        return image
+        let imageView = UIImageView()
+
+        let configuration = UIImage.SymbolConfiguration(pointSize: 10)
+        let image = UIImage(systemName: "circle.fill", withConfiguration: configuration)
+
+        imageView.image = image
+        imageView.contentMode = .center
+        return imageView
     }()
 
     var nameStudentsLabel: UILabel = {
@@ -26,13 +29,6 @@ class ProfileView: UIView {
         label.font = .systemFont(ofSize: 24, weight: .bold)
         return label
     }()
-
-//    private lazy var editProfileButton: UIButton = {
-//        let button = UIButton()
-//        button.setImage(UIImage(named: "edit"), for: .normal)
-//        button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
-//        return button
-//    }()
 
     var profilePhotoImage: UIImageView = {
         let image = UIImageView()
@@ -184,7 +180,6 @@ class ProfileView: UIView {
 
     private func setupHierarchy() {
         addSubview(indicatorAndNameStudentsStackView)
-//        addSubview(editProfileButton)
         addSubview(profilePhotoImage)
         addSubview(cityAndMailStackView)
         addSubview(firstLineView)
@@ -225,12 +220,6 @@ class ProfileView: UIView {
             make.trailing.equalTo(self.snp.trailing).offset(-30)
         }
 
-//        editProfileButton.snp.makeConstraints { make in
-//            make.top.equalTo(indicatorAndNameStudentsStackView.snp.top)
-//            make.trailing.equalTo(self.snp.trailing).offset(-30)
-//            make.width.equalTo(60)
-//        }
-
         profilePhotoImage.snp.makeConstraints { make in
             make.top.equalTo(indicatorAndNameStudentsStackView.snp.bottom).offset(20)
             make.leading.equalTo(indicatorAndNameStudentsStackView.snp.leading)
@@ -243,12 +232,6 @@ class ProfileView: UIView {
             make.leading.equalTo(profilePhotoImage.snp.trailing).offset(20)
             make.trailing.equalTo(indicatorAndNameStudentsStackView.snp.trailing)
         }
-
-//        cityAndMailStackView.snp.makeConstraints { make in
-//            make.top.equalTo(createStatusLabel.snp.bottom).offset(15)
-//            make.leading.equalTo(createStatusLabel.snp.leading)
-//            make.trailing.equalTo(createStatusLabel.snp.trailing)
-//        }
 
         firstLineView.snp.makeConstraints { make in
             make.top.equalTo(profilePhotoImage.snp.bottom).offset(20)
@@ -264,13 +247,4 @@ class ProfileView: UIView {
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-30)
         }
     }
-
-    // MARK: - Actions
-
-//    @objc func tapButtonSettingsController() {
-////        delegate?.customViewDidTapButton()
-//
-////        SceneDelegate.shared.changeViewController(viewController: ModuleBuilder.builderCreateNewUser(), animationOptions: .transitionFlipFromRight)
-//
-//    }
 }
