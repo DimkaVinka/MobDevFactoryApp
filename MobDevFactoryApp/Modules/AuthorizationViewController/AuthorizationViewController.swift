@@ -16,15 +16,10 @@ class AuthorizationViewController: UIViewController {
     private var alert = Alert()
     
     //MARK: Views
-    private var greteAccountButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .systemBlue
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = Metric.cornelRadiusView
-        button.setTitle("Создать аккаунт", for: .normal)
-        button.addTarget(self, action: #selector(tapButtonGreteAccount), for: .touchUpInside)
-        return button
+    private let imageLogoMDF: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "logoMDF")
+        return image
     }()
     
     private var label: UILabel = {
@@ -40,12 +35,14 @@ class AuthorizationViewController: UIViewController {
     private var nickNameTextField: UITextField = {
         let textField = UITextField()
         textField.tintColor = .black
+        textField.becomeFirstResponder()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .white
         textField.layer.cornerRadius = Metric.cornelRadiusView
         textField.clearButtonMode = .always
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Nick Name"
-        textField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
+        textField.returnKeyType = .next
         return textField
     }()
     
@@ -56,8 +53,9 @@ class AuthorizationViewController: UIViewController {
         textField.backgroundColor = .white
         textField.layer.cornerRadius = Metric.cornelRadiusView
         textField.clearButtonMode = .always
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Password"
-        textField.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
+        textField.returnKeyType = .done
         return textField
     }()
     
@@ -81,25 +79,25 @@ class AuthorizationViewController: UIViewController {
     }
     //MARK: Setup
     private func setupHerarcy() {
-        view.addSubview(greteAccountButton)
         view.addSubview(label)
         view.addSubview(nickNameTextField)
         view.addSubview(passwordTextField)
         view.addSubview(proceedButton)
+        view.addSubview(imageLogoMDF)
     }
     
     private func setupView(){
         
-        greteAccountButton.snp.makeConstraints { make in
-            make.right.equalTo(view)
-            make.top.equalTo(view).offset(330)
-            make.width.equalTo(150)
-            make.height.height.equalTo(Metric.heightView)
+        imageLogoMDF.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view).offset(50)
+            make.height.equalTo(Metric.sizeLogoImage)
+            make.width.equalTo(Metric.sizeLogoImage)
         }
        
         label.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.centerY.equalTo(view).offset(30)
+            make.centerY.equalTo(view).offset(60)
             make.width.equalTo(250)
         }
         
@@ -133,30 +131,11 @@ class AuthorizationViewController: UIViewController {
         
         for user in storageManager.items {
             if user.nickName == nickNameTextField.text ?? "" && user.password == passwordTextField.text ?? "" {
-//                let tabBarViewController = UITabBarController()
-//                tabBarViewController.tabBar.backgroundColor = .white
-//                let lessonTabBarItem = ModuleBuilderTabBarConrolers.buiderLessonViewController()
-//                lessonTabBarItem.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
-//                let calendarTabBarItem = ModuleBuilderTabBarConrolers.buiderCalendarViewController()
-//                calendarTabBarItem.tabBarItem = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar"), tag: 1)
-//                let searchTabbarItem = ModuleBuilderTabBarConrolers.buiderSearchViewController()
-//                searchTabbarItem.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
-//                let personTabbarItem = ModuleBuilderTabBarConrolers.buiderPersonViewController()
-//                personTabbarItem.tabBarItem = UITabBarItem(title: "Студент", image: UIImage(systemName: "person"), tag: 3)
-//                tabBarViewController.setViewControllers([
-//                    lessonTabBarItem,
-//                    searchTabbarItem,
-//                    calendarTabBarItem,
-//                    personTabbarItem,
-//                ], animated: true)
-//                tabBarViewController.modalPresentationStyle = .fullScreen
-//                present(tabBarViewController, animated: true)
-                
                 SceneDelegate.shared.changeViewController(viewController: ModuleBuilder.builderTabBarController(),
                                                           animationOptions: .transitionCrossDissolve)
             } else {
 // MARK: Alert
-                alert.showAlert(title: "Либо пароль или логин не правильно либо регистроваться надо", viewComtroller: self)
+                alert.showAlert(title: "Ошибка регистрации или пароля", viewComtroller: self)
             }
         }
     }
