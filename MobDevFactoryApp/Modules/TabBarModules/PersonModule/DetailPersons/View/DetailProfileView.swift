@@ -51,27 +51,6 @@ class DetailProfileView: UIView {
         return textField
     }()
 
-//    private lazy var editStatusLabel: UILabel = {
-//        let label = UILabel()
-//        label.textColor = .white
-//        label.font = .systemFont(ofSize: 20)
-//        label.textAlignment = .left
-//        label.text = "Статус"
-//        return label
-//    }()
-//
-//    var editStatusTextField: UITextField = {
-//        let textField = UITextField()
-//        textField.tintColor = .black
-//        textField.translatesAutoresizingMaskIntoConstraints = false
-//        textField.backgroundColor = .white
-//        textField.layer.cornerRadius = 15
-//        textField.clearButtonMode = .always
-//        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-//        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-//        return textField
-//    }()
-
     private lazy var editCityLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -143,8 +122,6 @@ class DetailProfileView: UIView {
         addSubview(profilePhotoImage)
         addSubview(firstEditNameLabel)
         addSubview(firstNameTextField)
-//        addSubview(editStatusLabel)
-//        addSubview(editStatusTextField)
         addSubview(editCityLabel)
         addSubview(editCityTextField)
         addSubview(editMailLabel)
@@ -188,19 +165,6 @@ class DetailProfileView: UIView {
             make.height.equalTo(36)
         }
 
-//        editStatusLabel.snp.makeConstraints { make in
-//            make.top.equalTo(firstNameTextField.snp.bottom).offset(10)
-//            make.leading.equalTo(firstNameTextField.snp.leading)
-//            make.trailing.equalTo(firstNameTextField.snp.trailing)
-//        }
-//
-//        editStatusTextField.snp.makeConstraints { make in
-//            make.top.equalTo(editStatusLabel.snp.bottom).offset(6)
-//            make.leading.equalTo(editStatusLabel.snp.leading)
-//            make.trailing.equalTo(editStatusLabel.snp.trailing)
-//            make.height.equalTo(30)
-//        }
-
         editCityLabel.snp.makeConstraints { make in
             make.top.equalTo(firstNameTextField.snp.bottom).offset(17)
             make.leading.equalTo(firstNameTextField.snp.leading)
@@ -231,8 +195,6 @@ class DetailProfileView: UIView {
             make.top.equalTo(editMailTextField.snp.bottomMargin).offset(45)
             make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(240)
-//            make.leading.equalTo(self.snp.leading)
-//            make.trailing.equalTo(self.snp.trailing)
             make.height.equalTo(45)
         }
     }

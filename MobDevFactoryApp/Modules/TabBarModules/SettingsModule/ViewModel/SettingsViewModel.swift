@@ -16,22 +16,22 @@ class SettingsViewModel {
         sections = [
             Section(title: "Основные", options: [
                 .staticCell(model: SettingsOption(title: "Аккаунт",
-                                                  icon: UIImage(image: .account),
+                                                  icon: UIImage(systemName: "person.circle"),
                                                   iconBackgroungColor: nil) {
 
                                                   }),
                 .staticCell(model: SettingsOption(title: "Уведомления",
-                                                  icon: UIImage(image: .notification),
+                                                  icon: UIImage(systemName: "bell.circle"),
                                                   iconBackgroungColor: nil) {
 
                                                   }),
                 .staticCell(model: SettingsOption(title: "Конфиденциальность и безопасность",
-                                                  icon: UIImage(image: .privacySecurity),
+                                                  icon: UIImage(systemName: "lock.circle"),
                                                   iconBackgroungColor: nil) {
 
                                                   }),
                 .switchCell(model: SettingsSwitchOption(title: "Темный режим",
-                                                        icon: UIImage(image: .darkMode),
+                                                        icon: UIImage(systemName: "moon.circle"),
                                                         iconBackgroungColor: nil,
                                                         handler: {
 
@@ -41,12 +41,12 @@ class SettingsViewModel {
 
             Section(title: "Дополнительные", options: [
                 .staticCell(model: SettingsOption(title: "Язык",
-                                                  icon: UIImage(image: .language),
+                                                  icon: UIImage(systemName: "network"),
                                                   iconBackgroungColor: nil) {
                                                       //                                                      SceneDelegate.shared.changeViewController(viewController: LanguageViewController(), animationOptions: .curveEaseOut)
                                                   }),
                 .staticCell(model: SettingsOption(title: "Выйти",
-                                                  icon: UIImage(image: .quit),
+                                                  icon: UIImage(systemName: "figure.roll"),
                                                   iconBackgroungColor: nil) {
 
                                                   })

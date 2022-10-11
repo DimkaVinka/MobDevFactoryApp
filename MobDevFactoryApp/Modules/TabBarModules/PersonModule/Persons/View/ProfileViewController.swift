@@ -35,7 +35,6 @@ class ProfileViewController: UIViewController {
 
     @objc func tapButtonSettingsController() {
         let vc = ModuleBuilder.builderCreateNewUser()
-//        let navController = UINavigationController(rootViewController: DetailProfileViewController())
         self.navigationController!.pushViewController(vc, animated: true)
     }
 
@@ -133,7 +132,6 @@ class ProfileViewController: UIViewController {
     private func createLayout() {
         editProfileButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
-//            make.leading.equalTo(view.snp.leading).offset(30)
             make.trailing.equalTo(view.snp.trailing).offset(-30)
         }
     }

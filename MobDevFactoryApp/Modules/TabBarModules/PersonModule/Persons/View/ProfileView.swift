@@ -215,7 +215,7 @@ class ProfileView: UIView {
 
     private func setupLayout() {
         indicatorAndNameStudentsStackView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(40)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.equalTo(self.snp.leading).offset(30)
             make.trailing.equalTo(self.snp.trailing).offset(-30)
         }
