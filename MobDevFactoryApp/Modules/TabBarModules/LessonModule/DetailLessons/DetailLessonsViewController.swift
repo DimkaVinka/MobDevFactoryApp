@@ -39,7 +39,6 @@ class DetailLessonsViewController: UIViewController {
         
         detailLessonsViewModel.$webView.sink(receiveValue: { cource in
             DispatchQueue.main.async {
-                
             }
         }).store(in: &cancellables)
     }
@@ -72,6 +71,18 @@ class DetailLessonsViewController: UIViewController {
     private func setupView() {
         title = cource?.cource_name
         view.backgroundColor = Metric.colorBackround
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(red: 15 / 255, green: 20 / 255, blue: 59 / 255, alpha: 1)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        
         webView.tintColor = .black
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
     }
