@@ -17,8 +17,9 @@ class CalendarView: UIView {
     
     lazy var segmentControl: UISegmentedControl = {
         let segmentControl = UISegmentedControl(items: ["Неделя", "Месяц"])
-        segmentControl.selectedSegmentTintColor = .orange
+        segmentControl.selectedSegmentTintColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
         segmentControl.backgroundColor = .systemGroupedBackground
+        segmentControl.selectedSegmentIndex = 1
         return segmentControl
     }()
     
@@ -37,16 +38,16 @@ class CalendarView: UIView {
     lazy var calendar: FSCalendar = {
         let calendar = FSCalendar()
         calendar.scrollDirection = .horizontal
-        calendar.appearance.weekdayTextColor = .brown
+        calendar.appearance.weekdayTextColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
         calendar.appearance.titleTodayColor = .white
         calendar.appearance.todayColor = .darkGray
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 16)
         calendar.appearance.headerDateFormat = "LLLL, yyyy"
         calendar.appearance.headerTitleFont = .systemFont(ofSize: 20, weight: .heavy)
-        calendar.appearance.headerTitleColor = .brown
+        calendar.appearance.headerTitleColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
         calendar.appearance.headerTitleAlignment = .center
         calendar.collectionView.tintColor = .orange
-        calendar.appearance.imageOffset = CGPoint(x: 0, y: -10)
+        calendar.appearance.imageOffset = CGPoint(x: 0, y: -15)
         calendar.locale = Locale(identifier: "ru_RU")
         calendar.allowsMultipleSelection = false
         calendar.firstWeekday = 2
@@ -80,7 +81,6 @@ class CalendarView: UIView {
     
     func setupView() {
         backgroundColor = Metric.colorBackround
-        tintColor = .white
     }
     
     func setupHierarchy() {

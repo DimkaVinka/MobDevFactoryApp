@@ -42,11 +42,24 @@ class CalendarViewModel: UIViewController {
     // MARK: - Setup functions
     
     private func setupView() {
+        
+        title = "Календарь"
 
         calendarView?.tableView.dataSource = self
         calendarView?.calendar.delegate = self
-        calendarView?.calendar.dataSource = self
         calendarView?.segmentControl.addTarget(self, action: #selector(controlDidChanged(_:)), for: .valueChanged)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(red: 15 / 255, green: 20 / 255, blue: 59 / 255, alpha: 1)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     // MARK: - Functions
@@ -79,6 +92,24 @@ extension CalendarViewModel: FSCalendarDelegate {
         selectedDate = date
         calendarView?.tableView.reloadData()
     }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
+        for event in EventsList().events {
+            if Calendar.current.isDate(event.date, inSameDayAs: date) {
+                switch event.colorGroup {
+                case .homeworkDeadline:
+                    return UIColor.red
+                case .homeworkOpen:
+                    return UIColor.systemYellow
+                case .newConspect:
+                    return UIColor.purple
+                case .groupCall:
+                    return UIColor.systemOrange
+                }
+            }
+        }
+        return nil
+    }
 }
 
     // MARK: - FSCalendarDelegateAppearance
@@ -90,63 +121,58 @@ extension CalendarViewModel: FSCalendarDelegateAppearance {
     }
 }
     
-extension CalendarViewModel:   FSCalendarDataSource {
-    
-    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        
-        var returnValue = UIImage()
-        
-        for event in EventsList().events {
-            if Calendar.current.isDate(event.date, inSameDayAs: date) {
-                switch event.colorGroup {
-                case .groupCall:
-                    returnValue = UIImage(systemName: "circle.dotted")!
-                case .newConspect:
-                    returnValue = UIImage(systemName: "circle.dotted")!
-                case .homeworkOpen:
-                    returnValue = UIImage(systemName: "circle.dotted")!
-                case .homeworkDeadline:
-                    returnValue = UIImage(systemName: "circle.dotted")!
-                }
-            }
-        }
-        return returnValue
-    }
+//extension CalendarViewModel: FSCalendarDataSource {
+//    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+//        var returnValue = UIImage()
+//        for event in EventsList().events {
+//            if Calendar.current.isDate(event.date, inSameDayAs: date) {
+//                switch event.colorGroup {
+//                case .groupCall:
+//                    returnValue = UIImage(systemName: "circle.dotted")!
+//                case .newConspect:
+//                    returnValue = UIImage(systemName: "circle.dotted")!
+//                case .homeworkOpen:
+//                    returnValue = UIImage(systemName: "circle.dotted")!
+//                case .homeworkDeadline:
+//                    returnValue = UIImage(systemName: "circle.dotted")!
+//                }
+//            }
+//        }
+//        return returnValue
+//    }
     
     ///Метод для создания цветных иконок
     
-    //    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-    //
-    //        let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
-    //
-    //        for event in eventsList {
-    //            if Calendar.current.isDate(event.date, inSameDayAs: date) {
-    //                switch event.colorGroup {
-    //                case .homeworkDeadline:
-    //                    cell.contentView.tintColor = .red
-    //                case .homeworkOpen:
-    //                    cell.contentView.tintColor = .systemBrown
-    //                case .newConspect:
-    //                    cell.contentView.tintColor = .purple
-    //                case .groupCall:
-    //                    cell.contentView.tintColor = .gray
-    //                }
-    //            }
-    //        }
-    //        return cell
-    //    }
-}
+//        func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+//    
+//            let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
+//    
+//            for event in EventsList().events {
+//                if Calendar.current.isDate(event.date, inSameDayAs: date) {
+//                    switch event.colorGroup {
+//                    case .homeworkDeadline:
+//                        cell.contentView.tintColor = .red
+//                    case .homeworkOpen:
+//                        cell.contentView.tintColor = .systemBrown
+//                    case .newConspect:
+//                        cell.contentView.tintColor = .purple
+//                    case .groupCall:
+//                        cell.contentView.tintColor = .gray
+//                    }
+//                }
+//            }
+//            return cell
+//        }
+
 
     // MARK: - UITableViewDataSource
 
 extension CalendarViewModel: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsForDate(date: selectedDate).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let event = eventsForDate(date: selectedDate)[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier, for: indexPath) as! CalendarTableViewCell
         cell.titleLable.text = event.name

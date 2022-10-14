@@ -16,6 +16,7 @@ class BlocksView: UIView {
         tableView.rowHeight = 50
         tableView.layer.cornerRadius = 10
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = Metric.colorBackround
         return tableView
     }()
     
@@ -48,7 +49,7 @@ class BlocksView: UIView {
     
     func setupLayout() {
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.equalTo(snp.leading)
             make.trailing.equalTo(snp.trailing)
             make.bottom.equalTo(snp.bottom)

@@ -18,48 +18,47 @@ class RatingViewController: UIViewController {
     private var observer: AnyCancellable?
     var teams: [Team]?
     
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        
-        let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        view.showsVerticalScrollIndicator = false
-        view.allowsMultipleSelection = true
-        view.alwaysBounceVertical = true
-        view.delegate = self
-        view.dataSource = self
-        
-        return view
-    }()
+    var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionViewLayout()
+        setupView()
         
         viewModel.loadTeams()
         observer = viewModel.$teams.sink { team in
             self.teams = team
         }
+    }
+    
+    func setupView() {
+        title = "Рейтинг"
+        view.addSubview(collectionView)
+        view.backgroundColor = Metric.colorBackround
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(red: 15 / 255, green: 20 / 255, blue: 59 / 255, alpha: 1)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     func configureCollectionViewLayout() {
-       title = "Main"
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-        view.addSubview(collectionView)
-        
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 170, width: view.frame.width, height: view.frame.height), collectionViewLayout: createLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .systemBackground
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
+        collectionView.backgroundColor = UIColor(red: 18 / 255, green: 14 / 255, blue: 62 / 255, alpha: 1)
+        //collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.identifier)
-        
         collectionView.register(FirstTypeCell.self, forCellWithReuseIdentifier: FirstTypeCell.identifier)
-
     }
+    
     func createLayout() -> UICollectionViewLayout {
-        
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnv: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                   heightDimension: .absolute(50))
@@ -69,17 +68,16 @@ class RatingViewController: UIViewController {
             
             let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
             
-            
             let headerSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(44))
+                widthDimension: .fractionalWidth(0.9),
+                heightDimension: .absolute(50))
             let header = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize,
                 elementKind: UICollectionView.elementKindSectionHeader,
                 alignment: .top)
             
             let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = 5
+            section.interGroupSpacing = 1
             section.boundarySupplementaryItems = [header]
             return section
         }
@@ -90,9 +88,8 @@ class RatingViewController: UIViewController {
 // MARK: - ViewController extension
 
 extension RatingViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -100,33 +97,19 @@ extension RatingViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //let info = model[indexPath.section][indexPath.item]
-
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstTypeCell.identifier, for: indexPath) as! FirstTypeCell
-            //cell.setupCell(data: info)
-        cell.lableTitle.text = "Huikdid"
-            return cell
-        }
-    
+        //let info = teams?[indexPath.section]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstTypeCell.identifier, for: indexPath) as! FirstTypeCell
+        //cell.setupCell(data: info)
+        return cell
+    }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
+        let info = teams?[indexPath.section]
         let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.identifier, for: indexPath) as! SectionHeader
-        
-//        let infoSection = Album.Sections.allCases[indexPath.section]
-        
-//        switch infoSection {
-//        case .myAlbums:
-        sectionHeader.lableTitle.text = "Мои альбомы"
-//        case .peopleAndPlaces:
-//            sectionHeader.label.text = "Люди и места"
-//        case .mediaFiles:
-//            sectionHeader.label.text = "Типы медиафайлов"
-//            sectionHeader.lableAll?.text = nil
-//        case .other:
-//            sectionHeader.label.text = "Другое"
-//            sectionHeader.lableAll?.text = nil
-//        }
+        sectionHeader.lableTitle.text = info?.teamName
+        sectionHeader.lableNumber.text = String(describing: info?.teamScore ?? 0)
+        sectionHeader.backgroundColor = UIColor(red: 53 / 255, green: 47 / 255, blue: 114 / 255, alpha: 1)
+        sectionHeader.layer.cornerRadius = 15
         return sectionHeader
     }
 }
