@@ -13,9 +13,9 @@ class LessonsViewController: UIViewController {
     // MARK: - Properties
     var lessonsViewModel = LessonsViewModel()
     
-    var currentView: BlocksView? {
+    var currentView: LessonsView? {
         guard isViewLoaded else { return nil }
-        return view as? BlocksView
+        return view as? LessonsView
     }
     
     var block: Block?
@@ -24,7 +24,7 @@ class LessonsViewController: UIViewController {
     
     // MARK: - Lifecycle
     override func loadView() {
-        view = BlocksView()
+        view = LessonsView()
     }
     
     override func viewDidLoad() {

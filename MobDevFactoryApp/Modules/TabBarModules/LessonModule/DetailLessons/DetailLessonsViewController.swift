@@ -18,16 +18,19 @@ class DetailLessonsViewController: UIViewController {
     var webView = WKWebView()
     var detailLessonsViewModel = DetailLessonsViewModel()
     
+    let storageManager = CourcesStorageManager()
+    
     var cancellables = Set<AnyCancellable>()
     
-    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarchy()
         setupLayout()
         setupView()
+        
+        storageManager.makeStorage()
         
         featchHTML()
         
@@ -60,12 +63,33 @@ class DetailLessonsViewController: UIViewController {
     }
     
     @objc func bookmarked() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: self, action: #selector(unBookmarked))
+        if storageManager.items?.count == 0 {
+            let favoriteCource = FavoriteCource()
+            favoriteCource.cource_name = cource?.cource_name ?? ""
+            favoriteCource.cource_link = cource?.cource_link ?? ""
+            storageManager.addCource(favoriteCource)
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
+            alert(title: "Урок добавлен в избранное")
+            
+        } else {
+            guard let items = storageManager.items else { return }
+            for item in items {
+                if item.cource_name == cource?.cource_name {
+                    storageManager.deleteCource(item)
+                    alert(title: "Урок удален из избранного")
+                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
+                } else {
+                    let favoriteCource = FavoriteCource()
+                    favoriteCource.cource_name = cource?.cource_name ?? ""
+                    favoriteCource.cource_link = cource?.cource_link ?? ""
+                    storageManager.addCource(favoriteCource)
+                    alert(title: "Урок добавлен в избранное")
+                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
+                }
+            }
+        }
     }
     
-    @objc func unBookmarked() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
-    }
     // MARK: - Setup functions
     
     private func setupView() {
@@ -82,8 +106,8 @@ class DetailLessonsViewController: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        
         webView.tintColor = .black
+    
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
     }
     
@@ -103,4 +127,39 @@ class DetailLessonsViewController: UIViewController {
 
 
 
+extension DetailLessonsViewController {
+    func alert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alertButton = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(alertButton)
+        present(alert, animated: true, completion: nil)
+    }
+}
 
+
+
+//if storageManager.items.count == 0 {
+//    let favoriteCource = FavoriteCource()
+//    favoriteCource.cource_name = cource?.cource_name ?? ""
+//    favoriteCource.cource_link = cource?.cource_link ?? ""
+//    storageManager.addCource(favoriteCource)
+//    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
+//    alert(title: "Урок добавлен в избранное")
+//
+//} else {
+//    for item in storageManager.items {
+//        if item.cource_name == cource?.cource_name {
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
+//            storageManager.deleteCource(item)
+//            alert(title: "Урок удален из избранного")
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
+//        } else {
+//            let favoriteCource = FavoriteCource()
+//            favoriteCource.cource_name = cource?.cource_name ?? ""
+//            favoriteCource.cource_link = cource?.cource_link ?? ""
+//            storageManager.addCource(favoriteCource)
+//            alert(title: "Урок добавлен в избранное")
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
+//        }
+//    }
+//}

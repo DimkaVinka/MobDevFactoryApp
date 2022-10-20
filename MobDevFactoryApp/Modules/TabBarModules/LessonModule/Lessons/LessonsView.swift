@@ -1,14 +1,14 @@
 //
-//  BlocksView.swift
+//  LessonsView.swift
 //  MobDevFactoryApp
 //
-//  Created by Мария Вольвакова on 30.09.2022.
+//  Created by Мария Вольвакова on 20.10.2022.
 //
 
 import UIKit
 import SnapKit
 
-class BlocksView: UIView {
+class LessonsView: UIView {
     
     // MARK: - Properties
     var tableView: UITableView = {
@@ -18,14 +18,6 @@ class BlocksView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = Metric.colorBackround
         return tableView
-    }()
-    
-    lazy var segmentControl: UISegmentedControl = {
-        let segmentControl = UISegmentedControl(items: ["СОДЕРЖАНИЕ", "ИЗБРАННОЕ"])
-        segmentControl.selectedSegmentTintColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
-        segmentControl.backgroundColor = .systemGroupedBackground
-        segmentControl.selectedSegmentIndex = 0
-        return segmentControl
     }()
     
     // MARK: - Initial
@@ -52,18 +44,12 @@ class BlocksView: UIView {
     }
     
     func setupHierarchy() {
-        addSubview(segmentControl)
         addSubview(tableView)
     }
     
     func setupLayout() {
-        segmentControl.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
-            make.left.equalTo(tableView.snp.left).offset(5)
-            make.right.equalTo(tableView.snp.right).offset(-5)
-        }
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(segmentControl.snp.bottom)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.equalTo(snp.leading)
             make.trailing.equalTo(snp.trailing)
             make.bottom.equalTo(snp.bottom)
