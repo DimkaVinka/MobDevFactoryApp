@@ -14,7 +14,6 @@ class DetailLessonsViewModel {
     
     // MARK: - Properties
     @Published var cource: Cource?
-    @Published var webView = WKWebView()
 
     
 //    // MARK: - Functions

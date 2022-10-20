@@ -58,8 +58,6 @@ class BlocksViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         currentView?.segmentControl.addTarget(self, action: #selector(controlDidChanged(_:)), for: .valueChanged)
-        
-        
     }
     
     @objc func controlDidChanged(_ segmentControl: UISegmentedControl) {
@@ -112,11 +110,11 @@ extension BlocksViewController: UITableViewDelegate {
             destinationController.lessonsViewModel.block = blocks?[indexPath.row]
             navigationController?.pushViewController(destinationController, animated: true)
         } else {
-//            let favoriteCources = storageManager.items[indexPath.row]
+//            let favoriteCources = storageManager.items?[indexPath.row]
 //
 //            let destinationController = DetailLessonsViewController()
-//            destinationController.detailLessonsViewModel.cource?.cource_name = favoriteCources.cource_name
-//
+//            destinationController.detailLessonsViewModel.cource = favoriteCources
+//            
 //            navigationController?.pushViewController(destinationController, animated: true)
 //            tableView.deselectRow(at: indexPath, animated: false)
         }

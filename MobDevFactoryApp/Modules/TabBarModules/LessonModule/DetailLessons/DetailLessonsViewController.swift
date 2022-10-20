@@ -17,9 +17,7 @@ class DetailLessonsViewController: UIViewController {
     var cource: Cource?
     var webView = WKWebView()
     var detailLessonsViewModel = DetailLessonsViewModel()
-    
     let storageManager = CourcesStorageManager()
-    
     var cancellables = Set<AnyCancellable>()
     
     // MARK: - Lifecycle
@@ -39,31 +37,21 @@ class DetailLessonsViewController: UIViewController {
                 self?.cource = cource
             }
         }.store(in: &cancellables)
-        
-        detailLessonsViewModel.$webView.sink(receiveValue: { cource in
-            DispatchQueue.main.async {
-            }
-        }).store(in: &cancellables)
     }
     
     func featchHTML() {
         do {
-            guard let filePath = Bundle.main.path(forResource: cource?.cource_link, ofType: "html")
+            guard let filePath = Bundle.main.url(forResource: cource?.cource_link, withExtension: "html")
             else {
                 print ("File reading error")
                 return
             }
-            let contents =  try String(contentsOfFile: filePath, encoding: .utf8)
-            let baseUrl = URL(fileURLWithPath: filePath)
-            self.webView.loadHTMLString(contents, baseURL: baseUrl)
-        }
-        catch {
-            print ("File HTML error")
+            self.webView.loadFileURL(filePath, allowingReadAccessTo: filePath)
         }
     }
     
     @objc func bookmarked() {
-        if storageManager.items?.count == 0 {
+        if storageManager.items.count == 0 {
             let favoriteCource = FavoriteCource()
             favoriteCource.cource_name = cource?.cource_name ?? ""
             favoriteCource.cource_link = cource?.cource_link ?? ""
@@ -72,9 +60,9 @@ class DetailLessonsViewController: UIViewController {
             alert(title: "Урок добавлен в избранное")
             
         } else {
-            guard let items = storageManager.items else { return }
-            for item in items {
+            for item in storageManager.items {
                 if item.cource_name == cource?.cource_name {
+                    
                     storageManager.deleteCource(item)
                     alert(title: "Урок удален из избранного")
                     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
@@ -125,8 +113,6 @@ class DetailLessonsViewController: UIViewController {
     }
 }
 
-
-
 extension DetailLessonsViewController {
     func alert(title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
@@ -136,30 +122,3 @@ extension DetailLessonsViewController {
     }
 }
 
-
-
-//if storageManager.items.count == 0 {
-//    let favoriteCource = FavoriteCource()
-//    favoriteCource.cource_name = cource?.cource_name ?? ""
-//    favoriteCource.cource_link = cource?.cource_link ?? ""
-//    storageManager.addCource(favoriteCource)
-//    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
-//    alert(title: "Урок добавлен в избранное")
-//
-//} else {
-//    for item in storageManager.items {
-//        if item.cource_name == cource?.cource_name {
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
-//            storageManager.deleteCource(item)
-//            alert(title: "Урок удален из избранного")
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
-//        } else {
-//            let favoriteCource = FavoriteCource()
-//            favoriteCource.cource_name = cource?.cource_name ?? ""
-//            favoriteCource.cource_link = cource?.cource_link ?? ""
-//            storageManager.addCource(favoriteCource)
-//            alert(title: "Урок добавлен в избранное")
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
-//        }
-//    }
-//}

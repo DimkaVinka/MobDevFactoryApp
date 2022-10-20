@@ -18,7 +18,7 @@ class FavoriteCource: Object {
 class CourcesStorageManager {
     
     let realm = try! Realm()
-    var items: Results<FavoriteCource>?
+    var items: Results<FavoriteCource>!
 
     // MARK: - Обращание к хранилищу
     func makeStorage() {
