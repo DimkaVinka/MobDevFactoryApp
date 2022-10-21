@@ -40,14 +40,13 @@ class DetailLessonsViewController: UIViewController {
     }
     
     func featchHTML() {
-        do {
-            guard let filePath = Bundle.main.url(forResource: cource?.cource_link, withExtension: "html")
-            else {
-                print ("File reading error")
-                return
-            }
-            self.webView.loadFileURL(filePath, allowingReadAccessTo: filePath)
+        
+        guard let filePath = Bundle.main.url(forResource: cource?.cource_link, withExtension: "html")
+        else {
+            print ("File reading error")
+            return
         }
+        self.webView.loadFileURL(filePath, allowingReadAccessTo: filePath)
     }
     
     @objc func bookmarked() {
@@ -61,7 +60,7 @@ class DetailLessonsViewController: UIViewController {
             
         } else {
             for item in storageManager.items {
-                if item.cource_name == cource?.cource_name {
+                if item.cource_name == cource?.cource_name && item.cource_link == cource?.cource_link {
                     
                     storageManager.deleteCource(item)
                     alert(title: "Урок удален из избранного")
@@ -95,7 +94,7 @@ class DetailLessonsViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         webView.tintColor = .black
-    
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
     }
     

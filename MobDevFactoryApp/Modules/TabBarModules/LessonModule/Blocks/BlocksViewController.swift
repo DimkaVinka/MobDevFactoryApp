@@ -31,11 +31,11 @@ class BlocksViewController: UIViewController {
         super.viewDidLoad()
         storageManager.makeStorage()
         blocksViewModel.loadBlocks()
+        
         observer = blocksViewModel.$blocks.sink { block in
             self.blocks = block
         }
         setupView()
-        
     }
     
     // MARK: - Setup functions
@@ -103,12 +103,15 @@ extension BlocksViewController: UITableViewDataSource {
 extension BlocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let destinationBlock = blocks?[indexPath.row]
+        
         let segmentControlIndex = currentView?.segmentControl.selectedSegmentIndex
         
         if segmentControlIndex == 0 {
             let destinationController = LessonsViewController()
-            destinationController.lessonsViewModel.block = blocks?[indexPath.row]
             navigationController?.pushViewController(destinationController, animated: true)
+            destinationController.lessonsViewModel.block = destinationBlock
+            tableView.deselectRow(at: indexPath, animated: false)
         } else {
 //            let favoriteCources = storageManager.items?[indexPath.row]
 //
