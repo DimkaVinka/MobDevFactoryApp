@@ -75,9 +75,9 @@ class CalendarViewModel: UIViewController {
     }
     
     @objc func controlDidChanged(_ segmentControl: UISegmentedControl) {
-        if calendarView?.segmentControl.selectedSegmentIndex == 0 {
+        if calendarView?.segmentControl.selectedSegmentIndex == 1 {
             calendarView?.calendar.setScope(.week, animated: calendarView?.toggle.isOn ?? true)
-        } else if calendarView?.segmentControl.selectedSegmentIndex == 1 {
+        } else if calendarView?.segmentControl.selectedSegmentIndex == 0 {
             calendarView?.calendar.setScope(.month, animated: calendarView?.toggle.isOn ?? true)
         }
     }

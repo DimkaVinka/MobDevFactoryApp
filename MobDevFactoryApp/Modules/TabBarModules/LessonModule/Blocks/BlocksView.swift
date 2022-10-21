@@ -58,9 +58,9 @@ class BlocksView: UIView {
     
     func setupLayout() {
         segmentControl.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
-            make.left.equalTo(tableView.snp.left).offset(5)
-            make.right.equalTo(tableView.snp.right).offset(-5)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.left.equalTo(tableView.snp.left).offset(7)
+            make.right.equalTo(tableView.snp.right).offset(-7)
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(segmentControl.snp.bottom)

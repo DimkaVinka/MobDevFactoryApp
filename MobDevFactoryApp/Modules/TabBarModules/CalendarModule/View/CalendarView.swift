@@ -16,10 +16,10 @@ class CalendarView: UIView {
     lazy var formatter = DateFormatter()
     
     lazy var segmentControl: UISegmentedControl = {
-        let segmentControl = UISegmentedControl(items: ["Неделя", "Месяц"])
+        let segmentControl = UISegmentedControl(items: ["МЕСЯЦ", "НЕДЕЛЯ"])
         segmentControl.selectedSegmentTintColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
         segmentControl.backgroundColor = .systemGroupedBackground
-        segmentControl.selectedSegmentIndex = 1
+        segmentControl.selectedSegmentIndex = 0
         return segmentControl
     }()
     
@@ -40,13 +40,14 @@ class CalendarView: UIView {
         calendar.scrollDirection = .horizontal
         calendar.appearance.weekdayTextColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
         calendar.appearance.titleTodayColor = .white
-        calendar.appearance.todayColor = .darkGray
+        calendar.appearance.todayColor = .systemBlue
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 16)
         calendar.appearance.headerDateFormat = "LLLL, yyyy"
         calendar.appearance.headerTitleFont = .systemFont(ofSize: 20, weight: .heavy)
         calendar.appearance.headerTitleColor = UIColor(red: 103 / 255, green: 112 / 255, blue: 241 / 255, alpha: 1)
         calendar.appearance.headerTitleAlignment = .center
         calendar.collectionView.tintColor = .orange
+        calendar.appearance.selectionColor = .lightGray
         calendar.appearance.imageOffset = CGPoint(x: 0, y: -15)
         calendar.locale = Locale(identifier: "ru_RU")
         calendar.allowsMultipleSelection = false
@@ -93,16 +94,16 @@ class CalendarView: UIView {
     func setupLayout() {
         
         segmentControl.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.left.equalTo(calendar.snp.left).offset(20)
-            make.right.equalTo(calendar.snp.right).offset(-20)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.left.equalTo(calendar.snp.left)
+            make.right.equalTo(calendar.snp.right)
         }
         
         calendar.snp.makeConstraints { make in
             make.top.equalTo(segmentControl.snp.bottom).offset(15)
             make.left.equalTo(safeAreaLayoutGuide.snp.left).offset(15)
             make.right.equalTo(safeAreaLayoutGuide.snp.right).offset(-15)
-            make.height.equalTo(300)
+            make.height.equalTo(250)
         }
         
         tableView.snp.makeConstraints { make in
