@@ -14,7 +14,7 @@ import Combine
 class RatingViewModel {
     
     // MARK: - Properties
-    @Published var teams: [Team]?
+    @Published var teams: Teams?
    
     
     // MARK: - Functions
@@ -24,7 +24,7 @@ class RatingViewModel {
                 let data = try Data(contentsOf: fileLocation)
                 let decoder = JSONDecoder()
                 let dataFromeJson = try decoder.decode(Teams.self, from: data)
-                self.teams = dataFromeJson.teams
+                self.teams = dataFromeJson
             } catch {
                 print(error)
             }
