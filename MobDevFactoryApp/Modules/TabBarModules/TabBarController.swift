@@ -18,7 +18,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     func setupTabBarController() {
         tabBar.tintColor = .black
         tabBar.backgroundColor = .white
-        view.backgroundColor = .systemGreen
+//        view.backgroundColor = .systemGreen
     }
     
     func setupTabBarViewControllers() {
@@ -33,12 +33,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let third = UINavigationController(rootViewController: CalendarViewModel())
         let thirdIcon = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar.circle"), selectedImage: UIImage(systemName: "calendar.circle.fill"))
         third.tabBarItem = thirdIcon
-        
+
         let fourth = UINavigationController(rootViewController: RatingViewController())
         let fourtIcon = UITabBarItem(title: "Рейтинг", image: UIImage(systemName: "star.circle"), selectedImage: UIImage(systemName: "star.circle.fill"))
         fourth.tabBarItem = fourtIcon
         
-        let fifth = SettingsViewController()
+        let fifth = UINavigationController(rootViewController: SettingsViewController())
         let fifthIcon = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gear.circle"), selectedImage: UIImage(systemName: "gear.circle.fill"))
         fifth.tabBarItem = fifthIcon
         

@@ -20,12 +20,12 @@ class SettingsViewController: UIViewController {
 
     private var observer: AnyCancellable?
 
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Настройки"
-        label.font = .systemFont(ofSize: 25, weight: .semibold)
-        return label
-    }()
+//    private let titleLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "Настройки"
+//        label.font = .systemFont(ofSize: 25, weight: .semibold)
+//        return label
+//    }()
 
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -53,7 +53,11 @@ class SettingsViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupHierarchy() {
-        view.addSubview(titleLabel)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = Metric.colorBackround
+        title = "Настройки"
+
+//        view.addSubview(titleLabel)
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -61,13 +65,13 @@ class SettingsViewController: UIViewController {
 
     private func setupLayout() {
 
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
-            make.leading.equalTo(view.snp.leading).offset(20)
-        }
+//        titleLabel.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
+//            make.leading.equalTo(view.snp.leading).offset(20)
+//        }
 
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(15)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.bottom.equalTo(view.snp.bottom)
@@ -86,6 +90,12 @@ extension SettingsViewController: UITableViewDelegate {
         switch type.self {
         case .staticCell(let model):
             print("Нажата ячейка \(model.title)")
+
+            if model.title == "Аккаунт" {
+                let profileUserController = ProfileViewController()
+                navigationController?.pushViewController(profileUserController, animated: true)
+            }
+
             model.handler()
         case .switchCell(let model):
             print("Нажата ячейка \(model.title)")
