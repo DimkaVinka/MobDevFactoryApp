@@ -285,6 +285,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		060A008328F6D8E400F0CCED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06E480CC28E96EAA00A8FA36 /* ViewModel */,
+				06E480CB28E96EA600A8FA36 /* View */,
+				06E480CA28E96EA000A8FA36 /* Model */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		06B5169028AD4D5200CE9F7E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,9 +497,7 @@
 		D66C750928CBB2E600CB7375 /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
-				06E480CC28E96EAA00A8FA36 /* ViewModel */,
-				06E480CB28E96EA600A8FA36 /* View */,
-				06E480CA28E96EA000A8FA36 /* Model */,
+				060A008328F6D8E400F0CCED /* Settings */,
 			);
 			path = SettingsModule;
 			sourceTree = "<group>";

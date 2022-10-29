@@ -95,11 +95,12 @@ class DetailProfileView: UIView {
 
     lazy var saveProfileButton: UIButton = {
         let button = UIButton(type: .system)
+        button.titleLabel?.font =  .systemFont(ofSize: 17)
         button.setTitle("Сохранить", for: .normal)
         button.tintColor = .white
-        button.backgroundColor = .orange
+        button.backgroundColor = Metric.blueCustom
         button.layer.masksToBounds = true
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
         return button
     }()
@@ -141,7 +142,7 @@ class DetailProfileView: UIView {
     private func setupLayout() {
 
         editProfileLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.topMargin).offset(5)
+            make.top.equalTo(self.snp.top).offset(70)
             make.centerX.equalTo(self.snp.centerX)
         }
 

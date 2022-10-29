@@ -46,7 +46,7 @@ class SettingsViewModel {
                                                       //                                                      SceneDelegate.shared.changeViewController(viewController: LanguageViewController(), animationOptions: .curveEaseOut)
                                                   }),
                 .staticCell(model: SettingsOption(title: "Выйти",
-                                                  icon: UIImage(systemName: "figure.roll"),
+                                                  icon: UIImage(systemName: "figure.walk.circle"),
                                                   iconBackgroungColor: nil) {
 
                                                   })

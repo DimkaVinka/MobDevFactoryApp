@@ -24,20 +24,6 @@ class ProfileViewController: UIViewController {
 
     private var observer: AnyCancellable?
 
-    private lazy var editProfileButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "edit"), for: .normal)
-        button.addTarget(self, action: #selector(tapButtonSettingsController), for: .touchUpInside)
-        return button
-    }()
-
-    // MARK: - Actions
-
-    @objc func tapButtonSettingsController() {
-        let vc = ModuleBuilder.builderCreateNewUser()
-        self.navigationController!.pushViewController(vc, animated: true)
-    }
-
     // MARK: - Lifecycle
 
     private var personView: ProfileView? {
@@ -76,7 +62,7 @@ class ProfileViewController: UIViewController {
 
     func saveStudents() {
         let student = PersonModel()
-        student.profileImage = UIImage(named: "noImage")!
+//        student.profileImage = UIImage(named: "noImage")
         student.firstName = "Fedor Donskov"
         student.groupLabel = "Group 6"
         student.cityLabel = "Россия, Москва"
@@ -92,13 +78,13 @@ class ProfileViewController: UIViewController {
     func createStudents() {
         let people = realm.objects(PersonModel.self)
         for person in people {
-            let profileImage = person.profileImage
+//            let profileImage = person.profileImage
             let firstName = person.firstName
             let groupLabel = person.groupLabel
             let cityLabel = person.cityLabel
             let emailLabel = person.emailLabel
 
-            personView?.profilePhotoImage.image = profileImage
+//            personView?.profilePhotoImage.image = profileImage
             personView?.nameStudentsLabel.text = firstName
             personView?.numberGroupLabel.text = groupLabel
             personView?.cityLabel.text = cityLabel
@@ -124,16 +110,14 @@ class ProfileViewController: UIViewController {
     }
 
     private func setupHierarchy() {
-        view.addSubview(editProfileButton)
-
-        createLayout()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Редактировать", style: .done, target: self, action: #selector(tapButtonSettingsController))
     }
 
-    private func createLayout() {
-        editProfileButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
-            make.trailing.equalTo(view.snp.trailing).offset(-30)
-        }
+    // MARK: - Actions
+
+    @objc func tapButtonSettingsController() {
+        let vc = ModuleBuilder.builderCreateNewUser()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

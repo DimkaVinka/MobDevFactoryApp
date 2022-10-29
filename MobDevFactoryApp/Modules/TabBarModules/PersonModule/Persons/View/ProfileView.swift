@@ -32,9 +32,8 @@ class ProfileView: UIView {
 
     var profilePhotoImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = .systemOrange
         image.image = UIImage(named: "noImage")
+        image.contentMode = .scaleAspectFill
         image.layer.masksToBounds = true
         image.layer.cornerRadius = 20
         return image
@@ -215,7 +214,7 @@ class ProfileView: UIView {
 
     private func setupLayout() {
         indicatorAndNameStudentsStackView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(self.snp.top).offset(70)
             make.leading.equalTo(self.snp.leading).offset(30)
             make.trailing.equalTo(self.snp.trailing).offset(-30)
         }
