@@ -28,7 +28,6 @@ class DetailProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupHierarchy()
     }
 

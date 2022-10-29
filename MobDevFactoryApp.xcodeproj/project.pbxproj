@@ -281,6 +281,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		060A008328F6D8E400F0CCED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06E480CC28E96EAA00A8FA36 /* ViewModel */,
+				06E480CB28E96EA600A8FA36 /* View */,
+				06E480CA28E96EA000A8FA36 /* Model */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		06B5169028AD4D5200CE9F7E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,9 +492,7 @@
 		D66C750928CBB2E600CB7375 /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
-				06E480CC28E96EAA00A8FA36 /* ViewModel */,
-				06E480CB28E96EA600A8FA36 /* View */,
-				06E480CA28E96EA000A8FA36 /* Model */,
+				060A008328F6D8E400F0CCED /* Settings */,
 			);
 			path = SettingsModule;
 			sourceTree = "<group>";
@@ -768,7 +776,6 @@
 				060A003728E9A61D00F0CCED /* SettingSwitchTableCell.swift in Sources */,
 				D6A3DAB128E737D700D5D8C7 /* BlocksViewModel.swift in Sources */,
 				D66C750028CBAC2700CB7375 /* EventModel.swift in Sources */,
-				06B5169E28AD51F800CE9F7E /* CreatePersonViewController.swift in Sources */,
 				D62721E228F0C36A000C5C53 /* RatingViewModel.swift in Sources */,
 				D66C74FD28CBAC0200CB7375 /* CalendarView.swift in Sources */,
 				7D74A61E28A1A432009C4C70 /* NetworkManager.swift in Sources */,

@@ -20,12 +20,12 @@ class SettingsViewController: UIViewController {
 
     private var observer: AnyCancellable?
 
-//    private let titleLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Настройки"
-//        label.font = .systemFont(ofSize: 25, weight: .semibold)
-//        return label
-//    }()
+    //    private let titleLabel: UILabel = {
+    //        let label = UILabel()
+    //        label.text = "Настройки"
+    //        label.font = .systemFont(ofSize: 25, weight: .semibold)
+    //        return label
+    //    }()
 
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -53,23 +53,18 @@ class SettingsViewController: UIViewController {
     // MARK: - Private methods
 
     private func setupHierarchy() {
-        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = Metric.colorBackround
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         title = "Настройки"
 
-//        view.addSubview(titleLabel)
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
     }
 
     private func setupLayout() {
-
-//        titleLabel.snp.makeConstraints { make in
-//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
-//            make.leading.equalTo(view.snp.leading).offset(20)
-//        }
-
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalTo(view.snp.leading)

@@ -38,8 +38,6 @@ final class ModuleBuilder {
     }
     
     static func builderCreateNewUser() -> UIViewController {
-//        let navigationViewController = UINavigationController(rootViewController: DetailProfileViewController())
-
         let viewController = DetailProfileViewController()
         return viewController
     }
