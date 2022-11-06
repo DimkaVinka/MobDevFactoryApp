@@ -14,11 +14,10 @@ class DetailLessonsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var cource: RealmCource?
-    var webView = WKWebView()
+    private var cource: Cource?
+    private var webView = WKWebView()
     var detailLessonsViewModel = DetailLessonsViewModel()
-    //let storageManager = CourcesStorageManager()
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Lifecycle
     
@@ -27,8 +26,6 @@ class DetailLessonsViewController: UIViewController {
         setupHierarchy()
         setupLayout()
         setupView()
-        
-        //storageManager.makeStorage()
         
         featchHTML()
         
@@ -39,7 +36,7 @@ class DetailLessonsViewController: UIViewController {
         }.store(in: &cancellables)
     }
     
-    func featchHTML() {
+    private func featchHTML() {
         
         guard let filePath = Bundle.main.url(forResource: cource?.cource_link, withExtension: "html")
         else {
@@ -48,33 +45,6 @@ class DetailLessonsViewController: UIViewController {
         }
         self.webView.loadFileURL(filePath, allowingReadAccessTo: filePath)
     }
-    
-//    @objc func bookmarked() {
-//        if storageManager.items.count == 0 {
-//            let favoriteCource = FavoriteCource()
-//            favoriteCource.cource_name = cource?.cource_name ?? ""
-//            favoriteCource.cource_link = cource?.cource_link ?? ""
-//            storageManager.addCource(favoriteCource)
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
-//            alert(title: "Урок добавлен в избранное")
-//
-//        } else {
-//            for item in storageManager.items {
-//                if item.cource_name == cource?.cource_name && item.cource_link == cource?.cource_link {
-//                    storageManager.deleteCource(item)
-//                    alert(title: "Урок удален из избранного")
-//                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
-//                } else {
-//                    let favoriteCource = FavoriteCource()
-//                    favoriteCource.cource_name = cource?.cource_name ?? ""
-//                    favoriteCource.cource_link = cource?.cource_link ?? ""
-//                    storageManager.addCource(favoriteCource)
-//                    alert(title: "Урок добавлен в избранное")
-//                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
-//                }
-//            }
-//        }
-//    }
     
     // MARK: - Setup functions
     
@@ -93,8 +63,6 @@ class DetailLessonsViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         webView.tintColor = .black
-        
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
     }
     
     private func setupHierarchy() {

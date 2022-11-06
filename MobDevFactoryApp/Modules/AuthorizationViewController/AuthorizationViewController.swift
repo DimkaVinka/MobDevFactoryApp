@@ -5,7 +5,6 @@
 //  Created by Daniil Litvinov on 10.08.2022.
 //
 
-
 import UIKit
 import SnapKit
 import RealmSwift

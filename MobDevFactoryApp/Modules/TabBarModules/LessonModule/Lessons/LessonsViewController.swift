@@ -11,14 +11,15 @@ import Combine
 class LessonsViewController: UIViewController {
     
     // MARK: - Properties
-    var lessonsViewModel = LessonsViewModel()
     
-    var currentView: LessonsView? {
+     var viewModel = LessonsViewModel()
+    
+    private var currentView: LessonsView? {
         guard isViewLoaded else { return nil }
         return view as? LessonsView
     }
     
-    var block: RealmBlock?
+    private var block: Block?
     
     private var observer: AnyCancellable?
     
@@ -30,7 +31,7 @@ class LessonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        observer = lessonsViewModel.$block.sink { block in
+        observer = viewModel.$block.sink { block in
             self.block = block
         }
         setupView()

@@ -118,7 +118,7 @@ class RatingViewController: UIViewController {
     
     
     func setupView() {
-        title = "🏆 Рейтинг"
+        title = "Рейтинг"
         
         view.backgroundColor = UIColor(red: 15 / 255, green: 20 / 255, blue: 59 / 255, alpha: 1)
         

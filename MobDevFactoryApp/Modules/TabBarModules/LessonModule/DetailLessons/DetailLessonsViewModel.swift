@@ -13,7 +13,7 @@ import Combine
 class DetailLessonsViewModel {
     
     // MARK: - Properties
-    @Published var cource: RealmCource?
+    @Published var cource: Cource?
 
 }
 

@@ -8,6 +8,7 @@
 import UIKit
 import FSCalendar
 import SnapKit
+import RealmSwift
 
 
 class CalendarViewController: UIViewController {
@@ -15,7 +16,6 @@ class CalendarViewController: UIViewController {
     // MARK: - Properties
     
     private let viewModel = CalendarViewModel()
-    private let realm = BlocksStorageManager().realm
     
     private var calendarView: CalendarView? {
         guard isViewLoaded else { return nil }
@@ -86,11 +86,9 @@ extension CalendarViewController: FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
-        for event in realm.objects(RealmCource.self) {
-            if let eventDate = (event.cource_opening_time).convertToDate() {
-                if Calendar.current.isDate(eventDate, inSameDayAs: date) {
+        for event in EventsList().events {
+            if Calendar.current.isDate(event.date, inSameDayAs: date) {
                     return UIColor.systemOrange
-                }
             }
         }
         return nil
@@ -115,8 +113,8 @@ extension CalendarViewController: UITableViewDataSource {
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event = viewModel.eventsForDate(date: selectedDate)[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier, for: indexPath) as! CalendarTableViewCell
-        cell.titleLable.text = event.cource_name
-        cell.timeLable.text = event.cource_opening_time
+         cell.titleLable.text = event.name
+         cell.timeLable.text = (event.date).convertToString()
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         return cell

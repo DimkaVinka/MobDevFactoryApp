@@ -6,19 +6,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class CalendarViewModel {
     
-    let realm = BlocksStorageManager().realm
 
-    func eventsForDate(date: Date) -> [RealmCource]  {
-        var daysEvents = [RealmCource]()
-        for event in realm.objects(RealmCource.self) {
-            if let eventDate = (event.cource_opening_time).convertToDate() {
-                if Calendar.current.isDate(eventDate, inSameDayAs: date) {
+
+    func eventsForDate(date: Date) -> [EventModel]  {
+        var daysEvents = [EventModel]()
+        for event in EventsList().events {
+            if Calendar.current.isDate(event.date, inSameDayAs: date) {
                     daysEvents.append(event)
-                }
             }
         }
         return daysEvents
