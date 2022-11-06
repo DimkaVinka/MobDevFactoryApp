@@ -88,7 +88,6 @@ class CalendarView: UIView {
         addSubview(segmentControl)
         addSubview(calendar)
         addSubview(tableView)
-        
     }
     
     func setupLayout() {

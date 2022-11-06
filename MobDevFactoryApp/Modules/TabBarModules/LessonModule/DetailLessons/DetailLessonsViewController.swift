@@ -14,10 +14,10 @@ class DetailLessonsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var cource: Cource?
+    var cource: RealmCource?
     var webView = WKWebView()
     var detailLessonsViewModel = DetailLessonsViewModel()
-    let storageManager = CourcesStorageManager()
+    //let storageManager = CourcesStorageManager()
     var cancellables = Set<AnyCancellable>()
     
     // MARK: - Lifecycle
@@ -28,7 +28,7 @@ class DetailLessonsViewController: UIViewController {
         setupLayout()
         setupView()
         
-        storageManager.makeStorage()
+        //storageManager.makeStorage()
         
         featchHTML()
         
@@ -49,33 +49,32 @@ class DetailLessonsViewController: UIViewController {
         self.webView.loadFileURL(filePath, allowingReadAccessTo: filePath)
     }
     
-    @objc func bookmarked() {
-        if storageManager.items.count == 0 {
-            let favoriteCource = FavoriteCource()
-            favoriteCource.cource_name = cource?.cource_name ?? ""
-            favoriteCource.cource_link = cource?.cource_link ?? ""
-            storageManager.addCource(favoriteCource)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
-            alert(title: "Урок добавлен в избранное")
-            
-        } else {
-            for item in storageManager.items {
-                if item.cource_name == cource?.cource_name && item.cource_link == cource?.cource_link {
-                    
-                    storageManager.deleteCource(item)
-                    alert(title: "Урок удален из избранного")
-                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
-                } else {
-                    let favoriteCource = FavoriteCource()
-                    favoriteCource.cource_name = cource?.cource_name ?? ""
-                    favoriteCource.cource_link = cource?.cource_link ?? ""
-                    storageManager.addCource(favoriteCource)
-                    alert(title: "Урок добавлен в избранное")
-                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
-                }
-            }
-        }
-    }
+//    @objc func bookmarked() {
+//        if storageManager.items.count == 0 {
+//            let favoriteCource = FavoriteCource()
+//            favoriteCource.cource_name = cource?.cource_name ?? ""
+//            favoriteCource.cource_link = cource?.cource_link ?? ""
+//            storageManager.addCource(favoriteCource)
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
+//            alert(title: "Урок добавлен в избранное")
+//
+//        } else {
+//            for item in storageManager.items {
+//                if item.cource_name == cource?.cource_name && item.cource_link == cource?.cource_link {
+//                    storageManager.deleteCource(item)
+//                    alert(title: "Урок удален из избранного")
+//                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: nil, action: nil)
+//                } else {
+//                    let favoriteCource = FavoriteCource()
+//                    favoriteCource.cource_name = cource?.cource_name ?? ""
+//                    favoriteCource.cource_link = cource?.cource_link ?? ""
+//                    storageManager.addCource(favoriteCource)
+//                    alert(title: "Урок добавлен в избранное")
+//                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: nil, action: nil)
+//                }
+//            }
+//        }
+//    }
     
     // MARK: - Setup functions
     
@@ -95,7 +94,7 @@ class DetailLessonsViewController: UIViewController {
         
         webView.tintColor = .black
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(bookmarked))
     }
     
     private func setupHierarchy() {

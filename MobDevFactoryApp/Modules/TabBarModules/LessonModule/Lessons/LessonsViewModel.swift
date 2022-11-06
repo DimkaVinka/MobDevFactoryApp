@@ -12,6 +12,6 @@ import Combine
 class LessonsViewModel {
     
     // MARK: - Properties
-    @Published var block: Block?
+    @Published var block: RealmBlock?
 }
 

@@ -7,15 +7,16 @@
 
 import UIKit
 import Combine
+import RealmSwift
 
 class BlocksViewController: UIViewController {
     
     // MARK: - Properties
     var blocksViewModel = BlocksViewModel()
     private var observer: AnyCancellable?
-    var blocks: [Block]?
+    var blocks: Results<RealmBlock>?
     
-    let storageManager = CourcesStorageManager()
+    //let storageManager = CourcesStorageManager()
     
     private var currentView: BlocksView? {
         guard isViewLoaded else { return nil }
@@ -29,7 +30,7 @@ class BlocksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        storageManager.makeStorage()
+        //storageManager.makeStorage()
         blocksViewModel.loadBlocks()
         
         observer = blocksViewModel.$blocks.sink { block in
@@ -71,30 +72,40 @@ extension BlocksViewController: UITableViewDataSource {
         var result = 0
         
         let segmentControlIndex = currentView?.segmentControl.selectedSegmentIndex
-        (segmentControlIndex == 0) ? (result = blocks?.count ?? 0) : (storageManager.items?.count == 0) ? (result = 1) : (result = storageManager.items?.count ?? 0)
-        return result
+        
+        if segmentControlIndex == 0 {
+            result = blocks?.count ?? 0
+        } else {
+            //if storageManager.items?.count == 0 {
+                result = 1
+           // } else {
+                //result = storageManager.items?.count ?? 0
+            //}
+        //}
     }
+        return result
+}
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Subtitle2")
-        let segmentControlIndex = currentView?.segmentControl.selectedSegmentIndex
+//        let segmentControlIndex = currentView?.segmentControl.selectedSegmentIndex
         
-        if segmentControlIndex == 0 {
-            let info = blocks?[indexPath.row]
-            cell.textLabel?.text = info?.block_name
+//        if segmentControlIndex == 0 {
+        let info = blocks?[indexPath.row]
+        cell.textLabel?.text = info?.block_name
             cell.accessoryType = .disclosureIndicator
             cell.imageView?.image = UIImage(systemName: "arrow.right.circle.fill")
-        } else {
-            if storageManager.items?.count == 0 {
-                cell.textLabel?.text = "Нет элементов в избранном"
-            } else {
-                let favoriteCources = storageManager.items?[indexPath.row]
-                cell.textLabel?.text = favoriteCources?.cource_name
-                cell.accessoryType = .disclosureIndicator
-                cell.imageView?.image = UIImage(systemName: "arrow.right.circle.fill")
-            }
-        }
+//        } else {
+//            if storageManager.items?.count == 0 {
+//                cell.textLabel?.text = "Нет элементов в избранном"
+//            } else {
+//                let favoriteCources = storageManager.items?[indexPath.row]
+//                cell.textLabel?.text = favoriteCources?.cource_name
+//                cell.accessoryType = .disclosureIndicator
+//                cell.imageView?.image = UIImage(systemName: "arrow.right.circle.fill")
+//            }
+        //}
         return cell
     }
 }

@@ -30,7 +30,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let secondItem = UITabBarItem(title: "Словарь", image: UIImage(systemName: "book.closed.circle"), selectedImage: UIImage(systemName: "book.closed.circle.fill"))
         second.tabBarItem = secondItem
         
-        let third = UINavigationController(rootViewController: CalendarViewModel())
+        let third = UINavigationController(rootViewController: CalendarViewController())
         let thirdIcon = UITabBarItem(title: "Календарь", image: UIImage(systemName: "calendar.circle"), selectedImage: UIImage(systemName: "calendar.circle.fill"))
         third.tabBarItem = thirdIcon
 

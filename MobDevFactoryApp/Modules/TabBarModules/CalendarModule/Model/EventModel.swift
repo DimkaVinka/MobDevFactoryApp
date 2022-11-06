@@ -12,11 +12,12 @@ struct EventModel {
     let description: String
     let date: Date
     let colorGroup: ColorGroups
-    
-    enum ColorGroups: CaseIterable {
-        case groupCall
-        case newConspect
-        case homeworkOpen
-        case homeworkDeadline
-    }
+}
+
+
+enum ColorGroups: CaseIterable {
+    case groupCall
+    case newConspect
+    case homeworkOpen
+    case homeworkDeadline
 }

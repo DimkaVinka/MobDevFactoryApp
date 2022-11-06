@@ -18,7 +18,7 @@ class LessonsViewController: UIViewController {
         return view as? LessonsView
     }
     
-    var block: Block?
+    var block: RealmBlock?
     
     private var observer: AnyCancellable?
     
